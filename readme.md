@@ -1,4 +1,23 @@
-## Laravel PHP Framework
+## SharingTests ##
+### Descrição ###
+- Aplicação pública de envio/exibição de arquivos de texto
+
+### Funcionalidades ###
+- Cadastro de usuários
+ - CRUD
+- Cadastro de professores
+ - CRUD
+- Cadastro de instituições
+ - CRUD
+- Cadastro/Upload de material
+ - CRUD
+
+### Esquema ###
+Um usuário, ao fazer o upload do material, deve declarar o nome do curso, o nome do professor, a data e a instituição de ensino desse material, além de um titulo para o arquivo. Com essas informações é possivel fazer o upload do material para o sistema e deixa-lo acessivel para outros usuários. O responsável pela publicação do material pode setar outras informações para que fique mais fácil filtrar/buscar outros materias, como Cidade, Estado, etc...
+
+Um usuário, ao buscar algum material, deve primeiro selecionar seu curso e assim terá uma lista com os materiais desse curso no sistema. Haverão também outros filtros, como: Instituição, Cidade, etc...
+
+## Laravel PHP Framework 
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
 [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
