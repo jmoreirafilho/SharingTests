@@ -10,6 +10,9 @@
 @yield('content')
 
 <script type="text/javascript" src="scripts/angularjs/angular.min.js"></script>
+<script type="text/javascript">
+	angular.module("view", []);
+</script>
 @yield('scripts')
 
 </body>
