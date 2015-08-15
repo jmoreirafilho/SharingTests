@@ -50,3 +50,5 @@ Route::resource('course', 'CourseController', ['except'=>['create','store','show
 */
 Route::resource('material', 'MaterialController');
 Route::post('/material/upload', ['as'=>'material.upload', 'uses'=>'MaterialController@upload']);
+Route::get('/material/donate', ['as'=>'material.donate', 'uses'=>'MaterialController@donate']);
+Route::get('/material/search', ['as'=>'material.search', 'uses'=>'MaterialController@search']);
