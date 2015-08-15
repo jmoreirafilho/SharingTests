@@ -9,11 +9,11 @@
 <body>
 @yield('content')
 
+</body>
+<script type="text/javascript" src="scripts/jquery/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="scripts/angularjs/angular.min.js"></script>
 <script type="text/javascript">
 	angular.module("view", []);
 </script>
 @yield('scripts')
-
-</body>
 </html>
