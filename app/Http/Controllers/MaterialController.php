@@ -6,9 +6,26 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Traits\RestTrait;
 
 class MaterialController extends Controller
 {
+    use RestTrait;
+
+    /**
+     * The model class name used by the controller.
+     *
+     * @var string
+     */
+    public $model = "App\Models\Material";
+
+    /**
+     * The resource name used in routes
+     *
+     * @var string
+     */
+    public $resource = "material";
+
     /**
      * Display a listing of the resource.
      *
