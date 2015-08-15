@@ -92,23 +92,32 @@ class MaterialController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-
-    /**
      * Upload the specified archive.
      *
      * @param  Request $request
      * @return Response
      */
     public function upload($link_url)
+    {
+        //
+    }
+
+    /**
+     * Display the view to donate.
+     *
+     * @return Response
+     */
+    public function donate()
+    {
+        //
+    }
+
+    /**
+     * Display the list of materials.
+     *
+     * @return Response
+     */
+    public function search()
     {
         //
     }
