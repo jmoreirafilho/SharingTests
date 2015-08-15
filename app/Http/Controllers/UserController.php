@@ -3,12 +3,28 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Traits\RestTrait;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
+    use RestTrait;
+
+    /**
+     * The model class name used by the controller.
+     *
+     * @var string
+     */
+    public $model = "App\Models\User";
+
+    /**
+     * The resource name used in routes
+     *
+     * @var string
+     */
+    public $resource = "user";
+
     /**
      * Display a listing of the resource.
      *

@@ -3,9 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\SelectableTrait;
 
 class College extends Model
 {
+    use SelectableTrait;
     /**
      * The database table used by the model.
      *

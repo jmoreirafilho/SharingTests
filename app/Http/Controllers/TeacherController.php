@@ -6,9 +6,26 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Traits\RestTrait;
 
 class TeacherController extends Controller
 {
+    use RestTrait;
+
+    /**
+     * The model class name used by the controller.
+     *
+     * @var string
+     */
+    public $model = "App\Models\Teacher";
+
+    /**
+     * The resource name used in routes
+     *
+     * @var string
+     */
+    public $resource = "teacher";
+
     /**
      * Display a listing of the resource.
      *
