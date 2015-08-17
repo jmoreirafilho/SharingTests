@@ -53,3 +53,11 @@ Route::resource('material', 'MaterialController');
 Route::post('/upload', ['as'=>'material.upload', 'uses'=>'MaterialController@upload']);
 Route::get('/donate', ['as'=>'material.donate', 'uses'=>'MaterialController@donate']);
 Route::get('/search', ['as'=>'material.search', 'uses'=>'MaterialController@search']);
+
+/*
+|--------------------------------------------------------------------------
+| Location Resource
+|--------------------------------------------------------------------------
+*/
+Route::resource('location', 'LocationController');
+Route::get('/searchLocation/{busca}', ['as' => 'location.search', 'uses' => 'LocationController@search']);

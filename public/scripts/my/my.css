@@ -1,5 +1,6 @@
 .top-buffer {
-	margin-top: 20px;
+	margin-top: 40px;
+  height:120px;
 }
 .btn-circle {
   width: 30px;
@@ -30,20 +31,55 @@
 	font-size:58px;
 }
 .btn-menu {
-	background-color:#5bc0de;
-	color: #FFF;
+  position:relative;
+  bottom:-80px;
+  color:#286090;
+  font: bold 18px 'Abel', sans-serif;
+  padding:5px;
 }
 .btn-menu:hover {
-	color:#FFF;
-	background-color:#31b0d5;
-	border-color:#269abc;
-}
-.bot-buffer {
-	margin-top: 50px;
+  text-decoration: none;
+  color:#337ab7;
 }
 .footer {
-	background-color: #5bc0de;
-	border:none;
+	background-color: #286090;
+	/*border:none;*/
+  height:60px;
+  width:100%;
+  border: 1px solid #000;
+  position:absolute;
+  bottom:0px;
 	text-align: center;
 	color:#FFF;
+}
+.logo-image {
+  height: 150px;
+  background-image:url('/images/logo.png');
+  background-position: center;
+  background-size:auto 100%; 
+  background-repeat:no-repeat;
+}
+.menu {
+  position: absolute;
+  top:-155px;
+  height:115px;
+  background-color: #286090;
+}
+.menu_home {
+  width:46px;
+}
+.menu_search {
+  left: 47px;
+  width: 122px;
+}
+.menu_create {
+  left: 170px;
+  width: 114px;
+}
+.menu_donate {
+  left: 285px;
+  width: 105px;
+}
+.no-top-margin {
+  margin-top:0px;
 }

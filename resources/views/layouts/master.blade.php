@@ -4,6 +4,7 @@
 	<title>
 		@yield('title')
 	</title>
+	<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="/scripts/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="/scripts/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/scripts/my/my.css">
@@ -11,19 +12,24 @@
 <body>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-12 top-buffer">
-				<div class="col-md-2 text-center">
-					<font style="font-size:75px;">STP</font>
+			<div class="col-md-12">
+				<div class="col-md-3 text-center logo-image">
+				<br />
 				</div>
-				<div class="col-md-5 text-center">
+				<div class="col-md-4 text-center top-buffer">
 					<div class="btn-group bot-buffer" role="group">
-						<a href="{!! route('material.index') !!}" class="btn btn-menu">@lang('menu.home')</a>
-						<a href="/search" class="btn btn-menu">@lang('menu.search')</a>
-						<a href="{!! route('material.create') !!}" class="btn btn-menu">@lang('menu.create')</a>
-						<a href="/donate" class="btn btn-menu">@lang('menu.donate')</a>
+						<div id="menu_home" class="menu menu_home"></div>
+						<div id="menu_search" class="menu menu_search"></div>
+						<div id="menu_create" class="menu menu_create"></div>
+						<div id="menu_donate" class="menu menu_donate"></div>
+
+						<a href="{!! route('material.index') !!}" class="btn-menu" id="home">@lang('menu.home')</a>
+						<a href="/search" class="btn-menu" id="search">@lang('menu.search')</a>
+						<a href="{!! route('material.create') !!}" class="btn-menu" id="create">@lang('menu.create')</a>
+						<a href="/donate" class="btn-menu" id="donate">@lang('menu.donate')</a>
 					</div>
 				</div>
-				<div class="col-md-5">
+				<div class="col-md-5 top-buffer">
 					{!! Form::open(['route'=>'user.login']) !!}
 					<div class="form-horizontal">
 						<div class="form-group">
@@ -46,12 +52,12 @@
 				</div>
 			</div>
 		</div>
-		<hr style="margin-top:0px;" />
+		<hr class="no-top-margin" />
 	</div>
 
 @yield('content')
 
-	<div class="navbar navbar-inverse navbar-fixed-bottom footer" role="navigation">
+	<div class="footer">
 		Footer
 	</div>
 
