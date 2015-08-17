@@ -5,13 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
-use App\Traits\RestTrait;
+use App\Http\Controllers\RestController;
+use App\Models\Material;
 
-class MaterialController extends Controller
+class MaterialController extends RestController
 {
-    use RestTrait;
-
     /**
      * The model class name used by the controller.
      *
@@ -33,17 +31,17 @@ class MaterialController extends Controller
      */
     public function index()
     {
-        //
+        return view('material.index');
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * @return view
      */
     public function create()
     {
-        //
+        return view('material.create');
     }
 
     /**
@@ -61,11 +59,11 @@ class MaterialController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return Response
+     * @return view
      */
     public function show($id)
     {
-        //
+        return view('material.show')->with('material', Material::find($id));
     }
 
     /**
@@ -76,7 +74,8 @@ class MaterialController extends Controller
      */
     public function edit($id)
     {
-        //
+        $material = App\Models\Material::findOrFail($id);
+        return view('material.edit')->with('material', $material);
     }
 
     /**
@@ -105,20 +104,20 @@ class MaterialController extends Controller
     /**
      * Display the view to donate.
      *
-     * @return Response
+     * @return view
      */
     public function donate()
     {
-        //
+        return view('material.donate');
     }
 
     /**
      * Display the list of materials.
      *
-     * @return Response
+     * @return view
      */
     public function search()
     {
-        //
+        return view('material.search');
     }
 }

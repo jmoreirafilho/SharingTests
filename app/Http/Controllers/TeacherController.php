@@ -5,12 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
-use App\Traits\RestTrait;
+use App\Http\Controllers\RestController;
 
-class TeacherController extends Controller
+class TeacherController extends RestController
 {
-    use RestTrait;
 
     /**
      * The model class name used by the controller.

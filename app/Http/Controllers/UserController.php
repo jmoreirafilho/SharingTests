@@ -5,12 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Traits\RestTrait;
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\RestController;
 
-class UserController extends Controller
+class UserController extends RestController
 {
-    use RestTrait;
-
     /**
      * The model class name used by the controller.
      *
@@ -32,7 +30,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        return view('user.index');
     }
 
     /**
@@ -77,5 +75,21 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         //
+    }
+
+    /**
+     * Login
+     *
+     * @param  Request  $request
+     * @return Response
+     */
+    public function login(Request $request)
+    {
+        if (\Auth::attempt(array('email' => $request->email, 'password' => $request->password), true))
+        {
+            return route('user.index');
+        } else{
+            return \Redirect::back();
+        }
     }
 }

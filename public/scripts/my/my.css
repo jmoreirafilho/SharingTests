@@ -1,0 +1,49 @@
+.top-buffer {
+	margin-top: 20px;
+}
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 8px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 10px 0;
+  font-size: 13px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 0;
+  font-size: 19px;
+  line-height: 1.33;
+  border-radius: 35px;
+}
+.title {
+	font-size:58px;
+}
+.btn-menu {
+	background-color:#5bc0de;
+	color: #FFF;
+}
+.btn-menu:hover {
+	color:#FFF;
+	background-color:#31b0d5;
+	border-color:#269abc;
+}
+.bot-buffer {
+	margin-top: 50px;
+}
+.footer {
+	background-color: #5bc0de;
+	border:none;
+	text-align: center;
+	color:#FFF;
+}
