@@ -34,27 +34,6 @@ class UserController extends RestController
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  Request  $request
-     * @return Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -73,6 +52,17 @@ class UserController extends RestController
      * @return Response
      */
     public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Redirect to donate page
+     *
+     * @param  Request  $request
+     * @return Response
+     */
+    public function donate()
     {
         //
     }

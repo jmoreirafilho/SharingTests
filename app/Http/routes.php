@@ -12,47 +12,50 @@
 */
 
 Route::get('/', function () {
-    return view('material.index');
+    return view('subject.home');
 });
+
+/*
+|--------------------------------------------------------------------------
+| Subject Resource
+|--------------------------------------------------------------------------
+*/
+Route::resource('subject', 'SubjectController', ['except'=>['create']]);
+Route::get('/subject/home', ['as'=>'subject.home', 'uses'=>'SubjectController@home']);
+Route::get('/subject/filter', ['as'=>'subject.filter', 'uses'=>'SubjectController@filter']);
+Route::get('/subject/search/{search}', ['as'=>'subject.search', 'uses'=>'SubjectController@search']);
 
 /*
 |--------------------------------------------------------------------------
 | User Resource
 |--------------------------------------------------------------------------
 */
-Route::resource('user', 'UserController', ['except'=>['show']]);
+Route::resource('user', 'UserController', ['except'=>['create', 'store', 'show']]);
 Route::post('/user/login', ['as'=>'user.login', 'uses'=>'UserController@login']);
-
-/*
-|--------------------------------------------------------------------------
-| Teacher Resource
-|--------------------------------------------------------------------------
-*/
-Route::resource('teacher', 'TeacherController', ['except'=>['create','store','show']]);
+Route::post('/user/donate', ['as'=>'user.donate', 'uses'=>'UserController@donate']);
 
 /*
 |--------------------------------------------------------------------------
 | College Resource
 |--------------------------------------------------------------------------
 */
-Route::resource('college', 'CollegeController', ['except'=>['create','store','show']]);
+Route::resource('college', 'CollegeController', ['except'=>['show']]);
+Route::get('/college/search/{search}', ['as'=>'college.search', 'uses'=>'CollegeController@search']);
 
 /*
 |--------------------------------------------------------------------------
 | Course Resource
 |--------------------------------------------------------------------------
 */
-Route::resource('course', 'CourseController', ['except'=>['create','store','show']]);
+Route::resource('course', 'CourseController', ['only'=>['index']]);
+Route::get('/course/search/{search}', ['as'=>'course.search', 'uses'=>'CourseController@search']);
 
 /*
 |--------------------------------------------------------------------------
-| Material Resource
+| Upload Resource
 |--------------------------------------------------------------------------
 */
-Route::resource('material', 'MaterialController');
-Route::post('/upload', ['as'=>'material.upload', 'uses'=>'MaterialController@upload']);
-Route::get('/donate', ['as'=>'material.donate', 'uses'=>'MaterialController@donate']);
-Route::get('/search', ['as'=>'material.search', 'uses'=>'MaterialController@search']);
+Route::resource('upload', 'UploadController', ['only'=>['create', 'store']]);
 
 /*
 |--------------------------------------------------------------------------

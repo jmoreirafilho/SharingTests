@@ -7,25 +7,25 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class CourseController extends Controller
+class UploadController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Show the form for creating a new resource.
      *
      * @return Response
      */
-    public function index()
+    public function create()
     {
         //
     }
 
     /**
-     * Search in courses.
+     * Store a newly created resource in storage.
      *
-     * @param  string  $search
+     * @param  Request  $request
      * @return Response
      */
-    public function search($search)
+    public function store(Request $request)
     {
         //
     }

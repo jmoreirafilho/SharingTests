@@ -6,23 +6,22 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\RestController;
-use App\Models\Material;
 
-class MaterialController extends RestController
+class SubjectController extends RestController
 {
     /**
      * The model class name used by the controller.
      *
      * @var string
      */
-    public $model = "App\Models\Material";
+    public $model = "App\Models\Subject";
 
     /**
      * The resource name used in routes
      *
      * @var string
      */
-    public $resource = "material";
+    public $resource = "subject";
 
     /**
      * Display a listing of the resource.
@@ -31,17 +30,27 @@ class MaterialController extends RestController
      */
     public function index()
     {
-        return view('material.index');
+        //
+    }
+    
+    /**
+     * Display the initial page.
+     *
+     * @return Response
+     */
+    public function home()
+    {
+        //
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Display all uploaded subjects to filtering.
      *
-     * @return view
+     * @return Response
      */
-    public function create()
+    public function filter()
     {
-        return view('material.create');
+        //
     }
 
     /**
@@ -59,11 +68,11 @@ class MaterialController extends RestController
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return view
+     * @return Response
      */
     public function show($id)
     {
-        return view('material.show')->with('material', Material::find($id));
+        //
     }
 
     /**
@@ -74,8 +83,7 @@ class MaterialController extends RestController
      */
     public function edit($id)
     {
-        $material = App\Models\Material::findOrFail($id);
-        return view('material.edit')->with('material', $material);
+        //
     }
 
     /**
@@ -91,33 +99,13 @@ class MaterialController extends RestController
     }
 
     /**
-     * Upload the specified archive.
+     * Search in subjects.
      *
-     * @param  Request $request
+     * @param  string  $search
      * @return Response
      */
-    public function upload($link_url)
+    public function search($search)
     {
         //
-    }
-
-    /**
-     * Display the view to donate.
-     *
-     * @return view
-     */
-    public function donate()
-    {
-        return view('material.donate');
-    }
-
-    /**
-     * Display the list of materials.
-     *
-     * @return view
-     */
-    public function search()
-    {
-        return view('material.search');
     }
 }

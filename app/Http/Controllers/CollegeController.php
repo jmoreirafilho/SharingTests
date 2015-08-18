@@ -34,6 +34,27 @@ class CollegeController extends RestController
     }
 
     /**
+     * Show the form for creating a new resource.
+     *
+     * @return Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  Request  $request
+     * @return Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -52,6 +73,17 @@ class CollegeController extends RestController
      * @return Response
      */
     public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Search in colleges.
+     *
+     * @param  string  $search
+     * @return Response
+     */
+    public function search($search)
     {
         //
     }
