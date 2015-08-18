@@ -20,12 +20,13 @@ class Course extends Model
      *
      * @var array
      */
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'subject_id'];
 
-    /**
-     * Indicates if the model should be timestamped
-     *
-     * @var bool
-     */
-    public $timestamps = false;
+    public function subject(){
+        return $this->belongsTo('App\Models\Subject', 'subject_id')
+    }
+
+    public function colleges(){
+        return $this->hasMany('App\Models\College');
+    }
 }
