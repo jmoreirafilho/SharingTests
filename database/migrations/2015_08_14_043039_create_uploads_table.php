@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTeachersTable extends Migration
+class CreateUploadsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,12 @@ class CreateTeachersTable extends Migration
      */
     public function up()
     {
-        Schema::create('teachers', function(Blueprint $table){
+        Schema::create('uploads', function(Blueprint $table){
             $table->increments('id');
-            $table->string('name', 255);
+            $table->string('link_url', 255);
+            $table->unsignedInteger('subject_id');
+            $table->foreign('subject_id')->references('id')->on('subjects');
+            $table->string('description',255);
         });
     }
 
@@ -25,6 +28,6 @@ class CreateTeachersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('teachers');
+        Schema::drop('uploads');
     }
 }
