@@ -20,12 +20,14 @@ class College extends Model
      *
      * @var array
      */
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'initials', 'location_city_id', 'course_id'];
 
-    /**
-     * Indicates if the model should be timestamped
-     *
-     * @var bool
-     */
-    public $timestamps = false;
+    public function location_city(){
+        return $this->belongsTo('App\Models\LocationCity', 'location_city_id');
+    }
+
+    public function course()
+    {
+        return $this->belongsTo('App\Models\Course', 'course_id');
+    }
 }
