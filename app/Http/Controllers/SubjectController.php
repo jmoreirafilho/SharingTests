@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\RestController;
+use App\Models\Subject;
 
 class SubjectController extends RestController
 {
@@ -30,7 +31,7 @@ class SubjectController extends RestController
      */
     public function index()
     {
-        //
+        return view('subject.index')->with('subjects', Subject::all()->toJson());
     }
     
     /**
@@ -40,7 +41,7 @@ class SubjectController extends RestController
      */
     public function home()
     {
-        //
+        return view('subject.home');
     }
 
     /**
@@ -50,7 +51,7 @@ class SubjectController extends RestController
      */
     public function filter()
     {
-        //
+        return view('subject.filter');
     }
 
     /**
@@ -72,7 +73,7 @@ class SubjectController extends RestController
      */
     public function show($id)
     {
-        //
+        return view('subject.show')->with('subject', Subject::find($id));
     }
 
     /**
@@ -83,7 +84,7 @@ class SubjectController extends RestController
      */
     public function edit($id)
     {
-        //
+        return view('subject.edit')->with('subject', Subject::find($id));
     }
 
     /**
@@ -106,6 +107,7 @@ class SubjectController extends RestController
      */
     public function search($search)
     {
-        //
+        $search = Subject::where('name', 'like', '%'.$search.'%')->take(20)->get();
+        return response()->json($search);
     }
 }

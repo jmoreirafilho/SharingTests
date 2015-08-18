@@ -16,7 +16,7 @@ class UploadController extends Controller
      */
     public function create()
     {
-        //
+        return view('upload.create');
     }
 
     /**

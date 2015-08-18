@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('subject.home');
+    return \Redirect::route('subject.home');
 });
 
 /*
@@ -21,9 +21,9 @@ Route::get('/', function () {
 |--------------------------------------------------------------------------
 */
 Route::resource('subject', 'SubjectController', ['except'=>['create']]);
-Route::get('/subject/home', ['as'=>'subject.home', 'uses'=>'SubjectController@home']);
-Route::get('/subject/filter', ['as'=>'subject.filter', 'uses'=>'SubjectController@filter']);
-Route::get('/subject/search/{search}', ['as'=>'subject.search', 'uses'=>'SubjectController@search']);
+Route::get('/home', ['as'=>'subject.home', 'uses'=>'SubjectController@home']);
+Route::get('/filter', ['as'=>'subject.filter', 'uses'=>'SubjectController@filter']);
+Route::get('/search/{search}', ['as'=>'subject.search', 'uses'=>'SubjectController@search']);
 
 /*
 |--------------------------------------------------------------------------

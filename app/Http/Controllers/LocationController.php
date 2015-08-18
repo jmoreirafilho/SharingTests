@@ -18,11 +18,7 @@ class LocationController extends Controller
      */
     public function search($search)
     {
-        $location = [];
-        foreach(LocationCity::where('name', 'like', '%'.$search.'%')->get() AS $id=>$city){
-            $location[] = ['city_id' => $city->id,'city'=>$city->name, 'state'=>$city->state->name];
-        }
-        // return $location;
+        $location = LocationCity::where('name', 'like', '%'.$search.'%')->take(20)->get();
         return response()->json($location);
     }
 }

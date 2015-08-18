@@ -43,14 +43,10 @@
 }
 .footer {
 	background-color: #286090;
-	/*border:none;*/
   height:60px;
-  width:100%;
-  border: 1px solid #000;
-  position:absolute;
-  bottom:0px;
 	text-align: center;
 	color:#FFF;
+  border:none;
 }
 .logo-image {
   height: 150px;
@@ -58,27 +54,6 @@
   background-position: center;
   background-size:auto 100%; 
   background-repeat:no-repeat;
-}
-.menu {
-  position: absolute;
-  top:-155px;
-  height:115px;
-  background-color: #286090;
-}
-.menu_home {
-  width:46px;
-}
-.menu_search {
-  left: 47px;
-  width: 122px;
-}
-.menu_create {
-  left: 170px;
-  width: 114px;
-}
-.menu_donate {
-  left: 285px;
-  width: 105px;
 }
 .no-top-margin {
   margin-top:0px;

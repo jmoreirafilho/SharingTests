@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\RestController;
+use App\Models\College;
 
 class CollegeController extends RestController
 {
@@ -30,7 +31,7 @@ class CollegeController extends RestController
      */
     public function index()
     {
-        //
+        return view('college.index')->with('colleges', College::all()->toJson());
     }
 
     /**
@@ -40,7 +41,7 @@ class CollegeController extends RestController
      */
     public function create()
     {
-        //
+        return view('college.create');
     }
 
     /**
@@ -62,7 +63,7 @@ class CollegeController extends RestController
      */
     public function edit($id)
     {
-        //
+        return view('college.edit')->with('college', College::find($id));
     }
 
     /**
@@ -85,6 +86,7 @@ class CollegeController extends RestController
      */
     public function search($search)
     {
-        //
+        $search = College::where('name', 'like', '%'.$search.'%')->take(20)->get();
+        return response()->json($search);
     }
 }

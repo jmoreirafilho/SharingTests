@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Traits\RestTrait;
 use App\Http\Requests;
 use App\Http\Controllers\RestController;
+use App\Models\User;
 
 class UserController extends RestController
 {
@@ -41,7 +42,7 @@ class UserController extends RestController
      */
     public function edit($id)
     {
-        //
+        return view('user.edit')->with('users', User::all()->toJson());
     }
 
     /**
@@ -64,7 +65,7 @@ class UserController extends RestController
      */
     public function donate()
     {
-        //
+        return view('user.donate');
     }
 
     /**

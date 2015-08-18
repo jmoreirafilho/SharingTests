@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Models\Course;
 
 class CourseController extends Controller
 {
@@ -16,7 +17,7 @@ class CourseController extends Controller
      */
     public function index()
     {
-        //
+        return view('course.index')->with('courses', Course::all()->toJson());
     }
 
     /**
@@ -27,6 +28,7 @@ class CourseController extends Controller
      */
     public function search($search)
     {
-        //
+        $search = Course::where('name', 'like', '%'.$search.'%')->take(20)->get();
+        return response()->json($search);
     }
 }

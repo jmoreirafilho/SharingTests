@@ -18,37 +18,11 @@
 				</div>
 				<div class="col-md-4 text-center top-buffer">
 					<div class="btn-group bot-buffer" role="group">
-						<div id="menu_home" class="menu menu_home"></div>
-						<div id="menu_search" class="menu menu_search"></div>
-						<div id="menu_create" class="menu menu_create"></div>
-						<div id="menu_donate" class="menu menu_donate"></div>
-
-						<a href="{!! route('material.index') !!}" class="btn-menu" id="home">@lang('menu.home')</a>
-						<a href="/search" class="btn-menu" id="search">@lang('menu.search')</a>
-						<a href="{!! route('material.create') !!}" class="btn-menu" id="create">@lang('menu.create')</a>
-						<a href="/donate" class="btn-menu" id="donate">@lang('menu.donate')</a>
+						<a href="{!! route('subject.home') !!}" class="btn-menu">@lang('menu.home')</a>
+						<a href="{!! route('college.index') !!}" class="btn-menu">@lang('menu.search')</a>
+						<a href="{!! route('upload.create') !!}" class="btn-menu">@lang('menu.create')</a>
+						<a href="{!! route('user.donate') !!}" class="btn-menu">@lang('menu.donate')</a>
 					</div>
-				</div>
-				<div class="col-md-5 top-buffer">
-					{!! Form::open(['route'=>'user.login']) !!}
-					<div class="form-horizontal">
-						<div class="form-group">
-							{!! Form::label('email', trans('material.username'), ['class' => 'col-md-2 control-label']) !!}
-							<div class="col-md-10">
-								{!! Form::text('email', null, ['class' => 'form-control', 'placeholder' => trans('material.placeholder_username'), 'ng-model'=>'username']) !!}
-							</div>
-						</div>
-						<div class="form-group">
-							{!! Form::label('password', trans('material.password'), ['class' => 'col-md-2 control-label']) !!}
-							<div class="col-md-7">
-								{!! Form::password('password', ['class' => 'form-control', 'placeholder' => trans('material.placeholder_password')]) !!}
-							</div>
-							<div class="col-md-3">
-								{!! Form::submit(trans('material.submit_login'), ['class' => 'btn btn-primary btn-block']) !!}
-							</div>
-						</div>
-					</div>
-					{!! Form::close() !!}
 				</div>
 			</div>
 		</div>
@@ -57,7 +31,7 @@
 
 @yield('content')
 
-	<div class="footer">
+	<div class="navbar navbar-inverse navbar-fixed-bottom footer" role="navigation">
 		Footer
 	</div>
 
