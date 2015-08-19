@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Traits\RestTrait;
-use App\Http\Requests;
+use App\Http\Requests\UserRequest;
 use App\Http\Controllers\RestController;
 use App\Models\User;
 
@@ -52,7 +52,7 @@ class UserController extends RestController
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(UserRequest $request, $id)
     {
         //
     }
@@ -74,7 +74,7 @@ class UserController extends RestController
      * @param  Request  $request
      * @return Response
      */
-    public function login(Request $request)
+    public function login(UserRequest $request)
     {
         var_dump($request->all());
         if (\Auth::attempt(array('email' => $request->email, 'password' => $request->password)))

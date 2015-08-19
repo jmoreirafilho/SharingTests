@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
+use App\Http\Requests\SubjectRequest;
 use App\Http\Controllers\RestController;
 use App\Models\Subject;
 
@@ -60,7 +60,7 @@ class SubjectController extends RestController
      * @param  Request  $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(SubjectRequest $request)
     {
         //
     }
@@ -94,7 +94,7 @@ class SubjectController extends RestController
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(SubjectRequest $request, $id)
     {
         //
     }
