@@ -1,24 +1,25 @@
 body{
-  background-color:#f3f9fb;
+  background-color:#eff8fa;
 }
 .top-buffer {
 	margin-top: 40px;
   height:120px;
 }
 .btn-menu {
-  color: #222467;
+  color: #FFF;
   position:relative;
   top:13px;
-  font: bold 18px 'Abel', sans-serif;
+  font-size:18px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding:5px;
 }
 .btn-menu:hover {
   text-decoration: none;
-  color:#FFF;
+  color:#879dd7;
 }
 .menu {
   position: fixed;
-  background-color: #4d46c1;
+  background-color: #1a237e;
   height:50px;
   width:100%;
   top:0px;
@@ -27,7 +28,7 @@ body{
   z-index:2;
 }
 .footer {
-	background-color: #4d46c1;
+	background-color: #1a237e;
   height:60px;
 	text-align: center;
 	color:#FFF;
@@ -57,7 +58,7 @@ body{
   margin-top:0px;
 }
 .card {
-  background-color: #afd0e4;
+  background-color: #879dd7;
   width:100%;
   margin:10px;
   padding: 10px;
@@ -69,15 +70,22 @@ body{
   position:absolute;
   right:0px;
   top:55px;
-  background-color: #afd0e4;
+  background-color: #879dd7;
   width:400px;
   height:150px;
   display:none;
   padding: 5px;
   box-shadow:0px 0px 10px #000;
 }
+.btn-login {
+  background-color: #1a237e;
+  color:#FFF; border:none;
+}
+.btn-login:hover {
+  color: #879dd7;
+}
 .addon-preferences {
-  background-color: #4d46c1;
+  background-color: #1a237e;
   color:#FFF;
   border:1px solid #CCC;
 }
@@ -88,7 +96,7 @@ body{
   font: bold 18px 'Abel', sans-serif;
 }
 .typeahead {
-  background-color:#f3f9fb;
+  background-color:#eff8fa;
   border-radius:3px;
   position:absolute;
   box-shadow: 0px 0px 5px #666;
@@ -103,7 +111,8 @@ body{
   padding-top:3px;
 }
 .typeahead-option:hover{
-  background-color:#afd0e4;
+  background-color:#879dd7;
+  color:#FFF;
   font-weight: bold;
 }
 a.college-list{
@@ -116,4 +125,7 @@ div.college-list{
 .college-list:hover{
   box-shadow:0px 0px 10px #666;
   color:#222467;
+}
+h3 {
+  margin-top: 5px;
 }

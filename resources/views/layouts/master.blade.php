@@ -1,10 +1,14 @@
+<?php
+if(count($errors)>0) {
+	dd($errors); 
+}
+?>
 <!DOCTYPE html>
 <html ng-app="view">
 <head>
 	<title>
 		@yield('title')
 	</title>
-	<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="/scripts/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="/scripts/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/scripts/my/my.css">
@@ -27,7 +31,7 @@
 		</div>
 	</div>
 	<div class="form-group">
-		{!! Form::submit(trans('subject.submit_login'), ['class'=>'btn btn-primary']) !!}
+		{!! Form::submit(trans('subject.submit_login'), ['class'=>'btn btn-login']) !!}
 	</div>
 	{!! Form::close() !!}
 	</div>

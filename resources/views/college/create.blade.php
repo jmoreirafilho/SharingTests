@@ -20,13 +20,13 @@
 				<div class="col-md-8">
 					<div class="form-group">
 						{!! Form::label('name', trans('college.form-name')) !!}
-						{!! Form::text('name', null, ['class'=>'form-control', 'placeholder'=>trans('college.ph-form-name')]) !!}
+						{!! Form::text('name', null, ['class'=>'form-control', 'placeholder'=>trans('college.ph-form-name'), 'ng-model'=>'name']) !!}
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="form-group">
 						{!! Form::label('initials', trans('college.form-initial')) !!}
-						{!! Form::text('initials', null, ['class'=>'form-control', 'placeholder'=>trans('college.ph-form-initial')]) !!}
+						{!! Form::text('initials', null, ['class'=>'form-control', 'placeholder'=>trans('college.ph-form-initial'), 'ng-model'=>'initials']) !!}
 					</div>
 				</div>
 			</div>
@@ -47,7 +47,7 @@
 			<div class="row">
 				<div class="col-md-3">
 					<div class="form-group">
-						{!! Form::submit(trans('college.form-submit'), ['class'=>'btn btn-primary']) !!}
+						{!! Form::submit(trans('college.form-submit'), ['class'=>'btn btn-primary', 'ng-disabled'=>'!name||!initials']) !!}
 					</div>
 				</div>
 			</div>

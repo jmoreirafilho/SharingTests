@@ -25,8 +25,7 @@ class UserRequest extends Request
     {
         return [
             "name" => "required|max:255",
-            "email" => "required|email|max:255",
-            "password" => "max:60"
+            "email" => "required|email|max:255"
         ];
     }
 }

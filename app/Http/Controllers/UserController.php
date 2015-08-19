@@ -74,7 +74,7 @@ class UserController extends RestController
      * @param  Request  $request
      * @return Response
      */
-    public function login(UserRequest $request)
+    public function login(Request $request)
     {
         var_dump($request->all());
         if (\Auth::attempt(array('email' => $request->email, 'password' => $request->password)))
