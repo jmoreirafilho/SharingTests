@@ -10,28 +10,72 @@
 	<link rel="stylesheet" type="text/css" href="/scripts/my/my.css">
 </head>
 <body>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="col-md-3 text-center logo-image">
-				<br />
-				</div>
-				<div class="col-md-4 text-center top-buffer">
-					<div class="btn-group bot-buffer" role="group">
-						<a href="{!! route('subject.home') !!}" class="btn-menu">@lang('menu.home')</a>
-						<a href="{!! route('college.index') !!}" class="btn-menu">@lang('menu.search')</a>
-						<a href="{!! route('upload.create') !!}" class="btn-menu">@lang('menu.create')</a>
-						<a href="{!! route('user.donate') !!}" class="btn-menu">@lang('menu.donate')</a>
-					</div>
-				</div>
+	@if(!Auth::check())
+	<div class="login" id="login">
+	{!! Form::open(['route'=>'user.login']) !!}
+	{!! Form::token() !!}
+	<div class="form-group">
+		<div class="input-group">
+			<div class="input-group-addon addon-preferences"><i class="fa fa-at"></i></div>
+			{!! Form::text('email', null, ['class'=>'form-control', 'placeholder' => trans('subject.placeholder-email')]) !!}
+			</div>
+	</div>
+	<div class="form-group">
+		<div class="input-group">
+			<div class="input-group-addon addon-preferences"><i class="fa fa-key"></i></div>
+			{!! Form::password('password', ['class'=>'form-control', 'placeholder' => trans('subject.placeholder-password')]) !!}
+		</div>
+	</div>
+	<div class="form-group">
+		{!! Form::submit(trans('subject.submit_login'), ['class'=>'btn btn-primary']) !!}
+	</div>
+	{!! Form::close() !!}
+	</div>
+	@endif
+	<div class="menu" role="navigation">
+		<div class="col-md-1 logo-icon">&nbsp;</div>
+		<div class="col-md-2 user-name-space">
+			@if(Auth::check())
+				<i class="fa fa-user"></i> {!! Auth::user()->name !!}
+			@else
+				&nbsp;
+			@endif
+		</div>
+		<div class="col-md-9 text-right">
+			<div class="btn-group">
+				<a href="{!! route('subject.home') !!}" class="btn-menu">@lang('title.subject-home')</a>
+				<a href="{!! route('college.index') !!}" class="btn-menu">@lang('title.college-index')</a>
+				@if(Auth::check())
+				<a href="{!! route('college.create') !!}" class="btn-menu">@lang('title.college-create')</a>
+				<a href="{!! route('subject.filter') !!}" class="btn-menu">@lang('title.subject-filter')</a>
+				@endif
+				<a href="{!! route('upload.create') !!}" class="btn-menu">@lang('title.upload-create')</a>
+				<a href="{!! route('user.donate') !!}" class="btn-menu">@lang('title.user-donate')</a>
+				@if(!Auth::check())
+				<a href="" class="btn-menu" id="show-login"><i class="fa fa-sign-in">&nbsp;</i></a>
+				@else
+				<a href="{!! route('user.logout') !!}" class="btn-menu"><i class="fa fa-sign-out">&nbsp;</i></a>
+				@endif
 			</div>
 		</div>
-		<hr class="no-top-margin" />
+	</div>
+	<div class="logo-banner">&nbsp;</div>
+
+	<div class="col-md-9 content">
+		@yield('content')
+	</div>
+	<div class="col-md-3 content">
+		<section>
+			<div class="col-md-12">
+				<div class="card card-ads">
+					ADS
+				</div>			
+			</div>
+		</section>
+		@yield('ads')
 	</div>
 
-@yield('content')
-
-	<div class="navbar navbar-inverse navbar-fixed-bottom footer" role="navigation">
+	<div class="col-md-12 footer" role="navigation">
 		Footer
 	</div>
 

@@ -18,8 +18,6 @@ class CreateCollegesTable extends Migration
             $table->string('initials', 20);
             $table->unsignedInteger('location_city_id');
             $table->foreign('location_city_id')->references('id')->on('location_cities');
-            $table->unsignedInteger('course_id');
-            $table->foreign('course_id')->references('id')->on('courses');
             $table->timestamps();
             $table->softDeletes();
         });

@@ -31,8 +31,9 @@ Route::get('/search/{search}', ['as'=>'subject.search', 'uses'=>'SubjectControll
 |--------------------------------------------------------------------------
 */
 Route::resource('user', 'UserController', ['except'=>['create', 'store', 'show']]);
-Route::post('/user/login', ['as'=>'user.login', 'uses'=>'UserController@login']);
-Route::post('/user/donate', ['as'=>'user.donate', 'uses'=>'UserController@donate']);
+Route::post('/login', ['as'=>'user.login', 'uses'=>'UserController@login']);
+Route::get('/logout', ['as'=>'user.logout', 'uses'=>'UserController@logout']);
+Route::get('/donate', ['as'=>'user.donate', 'uses'=>'UserController@donate']);
 
 /*
 |--------------------------------------------------------------------------

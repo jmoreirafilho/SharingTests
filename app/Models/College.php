@@ -20,9 +20,9 @@ class College extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'initials', 'location_city_id', 'course_id'];
+    protected $fillable = ['name', 'initials', 'location_city_id'];
 
-    public function location_city(){
+    public function city(){
         return $this->belongsTo('App\Models\LocationCity', 'location_city_id');
     }
 

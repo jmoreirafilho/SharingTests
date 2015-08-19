@@ -1,3 +1,3 @@
-@extends('layouts.logged')
+@extends('layouts.master')
 
 @section('title', 'titulo')

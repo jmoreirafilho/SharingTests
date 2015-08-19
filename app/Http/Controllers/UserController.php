@@ -76,11 +76,28 @@ class UserController extends RestController
      */
     public function login(Request $request)
     {
-        if (\Auth::attempt(array('email' => $request->email, 'password' => $request->password), true))
+        var_dump($request->all());
+        if (\Auth::attempt(array('email' => $request->email, 'password' => $request->password)))
         {
-            return route('user.index');
+            // dd("ok!");
+            // return view('subject.home');
+            return redirect()->intended('/home');
         } else{
-            return \Redirect::back();
+            dd("fail!");
+            // return \Redirect::back();
         }
+    }
+
+    /**
+     * Logout
+     *
+     * @return Response
+     */
+    public function logout()
+    {
+        if(\Auth::check()){
+            \Auth::logout();
+        }
+        return \Redirect::route('subject.home');
     }
 }

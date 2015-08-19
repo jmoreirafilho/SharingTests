@@ -31,7 +31,18 @@ class CollegeController extends RestController
      */
     public function index()
     {
-        return view('college.index')->with('colleges', College::all()->toJson());
+        $returned = [];
+        $colleges = College::all()->take(6);
+        foreach($colleges AS $id=>$college){
+            $returned[] = [
+            'id'=>$college->id,
+            'name'=>$college->name,
+            'initials'=>$college->initials,
+            'city'=>$college->city->name,
+            'state'=>$college->city->state->name
+            ];
+        }
+        return view('college.index')->with('colleges', json_encode($returned));
     }
 
     /**
@@ -52,7 +63,14 @@ class CollegeController extends RestController
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        $college = new College();
+        $college->name = $request->name;
+        $college->initials = $request->initial;
+        $college->location_city_id = $request->location_city_id;
+        $college->save();
+
+        return redirect()->route('college.index');
     }
 
     /**
