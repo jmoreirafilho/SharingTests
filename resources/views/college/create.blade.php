@@ -5,7 +5,6 @@
 @if(!Auth::check())
 	<?php header("Location: /"); ?>
 @endif
-
 <section ng-controller="viewController">
 	<div class="col-md-12">
 		<div class="card">
@@ -26,8 +25,8 @@
 				</div>
 				<div class="col-md-4">
 					<div class="form-group">
-						{!! Form::label('initial', trans('college.form-initial')) !!}
-						{!! Form::text('initial', null, ['class'=>'form-control', 'placeholder'=>trans('college.ph-form-initial')]) !!}
+						{!! Form::label('initials', trans('college.form-initial')) !!}
+						{!! Form::text('initials', null, ['class'=>'form-control', 'placeholder'=>trans('college.ph-form-initial')]) !!}
 					</div>
 				</div>
 			</div>

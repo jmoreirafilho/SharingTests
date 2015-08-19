@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
+use App\Http\Requests\CollegeRequest;
 use App\Http\Controllers\RestController;
 use App\Models\College;
 
@@ -61,12 +61,12 @@ class CollegeController extends RestController
      * @param  Request  $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(CollegeRequest $request)
     {
         // dd($request);
         $college = new College();
         $college->name = $request->name;
-        $college->initials = $request->initial;
+        $college->initials = $request->initials;
         $college->location_city_id = $request->location_city_id;
         $college->save();
 
@@ -91,7 +91,7 @@ class CollegeController extends RestController
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(CollegeRequest $request, $id)
     {
         //
     }
