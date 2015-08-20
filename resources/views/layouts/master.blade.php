@@ -11,7 +11,7 @@
 <body>
 	@if(!Auth::check())
 	<div class="login" id="login">
-	{!! Form::open(['route'=>'user.login']) !!}
+	{!! Form::open(['route'=>'home.login']) !!}
 	{!! Form::token() !!}
 	<div class="form-group">
 		<div class="input-group">
@@ -46,7 +46,7 @@
 		</div>
 		<div class="col-md-9 text-right">
 			<div class="btn-group">
-				<a href="{!! route('subject.home') !!}" class="btn-menu">@lang('title.subject-home')</a>
+				<a href="{!! route('home.index') !!}" class="btn-menu">@lang('title.home-index')</a>
 				@if(Auth::check())
 					@if(Auth::check() && Auth::user()->status_level == 1)
 					<a href="{!! route('user.index') !!}" class="btn-menu">@lang('title.user-index')</a>
@@ -54,11 +54,11 @@
 					<a href="{!! route('subject.filter') !!}" class="btn-menu">@lang('title.subject-filter')</a>
 					@endif
 					<a href="{!! route('college.index') !!}" class="btn-menu">@lang('title.college-index')</a>
-					<a href="{!! route('upload.create') !!}" class="btn-menu">@lang('title.upload-create')</a>
+					<a href="{!! route('subject.create') !!}" class="btn-menu">@lang('title.subject-create')</a>
 					@else
-					<a href="{!! route('user.create') !!}" class="btn-menu">@lang('title.user-create')</a>
+					<a href="{!! route('home.create') !!}" class="btn-menu">@lang('title.home-create')</a>
 					@endif
-				<a href="{!! route('user.donate') !!}" class="btn-menu">@lang('title.user-donate')</a>
+				<a href="{!! route('home.donate') !!}" class="btn-menu">@lang('title.home-donate')</a>
 				@if(!Auth::check())
 				<a href="" class="btn-menu" id="show-login"><i class="fa fa-sign-in">&nbsp;</i></a>
 				@else

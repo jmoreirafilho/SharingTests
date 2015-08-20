@@ -33,16 +33,6 @@ class SubjectController extends RestController
     {
         return view('subject.index')->with('subjects', Subject::all()->toJson());
     }
-    
-    /**
-     * Display the initial page.
-     *
-     * @return Response
-     */
-    public function home()
-    {
-        return view('subject.home');
-    }
 
     /**
      * Display all uploaded subjects to filtering.
@@ -52,6 +42,16 @@ class SubjectController extends RestController
     public function filter()
     {
         return view('subject.filter');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return Response
+     */
+    public function create()
+    {
+        return view('subject.create');
     }
 
     /**
@@ -84,7 +84,7 @@ class SubjectController extends RestController
      */
     public function edit($id)
     {
-        return view('subject.edit')->with('subject', Subject::find($id));
+        return view('subject.edit')->with('subject', Subject::find($id)->toJson());
     }
 
     /**
@@ -107,7 +107,11 @@ class SubjectController extends RestController
      */
     public function search($search)
     {
-        $search = Subject::where('name', 'like', '%'.$search.'%')->take(20)->get();
-        return response()->json($search);
+        $result = [];
+        $subjects = Subject::with('tag')->where('name', 'like', '%'.$search.'%')->where('filtered', true)->take(20)->get();
+        foreach($subjects AS $id => $subject){
+            $result[] = ["id"=>$subject->id, "name", $subject->name, "description"=>$subject->description, "tag"=>$subject->tag->name];
+        }
+        return response()->json($result);
     }
 }

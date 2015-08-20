@@ -11,57 +11,51 @@
 |
 */
 
-Route::get('/', function () {
-    return \Redirect::route('subject.home');
+Route::resource('home', 'HomeController', ['except' => ['show', 'edit', 'update', 'destroy']]);
+Route::get('/', ['as' => 'home.index', 'uses' => 'HomeController@index']);
+Route::get('/donate', ['as' => 'home.donate', 'uses'=>'HomeController@donate']);
+Route::post('/login', ['as' => 'home.login', 'uses'=>'HomeController@login']);
+
+Route::group(['middleware'=>'auth'], function(){
+	/*
+	|--------------------------------------------------------------------------
+	| User Resource
+	|--------------------------------------------------------------------------
+	*/
+	Route::resource('user', 'UserController', ['except'=>['create', 'store']]);
+	Route::get('/logout', ['as'=>'user.logout', 'uses'=>'UserController@logout']);
+	Route::get('/profile', ['as'=>'user.profile', 'uses'=>'UserController@profile']);
+	Route::get('/searchUser/{search}', ['uses'=>'UserController@search']);
+
+	/*
+	|--------------------------------------------------------------------------
+	| Subject Resource
+	|--------------------------------------------------------------------------
+	*/
+	Route::resource('subject', 'SubjectController', ['except'=>['destroy']]);
+	Route::get('/filter', ['as'=>'subject.filter', 'uses'=>'SubjectController@filter']);
+	Route::get('/searchSubject/{search}', ['uses'=>'SubjectController@search']);
+
+	/*
+	|--------------------------------------------------------------------------
+	| College Resource
+	|--------------------------------------------------------------------------
+	*/
+	Route::resource('college', 'CollegeController', ['except'=>['show']]);
+	Route::get('/searchCollege/{search}', ['uses'=>'CollegeController@search']);
+
+	/*
+	|--------------------------------------------------------------------------
+	| Course Resource
+	|--------------------------------------------------------------------------
+	*/
+	Route::resource('course', 'CourseController', ['only'=>['index']]);
+	Route::get('/searchCourse/{search}', ['uses'=>'CourseController@search']);
+
+	/*
+	|--------------------------------------------------------------------------
+	| Location Resource
+	|--------------------------------------------------------------------------
+	*/
+	Route::get('/searchLocation/{busca}', ['uses' => 'LocationController@search']);
 });
-
-/*
-|--------------------------------------------------------------------------
-| Subject Resource
-|--------------------------------------------------------------------------
-*/
-Route::resource('subject', 'SubjectController', ['except'=>['create']]);
-Route::get('/home', ['as'=>'subject.home', 'uses'=>'SubjectController@home']);
-Route::get('/filter', ['as'=>'subject.filter', 'uses'=>'SubjectController@filter']);
-Route::get('/search/{search}', ['as'=>'subject.search', 'uses'=>'SubjectController@search']);
-
-/*
-|--------------------------------------------------------------------------
-| User Resource
-|--------------------------------------------------------------------------
-*/
-Route::resource('user', 'UserController');
-Route::post('/login', ['as'=>'user.login', 'uses'=>'UserController@login']);
-Route::get('/logout', ['as'=>'user.logout', 'uses'=>'UserController@logout']);
-Route::get('/donate', ['as'=>'user.donate', 'uses'=>'UserController@donate']);
-
-/*
-|--------------------------------------------------------------------------
-| College Resource
-|--------------------------------------------------------------------------
-*/
-Route::resource('college', 'CollegeController', ['except'=>['show']]);
-Route::get('/college/search/{search}', ['as'=>'college.search', 'uses'=>'CollegeController@search']);
-
-/*
-|--------------------------------------------------------------------------
-| Course Resource
-|--------------------------------------------------------------------------
-*/
-Route::resource('course', 'CourseController', ['only'=>['index']]);
-Route::get('/course/search/{search}', ['as'=>'course.search', 'uses'=>'CourseController@search']);
-
-/*
-|--------------------------------------------------------------------------
-| Upload Resource
-|--------------------------------------------------------------------------
-*/
-Route::resource('upload', 'UploadController', ['only'=>['create', 'store']]);
-
-/*
-|--------------------------------------------------------------------------
-| Location Resource
-|--------------------------------------------------------------------------
-*/
-Route::resource('location', 'LocationController');
-Route::get('/searchLocation/{busca}', ['as' => 'location.search', 'uses' => 'LocationController@search']);

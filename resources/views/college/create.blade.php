@@ -2,9 +2,6 @@
 @section('title', trans('title.college-create'))
 
 @section('content')
-@if(!Auth::check())
-	<?php header("Location: /"); ?>
-@endif
 <section ng-controller="viewController">
 	<div class="col-md-12">
 		<div class="card">

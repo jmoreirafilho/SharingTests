@@ -25,14 +25,14 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = ['name', 'email'];
 
     /**
      * The attributes excluded from the model's JSON form.
      *
      * @var array
      */
-    protected $hidden = ['remember_token'];
+    protected $hidden = ['password', 'remember_token'];
 
     public function score(){
         return $this->hasOne('App\Models\Score');

@@ -1,14 +1,15 @@
 @extends('layouts.master')
 
-@section('title', trans('title.user-create'))
+@section('title', trans('title.home-create'))
 
 @section('content')
 <section ng-controller="viewController">
 	<div class="col-md-12">
 		<div class="card">
-			<h3>@lang('title.user-create')</h3>
-			<hr>
-			{!! Form::open(['route' => 'user.store']) !!}
+			<div class="card-title">
+				<h3>@lang('title.home-create')</h3>
+			</div>
+			{!! Form::open(['route' => 'home.store']) !!}
 			{!! Form::token() !!}
 			<div class="row">
 				<div class="col-md-6">
