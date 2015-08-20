@@ -36,4 +36,8 @@ class Subject extends Model
     public function uploads(){
         return $this->hasMany('App\Models\Upload');
     }
+
+    public function tag() {
+        return $this->belongsTo('App\Models\Tag');
+    }
 }

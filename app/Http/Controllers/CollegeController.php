@@ -63,11 +63,8 @@ class CollegeController extends RestController
      */
     public function store(CollegeRequest $request)
     {
-        // dd($request);
-        $college = new College();
-        $college->name = $request->name;
-        $college->initials = $request->initials;
-        $college->location_city_id = $request->location_city_id;
+        $college = new College;
+        $college->fill($request->all());
         $college->save();
 
         return redirect()->route('college.index');
@@ -81,7 +78,7 @@ class CollegeController extends RestController
      */
     public function edit($id)
     {
-        return view('college.edit')->with('college', College::find($id));
+        return view('college.edit')->with('college', College::find($id)->toJson());
     }
 
     /**
@@ -93,7 +90,11 @@ class CollegeController extends RestController
      */
     public function update(CollegeRequest $request, $id)
     {
-        //
+        $college = College::find($id);
+        $college->fill($request->all());
+        $college->save();
+
+        return redirect()->route('college.index');
     }
 
     /**
@@ -104,7 +105,11 @@ class CollegeController extends RestController
      */
     public function search($search)
     {
-        $search = College::where('name', 'like', '%'.$search.'%')->take(20)->get();
-        return response()->json($search);
+        $return = [];
+        $colleges = College::whereRaw("name LIKE '%".$search."%' OR initials LIKE '%".$search."%'")->where('deleted_at', null)->take(20)->get();
+        foreach($colleges AS $id => $college){
+            $return[] = ["id" => $college->id, "name" => $college->name, "initials"=>$college->initials, "city"=>$college->city->name, "state"=>$college->city->state->uf];
+        }
+        return response()->json($return);
     }
 }

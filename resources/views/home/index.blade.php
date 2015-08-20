@@ -1,11 +1,11 @@
 @extends('layouts.master')
-@section('title', trans('title.user-donate'))
+@section('title', trans('title.home-index'))
 
 @section('content')
 <section>
 	<div class="col-md-12">
 		<div class="card">
-			<p>Pagina Donate</p>
+			<p>Pagina Home</p>
 		</div>
 	</div>
 </section>

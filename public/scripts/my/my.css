@@ -58,11 +58,21 @@ body{
   margin-top:0px;
 }
 .card {
-  background-color: #9fa8da;
-  box-shadow: 0px 1px 5px #000;
+  background-color:#fff;
+  box-shadow: 0px 1px 5px #666;
   width:100%;
   margin:10px;
   padding: 10px;
+}
+.card-title {
+  margin-top:-10px;
+  margin-left:-10px;
+  margin-right:-10px;
+  margin-bottom:15px;
+  padding:5px;
+  padding-left: 10px;
+  background-color:#1a237e;
+  color:#FFF;
 }
 .card-ads {
   height: 500px;
@@ -71,7 +81,7 @@ body{
   position:absolute;
   right:0px;
   top:55px;
-  background-color: #9fa8da;
+  background-color: #FFF;
   width:400px;
   height:150px;
   display:none;
@@ -80,10 +90,11 @@ body{
 }
 .btn-login {
   background-color: #1a237e;
-  color:#FFF; border:none;
+  color:#fff; border:none;
 }
 .btn-login:hover {
-  color: #9fa8da;
+  background-color: #9fa8da;
+  color:#000;
 }
 .addon-preferences {
   background-color: #1a237e;

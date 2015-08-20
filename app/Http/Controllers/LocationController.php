@@ -12,9 +12,10 @@ use App\Models\LocationState;
 class LocationController extends Controller
 {
     /**
-     * Display the list of materials.
+     * Return a json search result.
      *
-     * @return view
+     * @var $search
+     * @return json
      */
     public function search($search)
     {

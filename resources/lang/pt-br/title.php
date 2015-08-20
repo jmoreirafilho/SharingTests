@@ -1,12 +1,12 @@
 <?php 
 return [
-	"subject-home" => "Início",
+	"home-index" => "Início",
+	"home-create" => "Criar Conta",
+	"home-donate" => "Fazer Doação",
 	"subject-filter" => "Filtrar Materiais",
 	"college-index" => "Buscar Material",
 	"college-create" => "Add Universidade",
-	"upload-create" => "Enviar Material",
-	"user-donate" => "Fazer Doação",
+	"subject-create" => "Enviar Material",
 	"user-index" => "Listar Usuários",
-	"user-create" => "Criar Conta",
 ];
  ?>
