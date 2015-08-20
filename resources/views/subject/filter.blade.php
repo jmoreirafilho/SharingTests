@@ -5,7 +5,6 @@
 @if(!Auth::check())
 	<?php header("Location: /"); ?>
 @endif
-
 <section>
 	<div class="col-md-12">
 		<div class="card">

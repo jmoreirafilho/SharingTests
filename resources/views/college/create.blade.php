@@ -76,6 +76,6 @@
 		$("#typeahead").show(300);
 	}).on('blur', function(){
 		$("#typeahead").hide(300);
-	}).attr('autocomplete','off');
+	});
 </script>
 @endsection
