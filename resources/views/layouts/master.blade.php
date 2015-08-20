@@ -1,8 +1,3 @@
-<?php
-if(count($errors)>0) {
-	dd($errors); 
-}
-?>
 <!DOCTYPE html>
 <html ng-app="view">
 <head>
@@ -35,10 +30,14 @@ if(count($errors)>0) {
 	</div>
 	{!! Form::close() !!}
 	</div>
+	@else
+	<div class="points" id="points">
+		{!! Auth::user()->score->value !!} <small>pts</small>
+	</div>
 	@endif
 	<div class="menu" role="navigation">
 		<div class="col-md-1 logo-icon">&nbsp;</div>
-		<div class="col-md-2 user-name-space">
+		<div class="col-md-2 user-name-space" id="open-points">
 			@if(Auth::check())
 				<i class="fa fa-user"></i> {!! Auth::user()->name !!}
 			@else
@@ -48,12 +47,17 @@ if(count($errors)>0) {
 		<div class="col-md-9 text-right">
 			<div class="btn-group">
 				<a href="{!! route('subject.home') !!}" class="btn-menu">@lang('title.subject-home')</a>
-				<a href="{!! route('college.index') !!}" class="btn-menu">@lang('title.college-index')</a>
 				@if(Auth::check())
-				<a href="{!! route('college.create') !!}" class="btn-menu">@lang('title.college-create')</a>
-				<a href="{!! route('subject.filter') !!}" class="btn-menu">@lang('title.subject-filter')</a>
-				@endif
-				<a href="{!! route('upload.create') !!}" class="btn-menu">@lang('title.upload-create')</a>
+					@if(Auth::check() && Auth::user()->status_level == 1)
+					<a href="{!! route('user.index') !!}" class="btn-menu">@lang('title.user-index')</a>
+					<a href="{!! route('college.create') !!}" class="btn-menu">@lang('title.college-create')</a>
+					<a href="{!! route('subject.filter') !!}" class="btn-menu">@lang('title.subject-filter')</a>
+					@endif
+					<a href="{!! route('college.index') !!}" class="btn-menu">@lang('title.college-index')</a>
+					<a href="{!! route('upload.create') !!}" class="btn-menu">@lang('title.upload-create')</a>
+					@else
+					<a href="{!! route('user.create') !!}" class="btn-menu">@lang('title.user-create')</a>
+					@endif
 				<a href="{!! route('user.donate') !!}" class="btn-menu">@lang('title.user-donate')</a>
 				@if(!Auth::check())
 				<a href="" class="btn-menu" id="show-login"><i class="fa fa-sign-in">&nbsp;</i></a>

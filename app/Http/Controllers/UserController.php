@@ -3,27 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Traits\RestTrait;
+
 use App\Http\Requests\UserRequest;
-use App\Http\Controllers\RestController;
+use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Score;
 
-class UserController extends RestController
+class UserController extends Controller
 {
-    /**
-     * The model class name used by the controller.
-     *
-     * @var string
-     */
-    public $model = "App\Models\User";
-
-    /**
-     * The resource name used in routes
-     *
-     * @var string
-     */
-    public $resource = "user";
-
     /**
      * Display a listing of the resource.
      *
@@ -31,7 +18,53 @@ class UserController extends RestController
      */
     public function index()
     {
-        return view('user.index');
+        return view('user.index')->with('users', User::with('score')->get()->toJson());
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return Response
+     */
+    public function create()
+    {
+        return view('user.create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  Request  $request
+     * @return Response
+     */
+    public function store(UserRequest $request)
+    {
+        // dd(json_encode($request->all()));
+        $user = new User;
+        $user->fill($request->all());
+        $user->password = \Hash::make($request->password);
+        $user->status_level = 0;
+        $user->save();
+
+        $scores = new Score;
+        $scores->user_id = $user->id;
+        $scores->value = 0;
+        $scores->save();
+
+        \Auth::attempt(array('email' => $request->email, 'password' => $request->password));
+
+        return redirect()->route('subject.home');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function show($id)
+    {
+        //
     }
 
     /**
@@ -42,7 +75,7 @@ class UserController extends RestController
      */
     public function edit($id)
     {
-        return view('user.edit')->with('users', User::all()->toJson());
+        //
     }
 
     /**
@@ -76,15 +109,11 @@ class UserController extends RestController
      */
     public function login(Request $request)
     {
-        var_dump($request->all());
         if (\Auth::attempt(array('email' => $request->email, 'password' => $request->password)))
         {
-            // dd("ok!");
-            // return view('subject.home');
             return redirect()->intended('/home');
         } else{
-            dd("fail!");
-            // return \Redirect::back();
+            return \Redirect::back();
         }
     }
 

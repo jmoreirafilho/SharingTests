@@ -30,7 +30,7 @@ Route::get('/search/{search}', ['as'=>'subject.search', 'uses'=>'SubjectControll
 | User Resource
 |--------------------------------------------------------------------------
 */
-Route::resource('user', 'UserController', ['except'=>['create', 'store', 'show']]);
+Route::resource('user', 'UserController');
 Route::post('/login', ['as'=>'user.login', 'uses'=>'UserController@login']);
 Route::get('/logout', ['as'=>'user.logout', 'uses'=>'UserController@logout']);
 Route::get('/donate', ['as'=>'user.donate', 'uses'=>'UserController@donate']);

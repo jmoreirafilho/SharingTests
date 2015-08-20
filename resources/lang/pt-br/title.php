@@ -6,5 +6,7 @@ return [
 	"college-create" => "Add Universidade",
 	"upload-create" => "Enviar Material",
 	"user-donate" => "Fazer Doação",
+	"user-index" => "Listar Usuários",
+	"user-create" => "Criar Conta",
 ];
  ?>
