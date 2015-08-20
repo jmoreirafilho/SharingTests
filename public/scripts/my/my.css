@@ -15,7 +15,7 @@ body{
 }
 .btn-menu:hover {
   text-decoration: none;
-  color:#879dd7;
+  color:#9fa8da;
 }
 .menu {
   position: fixed;
@@ -58,7 +58,7 @@ body{
   margin-top:0px;
 }
 .card {
-  background-color: #879dd7;
+  background-color: #9fa8da;
   width:100%;
   margin:10px;
   padding: 10px;
@@ -70,7 +70,7 @@ body{
   position:absolute;
   right:0px;
   top:55px;
-  background-color: #879dd7;
+  background-color: #9fa8da;
   width:400px;
   height:150px;
   display:none;
@@ -82,7 +82,7 @@ body{
   color:#FFF; border:none;
 }
 .btn-login:hover {
-  color: #879dd7;
+  color: #9fa8da;
 }
 .addon-preferences {
   background-color: #1a237e;
@@ -111,7 +111,7 @@ body{
   padding-top:3px;
 }
 .typeahead-option:hover{
-  background-color:#879dd7;
+  background-color:#9fa8da;
   color:#FFF;
   font-weight: bold;
 }
