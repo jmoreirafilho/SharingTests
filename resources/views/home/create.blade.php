@@ -6,9 +6,7 @@
 <section ng-controller="viewController">
 	<div class="col-md-12">
 		<div class="card">
-			<div class="card-title">
-				<h3>@lang('title.home-create')</h3>
-			</div>
+			<div class="card-title">@lang('title.home-create')</div>
 			{!! Form::open(['route' => 'home.store']) !!}
 			{!! Form::token() !!}
 			<div class="row">

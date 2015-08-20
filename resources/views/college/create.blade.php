@@ -5,11 +5,9 @@
 <section ng-controller="viewController">
 	<div class="col-md-12">
 		<div class="card">
-			
-			<h3>
-				@lang('college.form-create-title')
-			</h3>
-			<hr>
+			<div class="card-title">
+				@lang('title.college-create')
+			</div>
 
 			{!! Form::open(['route' => 'college.store']) !!}
 			{!! Form::token() !!}

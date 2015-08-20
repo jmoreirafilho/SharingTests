@@ -8,5 +8,6 @@ return [
 	"form-search-city" => "Cidade",
 	"ph-form-search-city" => "Buscar Cidade",
 	"form-submit" => "Cadastrar",
+	"select-button" => "Selecionar",
 ];
  ?>

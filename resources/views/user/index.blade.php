@@ -6,7 +6,7 @@
 <section ng-controller="viewController">
 	<div class="col-md-12" ng-repeat="user in users">
 		<div class="card">
-			<h3>@{{user.name}} - @{{user.email}} - @{{user.score.value}}</h3>
+			<h3 style="margin-top:10px;">@{{user.name}} - @{{user.email}} - @{{user.score.value}}</h3>
 		</div>
 	</div>
 </section>

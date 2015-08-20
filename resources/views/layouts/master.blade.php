@@ -32,7 +32,12 @@
 	</div>
 	@else
 	<div class="points" id="points">
-		{!! Auth::user()->score->value !!} <small>pts</small>
+		<div class="col-md-2">
+			<i class="fa fa-trophy"></i>
+		</div>
+		<div class="col-md-10 text-left">
+			{!! Auth::user()->score->value !!} <small>pts</small>
+		</div>
 	</div>
 	@endif
 	<div class="menu" role="navigation">

@@ -4,13 +4,12 @@
 @section('content')
 <section ng-controller="viewController">
 	<div class="col-md-4" ng-repeat="college in colleges">
-		<a href="" class="college-list">
-			<div class="card college-list">
-				<h3>@{{college.initials}}</h3>
-				<small>@{{college.name}}</small><br />
-				<small>@{{college.city}} - @{{college.state}}</small>
-			</div>
-		</a>
+		<div class="card text-center">
+			<div class="card-title">@{{college.initials}}</div>
+			<p><small>@{{college.name}}</small><br />
+			<small>@{{college.city}} - @{{college.state}}</small></p>
+			<button class="btn btn-primary">@lang('college.select-button')</button>
+		</div>
 	</div>
 </section>
 @endsection
