@@ -22,7 +22,7 @@ class Tag extends Model
      */
     public $timestamps = false;
 
-    public function subjects(){
-    	return $this->hasMany('App\Models\Subject');
+    public function materials(){
+    	return $this->hasMany('App\Models\Material');
     }
 }

@@ -26,8 +26,8 @@ class College extends Model
         return $this->belongsTo('App\Models\LocationCity', 'location_city_id');
     }
 
-    public function course()
+    public function courses()
     {
-        return $this->belongsTo('App\Models\Course', 'course_id');
+        return $this->hasMany('App\Models\Course', 'course_id');
     }
 }

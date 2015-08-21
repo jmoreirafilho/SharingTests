@@ -32,8 +32,7 @@ Route::group(['middleware'=>'auth'], function(){
 	| Subject Resource
 	|--------------------------------------------------------------------------
 	*/
-	Route::resource('subject', 'SubjectController', ['except'=>['destroy']]);
-	Route::get('/filter', ['as'=>'subject.filter', 'uses'=>'SubjectController@filter']);
+	Route::resource('subject', 'SubjectController', ['only'=>['index']]);
 	Route::get('/searchSubject/{search}', ['uses'=>'SubjectController@search']);
 
 	/*
@@ -43,6 +42,15 @@ Route::group(['middleware'=>'auth'], function(){
 	*/
 	Route::resource('college', 'CollegeController', ['except'=>['show']]);
 	Route::get('/searchCollege/{search}', ['uses'=>'CollegeController@search']);
+
+	/*
+	|--------------------------------------------------------------------------
+	| Material Resource
+	|--------------------------------------------------------------------------
+	*/
+	Route::resource('material', 'MaterialController', ['except'=>['show']]);
+	Route::get('/filter', ['as'=>'material.filter', 'uses'=>'MaterialController@filter']);
+	Route::get('/searchSubject/{search}', ['uses'=>'MaterialController@search']);
 
 	/*
 	|--------------------------------------------------------------------------
