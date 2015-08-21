@@ -33,6 +33,7 @@ Route::group(['middleware'=>'auth'], function(){
 	|--------------------------------------------------------------------------
 	*/
 	Route::resource('subject', 'SubjectController', ['only'=>['index']]);
+	Route::get('subject/{id}', ['uses' => 'SubjectController@index']);
 	Route::get('/searchSubject/{search}', ['uses'=>'SubjectController@search']);
 
 	/*
@@ -49,6 +50,7 @@ Route::group(['middleware'=>'auth'], function(){
 	|--------------------------------------------------------------------------
 	*/
 	Route::resource('material', 'MaterialController', ['except'=>['show']]);
+	Route::get('material/{id}', ['uses' => 'MaterialController@index']);
 	Route::get('/filter', ['as'=>'material.filter', 'uses'=>'MaterialController@filter']);
 	Route::get('/searchSubject/{search}', ['uses'=>'MaterialController@search']);
 
@@ -58,6 +60,7 @@ Route::group(['middleware'=>'auth'], function(){
 	|--------------------------------------------------------------------------
 	*/
 	Route::resource('course', 'CourseController', ['only'=>['index']]);
+	Route::get('/course/{id}', ['uses' => 'CourseController@index']);
 	Route::get('/searchCourse/{search}', ['uses'=>'CourseController@search']);
 
 	/*

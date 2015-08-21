@@ -152,3 +152,9 @@ body{
   text-align: center;
   display:none;
 }
+.search-bar {
+  background-color:#1a237e;
+  margin-top:10px;
+  padding-top:3px;
+  padding-bottom:3px;
+}

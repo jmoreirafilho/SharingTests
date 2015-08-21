@@ -16,9 +16,19 @@ class SubjectController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function index($id)
     {
-        return view('subject.index')->with('subjects', Subject::all()->toJson());
+        $subjects = Subject::all();
+        $return = [];
+        foreach ($subjects as $key => $subject) {
+            if($subject->course->id == $id){
+                $return[] = [
+                    "id" => $subject->id,
+                    "name" => $subject->name
+                ];
+            }
+        }
+        return view('subject.index')->with('subjects', json_encode($return));
     }
 
     /**

@@ -16,6 +16,7 @@ class CreateMaterialsTable extends Migration
             $table->increments('id');
             $table->string('name', 255);
             $table->string('description', 255);
+            $table->string('link_url', 255);
             $table->unsignedInteger('tag_id');
             $table->foreign('tag_id')->references('id')->on('tags');
             $table->unsignedInteger('subject_id');

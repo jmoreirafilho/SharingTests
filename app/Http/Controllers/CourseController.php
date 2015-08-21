@@ -14,9 +14,19 @@ class CourseController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function index($id)
     {
-        return view('course.index')->with('courses', Course::all()->toJson());
+        $courses = Course::all();
+        $return = [];
+        foreach ($courses as $key => $course) {
+            if($course->college->id == $id){
+                $return[] = [
+                    "id" => $course->id,
+                    "name" => $course->name
+                ];
+            }
+        }
+        return view('course.index')->with('courses', json_encode($return));
     }
 
     /**
