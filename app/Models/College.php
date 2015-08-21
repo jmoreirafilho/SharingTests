@@ -30,4 +30,15 @@ class College extends Model
     {
         return $this->hasMany('App\Models\Course', 'course_id');
     }
+
+    /**
+     * Get the user's first name.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function setInitialsAttribute($value)
+    {
+        return $this->attributes['initials'] = strtoupper($value);
+    }
 }

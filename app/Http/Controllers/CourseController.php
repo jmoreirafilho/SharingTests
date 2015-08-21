@@ -16,7 +16,7 @@ class CourseController extends Controller
      */
     public function index($id)
     {
-        $courses = Course::all();
+        $courses = Course::orderBy('name')->get();
         $return = [];
         foreach ($courses as $key => $course) {
             if($course->college->id == $id){
@@ -26,7 +26,7 @@ class CourseController extends Controller
                 ];
             }
         }
-        return view('course.index')->with('courses', json_encode($return));
+        return view('course.index')->with(['courses' => json_encode($return), 'id'=>$id]);
     }
 
     /**
@@ -35,9 +35,9 @@ class CourseController extends Controller
      * @param  string  $search
      * @return Response
      */
-    public function search($search)
+    public function search($id, $search)
     {
-        $search = Course::where('name', 'like', '%'.$search.'%')->take(20)->get();
-        return response()->json($search);
+        $courses = Course::where('name', 'like', '%'.$search.'%')->where('college_id', $id)->take(6)->get();
+        return response()->json($courses);
     }
 }

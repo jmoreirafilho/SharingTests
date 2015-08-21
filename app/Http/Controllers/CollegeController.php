@@ -106,7 +106,7 @@ class CollegeController extends RestController
     public function search($search)
     {
         $return = [];
-        $colleges = College::whereRaw("name LIKE '%".$search."%' OR initials LIKE '%".$search."%'")->where('deleted_at', null)->take(20)->get();
+        $colleges = College::whereRaw("name LIKE '%".$search."%' OR initials LIKE '%".$search."%'")->where('deleted_at', null)->take(6)->get();
         foreach($colleges AS $id => $college){
             $return[] = ["id" => $college->id, "name" => $college->name, "initials"=>$college->initials, "city"=>$college->city->name, "state"=>$college->city->state->uf];
         }

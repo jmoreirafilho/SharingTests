@@ -3,9 +3,7 @@
 
 @section('content')
 <section ng-controller="viewController">
-	<div class="col-md-12 search-bar">
-		{!! Form::text('search', null, ['class'=>'form-control']) !!}
-	</div>
+	@include('search-bar')
 	<div class="col-md-4" ng-repeat="college in colleges">
 		<div class="card text-center">
 			<div class="card-title">@{{college.initials}}</div>
@@ -19,8 +17,17 @@
 
 @section('scripts')
 <script>
-	angular.module('view').controller('viewController', function($scope){
+	angular.module('view').controller('viewController', function($scope, $http){
 		$scope.colleges = {!! $colleges !!};
+		$scope.search_changed = function(data){
+			if(data){
+				$http.get('/searchCollege/'+data).success(function(result){
+					$scope.colleges = result;
+				});
+		 	} else{
+		 		$scope.colleges = {!! $colleges !!};
+		 	}
+		};
 	});
 </script>
 @endsection

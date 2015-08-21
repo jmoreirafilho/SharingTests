@@ -33,14 +33,14 @@ class MaterialController extends RestController
         $materials = Material::all();
         $return = [];
         foreach ($materials as $key => $material) {
-            if($material->subject->id == $id){
+            if($material->subject->id == $id && $material->filtered){
                 $return[] = [
                     "id" => $material->id,
                     "name" => $material->name
                 ];
             }
         }
-        return view('material.index')->with('materials', json_encode($return));
+        return view('material.index')->with(['materials' => json_encode($return), 'id'=>$id]);
     }
 
     /**
@@ -96,5 +96,23 @@ class MaterialController extends RestController
     public function filter()
     {
         return view('material.filter');
+    }
+
+    /**
+     * Search in materials.
+     *
+     * @param  string  $search
+     * @return Response
+     */
+    public function search($id, $search)
+    {
+        $courses = Material::whereRaw("name LIKE '%".$search."%' OR description LIKE '%".$search."%'")->where('subject_id', $id)->take(6)->get();
+        $return = [];
+        foreach($courses AS $key=>$course){
+            if($course->filtered){
+                $return[] = ['id'=>$course->id, 'name'=>$course->name, 'description' => $course->description, 'link_url'=>$course->link_url, 'tag' => $course->tag->name];
+            }
+        };
+        return response()->json($courses);
     }
 }

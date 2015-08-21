@@ -27,8 +27,8 @@ class SubjectController extends Controller
                     "name" => $subject->name
                 ];
             }
-        }
-        return view('subject.index')->with('subjects', json_encode($return));
+        };
+        return view('subject.index')->with(['subjects' => json_encode($return), 'id'=>$id]);
     }
 
     /**
@@ -37,13 +37,9 @@ class SubjectController extends Controller
      * @param  string  $search
      * @return Response
      */
-    public function search($search)
+    public function search($id, $search)
     {
-        $result = [];
-        $subjects = Subject::with('tag')->where('name', 'like', '%'.$search.'%')->where('filtered', true)->take(20)->get();
-        foreach($subjects AS $id => $subject){
-            $result[] = ["id"=>$subject->id, "name", $subject->name, "description"=>$subject->description, "tag"=>$subject->tag->name];
-        }
-        return response()->json($result);
+        $subjects = Subject::where('name', 'like', '%'.$search.'%')->where('course_id', $id)->take(6)->get();
+        return response()->json($subjects);
     }
 }

@@ -3,10 +3,19 @@
 
 @section('content')
 <section ng-controller="viewController">
-	<div class="col-md-4" ng-repeat="course in courses">
+	@include('search-bar')
+	<div class="col-md-10 col-md-offset-1">
 		<div class="card text-center">
-			<div class="card-title">@{{course.name}}</div>
-			<a href="/subject/@{{course.id}}"><button class="btn btn-primary">@lang('college.select-button')</button></a>
+			<div class="card-title">Cursos</div>
+			<div class="container-fluid">
+				<table class="table">
+					<tr ng-repeat="course in courses" ng-model="modelo" ng-mouseover="modelo=true" ng-mouseleave="modelo=false">
+						<td class="text-left">
+							<font ng-hide="modelo">@{{course.name}}</font> <strong ng-show='modelo'>@{{course.name}}</strong>
+						</td>
+					</tr>
+				</table>
+			</div>
 		</div>
 	</div>
 </section>
@@ -14,8 +23,22 @@
 
 @section('scripts')
 <script>
-	angular.module('view').controller('viewController', function($scope){
+	angular.module('view').controller('viewController', function($scope, $http){
 		$scope.courses = {!! $courses !!};
+		$scope.search_changed = function(data){
+			if(data){
+				$http.get('/searchCourse/'+{!! $id !!}+'/'+data).success(function(result){
+					$scope.courses = result;
+				});
+		 	} else{
+		 		$scope.courses = {!! $courses !!};
+		 	}
+		};
+		$scope.hover = function(id){
+			$scope.show = function(id){
+				return true;
+			}
+		}
 	});
 </script>
 @endsection
