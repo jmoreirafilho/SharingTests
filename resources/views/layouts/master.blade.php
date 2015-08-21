@@ -56,10 +56,10 @@
 					@if(Auth::check() && Auth::user()->status_level == 1)
 					<a href="{!! route('user.index') !!}" class="btn-menu">@lang('title.user-index')</a>
 					<a href="{!! route('college.create') !!}" class="btn-menu">@lang('title.college-create')</a>
-					<a href="{!! route('subject.filter') !!}" class="btn-menu">@lang('title.subject-filter')</a>
+					<a href="{!! route('material.filter') !!}" class="btn-menu">@lang('title.subject-filter')</a>
 					@endif
 					<a href="{!! route('college.index') !!}" class="btn-menu">@lang('title.college-index')</a>
-					<a href="{!! route('subject.create') !!}" class="btn-menu">@lang('title.subject-create')</a>
+					<a href="{!! route('material.create') !!}" class="btn-menu">@lang('title.subject-create')</a>
 					@else
 					<a href="{!! route('home.create') !!}" class="btn-menu">@lang('title.home-create')</a>
 					@endif

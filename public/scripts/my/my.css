@@ -152,3 +152,6 @@ body{
   text-align: center;
   display:none;
 }
+.search-bar {
+  margin-top:15px;
+}

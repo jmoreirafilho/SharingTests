@@ -22,11 +22,11 @@ class Course extends Model
      */
     protected $fillable = ['name', 'subject_id'];
 
-    public function subject(){
-        return $this->belongsTo('App\Models\Subject', 'subject_id')
+    public function subjects(){
+        return $this->hasMany('App\Models\Subject');
     }
 
-    public function colleges(){
-        return $this->hasMany('App\Models\College');
+    public function college(){
+        return $this->belongsTo('App\Models\College');
     }
 }

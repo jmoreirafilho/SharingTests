@@ -32,9 +32,9 @@ Route::group(['middleware'=>'auth'], function(){
 	| Subject Resource
 	|--------------------------------------------------------------------------
 	*/
-	Route::resource('subject', 'SubjectController', ['except'=>['destroy']]);
-	Route::get('/filter', ['as'=>'subject.filter', 'uses'=>'SubjectController@filter']);
-	Route::get('/searchSubject/{search}', ['uses'=>'SubjectController@search']);
+	Route::resource('subject', 'SubjectController', ['only'=>['index']]);
+	Route::get('subject/{id}', ['uses' => 'SubjectController@index']);
+	Route::get('/searchSubject/{id}/{search}', ['uses'=>'SubjectController@search']);
 
 	/*
 	|--------------------------------------------------------------------------
@@ -46,11 +46,22 @@ Route::group(['middleware'=>'auth'], function(){
 
 	/*
 	|--------------------------------------------------------------------------
+	| Material Resource
+	|--------------------------------------------------------------------------
+	*/
+	Route::resource('material', 'MaterialController', ['except'=>['show']]);
+	Route::get('/material/{id}', ['uses' => 'MaterialController@index']);
+	Route::get('/filter', ['as'=>'material.filter', 'uses'=>'MaterialController@filter']);
+	Route::get('/searchMaterial/{id}/{search}', ['uses'=>'MaterialController@search']);
+
+	/*
+	|--------------------------------------------------------------------------
 	| Course Resource
 	|--------------------------------------------------------------------------
 	*/
 	Route::resource('course', 'CourseController', ['only'=>['index']]);
-	Route::get('/searchCourse/{search}', ['uses'=>'CourseController@search']);
+	Route::get('/course/{id}', ['uses' => 'CourseController@index']);
+	Route::get('/searchCourse/{id}/{search}', ['uses'=>'CourseController@search']);
 
 	/*
 	|--------------------------------------------------------------------------

@@ -26,8 +26,19 @@ class College extends Model
         return $this->belongsTo('App\Models\LocationCity', 'location_city_id');
     }
 
-    public function course()
+    public function courses()
     {
-        return $this->belongsTo('App\Models\Course', 'course_id');
+        return $this->hasMany('App\Models\Course', 'course_id');
+    }
+
+    /**
+     * Get the user's first name.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function setInitialsAttribute($value)
+    {
+        return $this->attributes['initials'] = strtoupper($value);
     }
 }

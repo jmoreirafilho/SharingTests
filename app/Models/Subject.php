@@ -29,15 +29,11 @@ class Subject extends Model
      */
     public $timestamps = false;
 
-    public function courses(){
-        return $this->hasMany('App\Models\Course');
+    public function course(){
+        return $this->belongsTo('App\Models\Course');
     }
 
-    public function uploads(){
-        return $this->hasMany('App\Models\Upload');
-    }
-
-    public function tag() {
-        return $this->belongsTo('App\Models\Tag');
+    public function materials(){
+        return $this->hasMany('App\Models\Material');
     }
 }
