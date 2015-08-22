@@ -153,5 +153,11 @@ body{
   display:none;
 }
 .search-bar {
+  z-index:1;
   margin-top:15px;
+}
+.option-hover {
+  background-color:#9fa8da;
+  color:#FFF; font-weight: bold;
+  cursor: pointer;
 }

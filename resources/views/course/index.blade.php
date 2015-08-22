@@ -9,9 +9,9 @@
 			<div class="card-title">Cursos</div>
 			<div class="container-fluid">
 				<table class="table">
-					<tr ng-repeat="course in courses" ng-model="modelo" ng-mouseover="modelo=true" ng-mouseleave="modelo=false">
-						<td class="text-left">
-							<font ng-hide="modelo">@{{course.name}}</font> <strong ng-show='modelo'>@{{course.name}}</strong>
+					<tr ng-repeat="course in courses" ng-model="modelo" ng-mouseover="modelo=true" ng-mouseleave="modelo=false" ng-class="selected(modelo)">
+						<td class="text-left" ng-click="redirect(course.id)">
+							@{{course.name}}
 						</td>
 					</tr>
 				</table>
@@ -23,7 +23,7 @@
 
 @section('scripts')
 <script>
-	angular.module('view').controller('viewController', function($scope, $http){
+	angular.module('view').controller('viewController', function($scope, $http, $location){
 		$scope.courses = {!! $courses !!};
 		$scope.search_changed = function(data){
 			if(data){
@@ -34,10 +34,13 @@
 		 		$scope.courses = {!! $courses !!};
 		 	}
 		};
-		$scope.hover = function(id){
-			$scope.show = function(id){
-				return true;
+		$scope.selected = function(pass){
+			if(pass){
+				return "option-hover";
 			}
+		}
+		$scope.redirect = function(id){
+			window.location.href = '/subject/'+id;
 		}
 	});
 </script>

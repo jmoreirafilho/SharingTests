@@ -4,10 +4,18 @@
 @section('content')
 <section ng-controller="viewController">
 	@include('search-bar')
-	<div class="col-md-6" ng-repeat="subject in subjects">
+	<div class="col-md-10 col-md-offset-1">
 		<div class="card text-center">
-			<div class="card-title">@{{subject.name}}</div>
-			<a href="/material/@{{subject.id}}"><button class="btn btn-primary">@lang('college.select-button')</button></a>
+			<div class="card-title">Subjects</div>
+			<div class="container-fluid">
+				<table class="table">
+					<tr ng-repeat="subject in subjects" ng-model="modelo" ng-mouseover="modelo=true" ng-mouseleave="modelo=false" ng-class="selected(modelo)">
+						<td class="text-left" ng-click="redirect(subject.id)">
+							@{{subject.name}}
+						</td>
+					</tr>
+				</table>
+			</div>
 		</div>
 	</div>
 </section>
@@ -26,6 +34,14 @@
 		 		$scope.subjects = {!! $subjects !!};
 		 	}
 		};
+		$scope.selected = function(pass){
+			if(pass){
+				return "option-hover";
+			}
+		}
+		$scope.redirect = function(id){
+			window.location.href = '/material/'+id;
+		}
 	});
 </script>
 @endsection
