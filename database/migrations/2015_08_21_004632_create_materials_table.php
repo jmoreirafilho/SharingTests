@@ -14,7 +14,6 @@ class CreateMaterialsTable extends Migration
     {
         Schema::create('materials', function(Blueprint $table){
             $table->increments('id');
-            $table->string('name', 255);
             $table->string('description', 255);
             $table->string('link_url', 255);
             $table->unsignedInteger('tag_id');
@@ -22,6 +21,7 @@ class CreateMaterialsTable extends Migration
             $table->unsignedInteger('subject_id');
             $table->foreign('subject_id')->references('id')->on('subjects');
             $table->boolean('filtered');
+            $table->timestamps();
         });
     }
 

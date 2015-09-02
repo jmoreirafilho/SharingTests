@@ -51,15 +51,19 @@
 		</div>
 		<div class="col-md-9 text-right">
 			<div class="btn-group">
+				@if(Auth::check())
+				<a href="{!! route('user.profile') !!}" class="btn-menu">@lang('title.user-profile')</a>
+				@else
 				<a href="{!! route('home.index') !!}" class="btn-menu">@lang('title.home-index')</a>
+				@endif
 				@if(Auth::check())
 					@if(Auth::check() && Auth::user()->status_level == 1)
 					<a href="{!! route('user.index') !!}" class="btn-menu">@lang('title.user-index')</a>
 					<a href="{!! route('college.create') !!}" class="btn-menu">@lang('title.college-create')</a>
-					<a href="{!! route('material.filter') !!}" class="btn-menu">@lang('title.subject-filter')</a>
+					<a href="{!! route('material.filter') !!}" class="btn-menu">@lang('title.material-filter')</a>
 					@endif
 					<a href="{!! route('college.index') !!}" class="btn-menu">@lang('title.college-index')</a>
-					<a href="{!! route('material.create') !!}" class="btn-menu">@lang('title.subject-create')</a>
+					<a href="{!! route('material.create') !!}" class="btn-menu">@lang('title.material-create')</a>
 					@else
 					<a href="{!! route('home.create') !!}" class="btn-menu">@lang('title.home-create')</a>
 					@endif

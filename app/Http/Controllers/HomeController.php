@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Models\User;
+use App\Models\Score;
 
 class HomeController extends Controller
 {
@@ -76,7 +77,7 @@ class HomeController extends Controller
     {
         if (\Auth::attempt(array('email' => $request->email, 'password' => $request->password)))
         {
-            return redirect()->intended('/');
+            return redirect()->intended('/profile');
         } else{
             return \Redirect::back();
         }

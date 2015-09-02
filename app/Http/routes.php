@@ -25,7 +25,9 @@ Route::group(['middleware'=>'auth'], function(){
 	Route::resource('user', 'UserController', ['except'=>['create', 'store']]);
 	Route::get('/logout', ['as'=>'user.logout', 'uses'=>'UserController@logout']);
 	Route::get('/profile', ['as'=>'user.profile', 'uses'=>'UserController@profile']);
+	Route::put('/profile/{id}', ['as'=>'user.updateProfile', 'uses'=>'UserController@updateProfile']);
 	Route::get('/searchUser/{search}', ['uses'=>'UserController@search']);
+	Route::get('/searchUserName/{search}', ['uses'=>'UserController@searchName']);
 
 	/*
 	|--------------------------------------------------------------------------
@@ -49,9 +51,10 @@ Route::group(['middleware'=>'auth'], function(){
 	| Material Resource
 	|--------------------------------------------------------------------------
 	*/
-	Route::resource('material', 'MaterialController', ['except'=>['show']]);
+	Route::resource('material', 'MaterialController', ['except' => ['show']]);
 	Route::get('/material/{id}', ['uses' => 'MaterialController@index']);
 	Route::get('/filter', ['as'=>'material.filter', 'uses'=>'MaterialController@filter']);
+	Route::post('/updateFiltered/{id}', ['as'=>'material.updateFiltered', 'uses'=>'MaterialController@updateFiltered']);
 	Route::get('/searchMaterial/{id}/{search}', ['uses'=>'MaterialController@search']);
 
 	/*

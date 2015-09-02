@@ -5,11 +5,11 @@
 <section ng-controller="viewController">
 	@include('search-bar')
 	<div class="col-md-10 col-md-offset-1">
-		<div class="card text-center">
-			<div class="card-title">Subjects</div>
+		<div class="card text-left">
+			<div class="card-title">@lang('subject.subjects')</div>
 			<div class="container-fluid">
 				<table class="table">
-					<tr ng-repeat="subject in subjects" ng-model="modelo" ng-mouseover="modelo=true" ng-mouseleave="modelo=false" ng-class="selected(modelo)">
+					<tr ng-repeat="subject in subjects | filter:search_bar" ng-model="modelo" ng-mouseover="modelo=true" ng-mouseleave="modelo=false" ng-class="selected(modelo)">
 						<td class="text-left" ng-click="redirect(subject.id)">
 							@{{subject.name}}
 						</td>
@@ -40,7 +40,7 @@
 			}
 		}
 		$scope.redirect = function(id){
-			window.location.href = '/material/'+id;
+			window.location = '/material/'+id;
 		}
 	});
 </script>

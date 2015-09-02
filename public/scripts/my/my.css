@@ -156,8 +156,25 @@ body{
   z-index:1;
   margin-top:15px;
 }
+.back-bar {
+  padding-top: 5px;
+  margin-top: 10px;
+}
 .option-hover {
   background-color:#9fa8da;
   color:#FFF; font-weight: bold;
   cursor: pointer;
+}
+.actions {
+  width:4.15%;
+  text-align: center;
+  cursor:pointer;
+}
+.tab-pane.body{
+  padding:10px;
+  padding-top:15px;
+}
+.sub-card {
+  box-shadow:0px 1px 3px #666;
+  padding:10px;
 }

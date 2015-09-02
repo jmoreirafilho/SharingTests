@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests\UserRequest;
+use App\Http\Requests;
 use App\Http\Controllers\RestController;
 use App\Models\User;
 use App\Models\Score;
@@ -64,8 +65,9 @@ class UserController extends RestController
      * @param  int  $id
      * @return Response
      */
-    public function update(UserRequest $request, $id)
+    public function update(Request $request, $id)
     {
+        dd($request);
         $user = User::find($id);
         $user->fill($request->all());
         $user->save();
@@ -95,6 +97,20 @@ class UserController extends RestController
     }
 
     /**
+     * Profile
+     *
+     * @return Response
+     */
+    public function updateProfile(Request $request, $id)
+    {
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->save();
+
+        return view('user.profile')->with('user', User::find($id)->toJson());
+    }
+
+    /**
      * Return a json search result.
      *
      * @var $search
@@ -108,5 +124,20 @@ class UserController extends RestController
             $usersL[] = ['id'=>$user->id, 'name'=>$user->name, 'email'=>$user->email, 'score'=>$user->score->value];
         }
         return response()->json($usersL);
+    }
+
+    /**
+     * Return a json search result.
+     *
+     * @var $search
+     * @return json
+     */
+    public function searchName($search)
+    {
+        $users = User::where('name', 'like', '%'.$search.'%')->take(10)->get();
+        if(count($users)>0){
+           return "true";
+        }
+        return "false";
     }
 }
