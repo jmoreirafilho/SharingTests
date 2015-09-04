@@ -25,7 +25,7 @@
 							@{{material.description}}
 						</td>
 						<td class="actions" ng-click="showMaterial(material.link_url)">
-							<i class="fa fa-eye" class="action-icons"></i>
+							<i class="fa fa-file-pdf-o" class="action-icons"></i>
 						</td>
 						<td class="actions" ng-click="recuseMaterial(material.id)">
 							<i class="fa fa-close" class="action-icons"></i>
@@ -62,6 +62,9 @@
 			$http.post('/updateFiltered/'+id, {status:'approved'}).success(function(){
 				window.location = "/filter";
 			});
+		};
+		$scope.showDescriptions = function(id){
+			return true;
 		};
 	});
 </script>
