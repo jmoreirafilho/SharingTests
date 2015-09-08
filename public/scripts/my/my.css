@@ -79,6 +79,21 @@ body{
   padding-top: 23px;
   padding-bottom: 17px;
 }
+.card-footer {
+  border-top:1px solid #ddd;
+  padding:5px;
+  padding-top:10px;
+}
+.btn-footer {
+  font-size:14px;
+  font-weight:bold;
+  margin-left:10px;
+  cursor: pointer;
+}
+.btn-footer:hover, .btn-footer:link {
+  color:#1a237e;
+  text-decoration: none;
+}
 .card-ads {
   height: 500px;
 }

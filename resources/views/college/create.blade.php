@@ -56,7 +56,7 @@
 <script>
 	angular.module('view').controller('viewController', function($scope, $http){
 		$scope.searching = function (data){
-			$http.get('http://sharingtests/searchLocation/'+data).success(function(result){
+			$http.get('/searchLocation/'+data).success(function(result){
 				$scope.cities = result;
 			});
 		};
