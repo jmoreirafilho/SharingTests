@@ -29,7 +29,7 @@
 					</div>
 					<div class="form-group">
 						<div class="row">
-							<div class="col-md-6" ng-show="material.college" ng-hide="!material.college">
+							<div class="col-md-6" ng-show="showCourse" ng-hide="!showCourse">
 								<div class="sub-card">
 									<ul class="nav nav-tabs">
 									  	<li role="presentation" ng-click="active('selectCourse')" ng-class="scCourseClass"><a href="">@lang('material.select')</a></li>
@@ -38,7 +38,7 @@
 									<div class="tab-content">
 										<div class="tab-pane body" ng-class="scCourseClass">
 											{!! Form::label('course', trans('material.select_course')) !!}
-											{!! Form::text('course', null, ['class'=>'form-control', 'ng-model' => 'material.course', 'placeholder' => trans('material.course_ph')]) !!}
+											{!! Form::select('course', [""=>"", "0"=>"teste0", "1"=>"teste1"], null, ['class'=>'form-control', 'ng-model'=>'material.course', 'ng-change'=>"selectedCourseId(material.course)"]) !!}
 										</div>
 										<div  class="tab-pane body" ng-class="crCourseClass">
 											{!! Form::label('course', trans('material.create_course')) !!}
@@ -125,69 +125,5 @@
 @endsection
 
 @section('scripts')
-<script>
-	angular.module('view').controller('viewController', function($scope, $http){
-		$scope.checkAll = function(data){
-			if(data){
-				if(data.name && data.email && data.pass1 && data.pass2 && (data.pass1 == data.pass2)){
-					return false;
-				}
-			}
-			return true;
-		}
-		$scope.configClass = "active";
-		$scope.photoClass = "active";
-		$scope.scCourseClass = "active";
-		$scope.scSubjectClass = "active";
-
-		$scope.active = function(data){
-			if(data == 'material'){
-				$scope.materialClass = "active";
-				$scope.configClass = "";
-			} else if(data == 'config'){
-				$scope.materialClass = "";
-				$scope.configClass = "active";
-			} else if(data == 'selectCourse'){
-				$scope.scCourseClass = "active";
-				$scope.crCourseClass = "";
-			} else if(data == 'createCourse'){
-				console.log("hey");
-				$scope.scCourseClass = "";
-				$scope.crCourseClass = "active";
-			} else if(data == 'selectSubject'){
-				$scope.scSubjectClass = "active";
-				$scope.crSubjectClass = "";
-			} else{//createSubject
-				$scope.scSubjectClass = "";
-				$scope.crSubjectClass = "active";
-			}
-		}
-		$scope.selectUpload = function(data){
-			if(data == 'photo'){
-				$scope.photoClass = "active";
-				$scope.pdfClass = "";
-			} else{
-				$scope.photoClass = "";
-				$scope.pdfClass = "active";
-			}
-		}
-		$scope.searchingColleges = function (data){
-			$http.get('/searchCollege/'+data).success(function(result){
-				console.log(result);
-				$scope.colleges = result;
-			});
-		};
-		$scope.getCollegeId = function(id, name, initials){
-			$scope.college_id = id;
-			$scope.material.college = name+" ("+initials+")";
-		}
-	});
-</script>
-<script>
-	$("#search_college").on('focus', function(){
-		$("#typeahead").show(300);
-	}).on('blur', function(){
-		$("#typeahead").hide(300);
-	});
-</script>
+	<script src="/scripts/my/material/create.js"></script>
 @endsection

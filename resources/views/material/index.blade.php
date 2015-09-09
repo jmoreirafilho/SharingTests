@@ -22,17 +22,8 @@
 @endsection
 
 @section('scripts')
-<script>
-	angular.module('view').controller('viewController', function($scope, $http){
-		$scope.materials = {!! $material !!};
-		$scope.selected = function(pass){
-			if(pass){
-				return "option-hover";
-			}
-		}
-		$scope.redirect = function(id){
-			window.location.href = '/material/show/'+id;
-		}
-	});
-</script>
+	<script>
+		var material = {!! $material !!};
+	</script>
+	<script src="/scripts/my/material/index.js"></script>
 @endsection
