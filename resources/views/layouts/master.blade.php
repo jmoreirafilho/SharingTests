@@ -6,7 +6,7 @@
 	</title>
 	<link rel="stylesheet" type="text/css" href="/scripts/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="/scripts/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="/scripts/my/my.css">
+	<link rel="stylesheet" type="text/css" href="/scripts/my/my.min.css">
 	@yield('styles')
 </head>
 <body>
