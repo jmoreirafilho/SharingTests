@@ -18,7 +18,7 @@
 		<div class="input-group">
 			<div class="input-group-addon addon-preferences"><i class="fa fa-at"></i></div>
 			{!! Form::text('email', null, ['class'=>'form-control', 'placeholder' => trans('subject.placeholder-email')]) !!}
-			</div>
+		</div>
 	</div>
 	<div class="form-group">
 		<div class="input-group">

@@ -46,6 +46,7 @@ angular.module('view').controller('viewController', function($scope, $http){
 			$scope.pdfClass = "active";
 		}
 	}
+	
 	$scope.searchingColleges = function (data){
 		$scope.showCourse = false;
 		$http.get('/searchCollege/'+data).success(function(result){
@@ -56,7 +57,7 @@ angular.module('view').controller('viewController', function($scope, $http){
 		$scope.college_id = id;
 		$scope.material.college = name+" ("+initials+")";
 		$scope.showCourse = true;
-	}
+	};
 });
 
 $("#search_college").on('focus', function(){

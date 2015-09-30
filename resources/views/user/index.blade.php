@@ -23,16 +23,7 @@
 
 @section('scripts')
 <script>
-	angular.module('view').controller('viewController', function($scope, $http){
-		$scope.users = {!! $users !!};
-		$scope.selected = function(pass){
-			if(pass){
-				return "option-hover";
-			}
-		}
-		$scope.redirect = function(id){
-			window.location.href = '/user/'+id;
-		}
-	});
+	var users = {!! $users !!};
 </script>
+<script src="/scripts/my/user/index.js"></script>
 @endsection

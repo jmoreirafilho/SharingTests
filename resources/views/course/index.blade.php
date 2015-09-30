@@ -15,6 +15,28 @@
 						</td>
 					</tr>
 				</table>
+				<table class="nomeDaClasse">
+					<tr>
+						<td id="nomedaid"></td>
+						<td id="nomedaid"></td>
+						<td id="nomedaid"></td>
+					</tr>
+					<tr>
+						<td id="nomedaid"></td>
+						<td id="nomedaid"></td>
+						<td id="nomedaid"></td>
+					</tr>
+					<tr>
+						<td id="nomedaid"></td>
+						<td id="nomedaid"></td>
+						<td id="nomedaid"></td>
+					</tr>
+					<tr>
+						<td id="nomedaid"></td>
+						<td id="nomedaid"></td>
+						<td id="nomedaid"></td>
+					</tr>
+				</table>
 			</div>
 		</div>
 	</div>
@@ -23,19 +45,7 @@
 
 @section('scripts')
 <script>
-	angular.module('view').controller('viewController', function($scope){
-		$scope.courses = {!! $courses !!};
-		$scope.selected = function(pass){
-			if(pass){
-				return "option-hover";
-			}
-		}
-		$scope.redirect = function(id){
-			window.location.href = '/subject/'+id;
-		};
-		$scope.goBack = function(){
-			window.history.back();
-		}
-	});
+	var courses = {!! $courses !!};
 </script>
+<script src="/scripts/my/course/index.js"></script>
 @endsection

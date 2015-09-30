@@ -43,8 +43,7 @@
 
 @section('scripts')
 <script>
-	angular.module('view').controller('viewController', function($scope, $http){
-		$scope.user = {!! $user !!};
-	});
+	var user = {!! $user !!};
 </script>
+<script src="/scripts/my/user/profile.js"></script>
 @endsection

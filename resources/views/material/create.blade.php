@@ -38,7 +38,7 @@
 									<div class="tab-content">
 										<div class="tab-pane body" ng-class="scCourseClass">
 											{!! Form::label('course', trans('material.select_course')) !!}
-											{!! Form::select('course', [""=>"", "0"=>"teste0", "1"=>"teste1"], null, ['class'=>'form-control', 'ng-model'=>'material.course', 'ng-change'=>"selectedCourseId(material.course)"]) !!}
+											{!! Form::select('course', "@{{courses}}", null, ['class'=>'form-control', 'ng-model'=>'material.course', 'ng-change'=>"selectedCourseId(material.course)"]) !!}
 										</div>
 										<div  class="tab-pane body" ng-class="crCourseClass">
 											{!! Form::label('course', trans('material.create_course')) !!}
