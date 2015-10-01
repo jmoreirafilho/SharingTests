@@ -36,4 +36,9 @@ class Material extends Model
     public function tag() {
         return $this->belongsTo('App\Models\Tag');
     }
+
+    public function courses()
+    {
+        return $this->hasMany('App\Models\Course', 'course_id');
+    }
 }

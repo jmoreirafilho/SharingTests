@@ -57,6 +57,7 @@ angular.module('view').controller('viewController', function($scope, $http){
 		$scope.college_id = id;
 		$scope.material.college = name+" ("+initials+")";
 		$scope.showCourse = true;
+		$http.get("/material/getCourses/"+id);
 	};
 });
 

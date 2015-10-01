@@ -151,4 +151,15 @@ class MaterialController extends RestController
         };
         return response()->json($return);
     }
+
+    /**
+    * Search in material the courses
+    * 
+    * @param id
+    * @return Response
+    */
+    public function getCourses($id)
+    {
+        $courses = Material::courses();
+    }
 }
