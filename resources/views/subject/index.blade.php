@@ -24,6 +24,7 @@
 @section('scripts')
 <script>
 	var subjects = {!! $subjects !!};
+	var id = {!! $id !!};
 </script>
 <script src="/scripts/my/subject/index.js"></script>
 @endsection

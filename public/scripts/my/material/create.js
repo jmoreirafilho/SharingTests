@@ -23,7 +23,6 @@ angular.module('view').controller('viewController', function($scope, $http){
 			$scope.scCourseClass = "active";
 			$scope.crCourseClass = "";
 		} else if(data == 'createCourse'){
-			console.log("hey");
 			$scope.scCourseClass = "";
 			$scope.crCourseClass = "active";
 		} else if(data == 'selectSubject'){
@@ -35,7 +34,9 @@ angular.module('view').controller('viewController', function($scope, $http){
 		}
 	}
 	$scope.selectedCourseId = function(id){
-		console.log(id);
+		$http.get("/material/getSubjects/"+id).success(function(subjects){
+			$scope.subjects = subjects;
+		});
 	}
 	$scope.selectUpload = function(data){
 		if(data == 'photo'){
@@ -57,7 +58,9 @@ angular.module('view').controller('viewController', function($scope, $http){
 		$scope.college_id = id;
 		$scope.material.college = name+" ("+initials+")";
 		$scope.showCourse = true;
-		$http.get("/material/getCourses/"+id);
+		$http.get("/material/getCourses/"+id).success(function(courses){
+			$scope.courses = courses;
+		});
 	};
 });
 

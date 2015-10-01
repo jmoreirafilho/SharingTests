@@ -56,6 +56,9 @@ Route::group(['middleware'=>'auth'], function(){
 	Route::get('/filter', ['as'=>'material.filter', 'uses'=>'MaterialController@filter']);
 	Route::post('/updateFiltered/{id}', ['as'=>'material.updateFiltered', 'uses'=>'MaterialController@updateFiltered']);
 	Route::get('/searchMaterial/{id}/{search}', ['uses'=>'MaterialController@search']);
+	Route::get('/material/getCourses/{id}', ['uses' => 'MaterialController@getCourses']);
+	Route::get('/material/getSubjects/{id}', ['uses' => 'MaterialController@getSubjects']);
+	Route::get('/material/getMaterials/{id}', ['uses' => 'MaterialController@getMaterials']);
 
 	/*
 	|--------------------------------------------------------------------------

@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\RestController;
 use App\Models\Material;
+use App\Models\College;
+use App\Models\Course;
+use App\Models\Subject;
 
 class MaterialController extends RestController
 {
@@ -153,13 +156,46 @@ class MaterialController extends RestController
     }
 
     /**
-    * Search in material the courses
+    * Search in College the courses
     * 
     * @param id
-    * @return Response
+    * @return Response with courses
     */
     public function getCourses($id)
     {
-        $courses = Material::courses();
+        $colleges = College::find($id)->courses;
+        $courses = [];
+        foreach($colleges AS $id=>$college){
+            $courses[] = ["id"=>$college->id, "name"=> $college->name];
+        }
+        return response()->json($courses);
+    }
+
+    /**
+    * Search in Course the Subjects
+    * 
+    * @param id
+    * @return Response with subjects
+    */
+    public function getSubjects($id)
+    {
+        $courses = Course::find($id)->subjects;
+        $subjects = [];
+        foreach($courses AS $id => $course){
+            $subjects[] = ["id"=> $course->id, "name"=> $course->name];
+        }
+        return response()->json($subjects);
+    }
+
+    /**
+    * Search in Subject the Materials
+    * 
+    * @param id
+    * @return Response with materials
+    */
+    public function getMaterials($id)
+    {
+        $subjects = Subject::find($id);
+        return response()->json($subjects->materials);
     }
 }

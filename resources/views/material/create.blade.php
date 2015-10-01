@@ -38,7 +38,9 @@
 									<div class="tab-content">
 										<div class="tab-pane body" ng-class="scCourseClass">
 											{!! Form::label('course', trans('material.select_course')) !!}
-											{!! Form::select('course', [], null, ['class'=>'form-control', 'ng-model'=>'material.course', 'ng-change'=>"selectedCourseId(material.course)"]) !!}
+											<select name="course" ng-model="material.course" class="form-control" ng-change="selectedCourseId(material.course)">
+												<option ng-repeat="course in courses" value="@{{course.id}}">@{{course.name}}</option>
+											</select>
 										</div>
 										<div  class="tab-pane body" ng-class="crCourseClass">
 											{!! Form::label('course', trans('material.create_course')) !!}
@@ -56,7 +58,9 @@
 									<div class="tab-content">
 										<div class="tab-pane body" ng-class="scSubjectClass">
 											{!! Form::label('subject', trans('material.select_subject')) !!}
-											{!! Form::text('subject', null, ['class'=>'form-control', 'ng-model' => 'material.subject', 'placeholder' => trans('material.subject_ph')]) !!}
+											<select name="subject" ng-model="material.subject" class="form-control" ng-change="selectedSubjectId(material.subject)">
+												<option ng-repeat="subject in subjects" value="@{{subject.id}}">@{{subject.name}}</option>
+											</select>
 										</div>
 										<div  class="tab-pane body" ng-class="crSubjectClass">
 											{!! Form::label('subject', trans('material.create_subject')) !!}
