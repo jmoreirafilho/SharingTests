@@ -3,6 +3,7 @@ return [
 	"home-index" => "Início",
 	"home-create" => "Criar Conta",
 	"home-donate" => "Fazer Doação",
+	"home-forgot_pass" => "Recuperar Senha",
 	"material-filter" => "Filtrar Materiais",
 	"material-create" => "Enviar Material",
 	"material-index" => "Lista de Materiais",

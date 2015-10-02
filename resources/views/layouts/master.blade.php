@@ -13,25 +13,42 @@
 </head>
 <body>
 	@if(!Auth::check())
-	<div class="login" id="login">
-	{!! Form::open(['route'=>'home.login']) !!}
-	{!! Form::token() !!}
-	<div class="form-group">
-		<div class="input-group">
-			<div class="input-group-addon addon-preferences"><i class="fa fa-at"></i></div>
-			{!! Form::text('email', null, ['class'=>'form-control', 'placeholder' => trans('subject.placeholder-email')]) !!}
+	<div class="login" id="login" ng-controller="loginController">
+		{!! Form::open(['route'=>'home.login']) !!}
+		{!! Form::token() !!}
+		<div class="row">
+			<div class="col-md-12">
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group-addon addon-preferences"><i class="fa fa-at"></i></div>
+						{!! Form::text('email', null, ['class'=>'form-control', 'placeholder' => trans('subject.placeholder-email')]) !!}
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
-	<div class="form-group">
-		<div class="input-group">
-			<div class="input-group-addon addon-preferences"><i class="fa fa-key"></i></div>
-			{!! Form::password('password', ['class'=>'form-control', 'placeholder' => trans('subject.placeholder-password')]) !!}
+		<div class="row">
+			<div class="col-md-12">
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group-addon addon-preferences"><i class="fa fa-key"></i></div>
+						{!! Form::password('password', ['class'=>'form-control', 'placeholder' => trans('subject.placeholder-password')]) !!}
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
-	<div class="form-group">
-		{!! Form::submit(trans('subject.submit_login'), ['class'=>'btn btn-login']) !!}
-	</div>
-	{!! Form::close() !!}
+		<div class="row">
+			<div class="col-md-2">
+				<div class="form-group">
+					{!! Form::submit(trans('subject.submit_login'), ['class'=>'btn btn-login']) !!}
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="forgot-password" ng-click="forgotPass()">@lang('home.forgot_pass')</label>
+				</div>
+			</div>
+		</div>
+		{!! Form::close() !!}
 	</div>
 	@else
 	<div class="points" id="points">

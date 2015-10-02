@@ -82,4 +82,15 @@ class HomeController extends Controller
             return \Redirect::back();
         }
     }
+
+    /**
+     * Login
+     *
+     * @param  Request  $request
+     * @return Response
+     */
+    public function forgotPass()
+    {
+        return view('home.forgot_password');
+    }
 }

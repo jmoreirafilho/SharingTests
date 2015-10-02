@@ -1,5 +1,10 @@
 // angular
 angular.module("view", []);
+angular.module("view").controller("loginController", function($scope){
+	$scope.forgotPass = function(){
+		window.location = "/forgot_password";
+	}
+});
 
 // jquery
 $("#show-login").on('click', function(){

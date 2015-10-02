@@ -15,6 +15,7 @@ Route::resource('home', 'HomeController', ['except' => ['show', 'edit', 'update'
 Route::get('/', ['as' => 'home.index', 'uses' => 'HomeController@index']);
 Route::get('/donate', ['as' => 'home.donate', 'uses'=>'HomeController@donate']);
 Route::post('/login', ['as' => 'home.login', 'uses'=>'HomeController@login']);
+Route::get('/forgot_password', ['as' => 'home.forgot_pass', 'uses'=>'HomeController@forgotPass']);
 
 Route::group(['middleware'=>'auth'], function(){
 	/*
