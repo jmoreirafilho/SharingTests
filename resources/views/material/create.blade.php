@@ -52,8 +52,8 @@
 							<div class="col-md-6" ng-show="material.course" ng-hide="!material.course">
 								<div class="sub-card">
 									<ul class="nav nav-tabs">
-									  	<li role="presentation" ng-click="active('selectSubject')" ng-class="scSubjectClass"><a href="">Select</a></li>
-									  	<li role="presentation" ng-click="active('createSubject')" ng-class="crSubjectClass"><a href="">Create</a></li>
+									  	<li role="presentation" ng-click="active('selectSubject')" ng-class="scSubjectClass"><a href="">@lang('material.select')</a></li>
+									  	<li role="presentation" ng-click="active('createSubject')" ng-class="crSubjectClass"><a href="">@lang('material.create')</a></li>
 									</ul>
 									<div class="tab-content">
 										<div class="tab-pane body" ng-class="scSubjectClass">
@@ -120,8 +120,16 @@
 				</div>
 			</div>
 			<div class="card-footer">
-				<a ng-click="save()" class="btn-footer">@lang('material.save')</a>
-				<a class="btn-footer">@lang('material.cancel')</a>
+				<div class="row">
+					<div class="col-md-6">
+						<a ng-click="save()" class="btn-footer">@lang('material.save')</a>
+						<a class="btn-footer">@lang('material.cancel')</a>
+					</div>
+					<div class="col-md-6 text-right">
+						<a ng-click="next()" ng-show="goNext" ng-hidden="!goNext" class="btn-footer">@lang('material.next')</a>
+						<a ng-click="back()" ng-show="goBack" ng-hidden="!goBack" class="btn-footer">@lang('material.back')</a>
+					</div>
+				</div>
 			</div>
 	</div>
 </section>

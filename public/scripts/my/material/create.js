@@ -13,24 +13,34 @@ angular.module('view').controller('viewController', function($scope, $http){
 	$scope.scSubjectClass = "active";
 
 	$scope.active = function(data){
-		if(data == 'material'){
+		switch(data){
+			case 'material':
 			$scope.materialClass = "active";
 			$scope.configClass = "";
-		} else if(data == 'config'){
+			break;
+			case 'config':
 			$scope.materialClass = "";
 			$scope.configClass = "active";
-		} else if(data == 'selectCourse'){
+			break;
+			case 'selectCourse':
 			$scope.scCourseClass = "active";
 			$scope.crCourseClass = "";
-		} else if(data == 'createCourse'){
+			break;
+			case 'createCourse':
 			$scope.scCourseClass = "";
 			$scope.crCourseClass = "active";
-		} else if(data == 'selectSubject'){
+			$scope.material.course = "";
+			$scope.subjects = "";
+			break;
+			case 'selectSubject':
 			$scope.scSubjectClass = "active";
 			$scope.crSubjectClass = "";
-		} else{//createSubject
+			break;
+			case 'createSubject':
 			$scope.scSubjectClass = "";
 			$scope.crSubjectClass = "active";
+			$scope.material.subject = "";
+			break;
 		}
 	}
 	$scope.selectedCourseId = function(id){
@@ -62,6 +72,18 @@ angular.module('view').controller('viewController', function($scope, $http){
 			$scope.courses = courses;
 		});
 	};
+	$scope.goBack = false;
+	$scope.goNext = true;
+	$scope.next = function(){
+		$scope.active('material');
+		$scope.goBack = true;
+		$scope.goNext = false;
+	}
+	$scope.back = function(){
+		$scope.active('config');
+		$scope.goBack = false;
+		$scope.goNext = true;
+	}
 });
 
 $("#search_college").on('focus', function(){

@@ -19,6 +19,8 @@ return [
 	"select_subject" => "Selecionar Cadeira",
 	"create_subject" => "Criar Cadeira",
 	"subject_ph" => "Informe a cadeira",
+	"next" => "Avançar",
+	"back" => "Voltar",
 	"save" => "Salvar",
 	"cancel" => "Cancelar",
 ];
