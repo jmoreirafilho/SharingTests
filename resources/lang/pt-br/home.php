@@ -14,5 +14,11 @@ return [
 	"email_ph" => "Informe seu e-mail",
 	"sended_message" => "Uma mensagem será enviada com uma nova senha para o e-mail informado!",
 	"confirm_button" => "Confirmar",
+	"temp_password_mail_title" => "Recuperação de Senha",
+	"temp_password_text_1" => "Olá! Siga os passos abaixo para redefinir sua senha!",
+	"temp_password_text_2" => "1 - Faça login com sua senha temporária",
+	"temp_password_text_3" => "2 - Em <strong>Profile</strong> redefina sua senha.",
+	"temp_password_text_4" => "Sharing Tests Project",
+	"email_error" => "Email Inválido!"
 ];
  ?>

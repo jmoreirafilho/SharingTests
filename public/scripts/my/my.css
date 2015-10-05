@@ -108,6 +108,7 @@ body{
 }
 .login {
   position:fixed;
+  z-index:3;
   right:0px;
   top:55px;
   background-color: #FFF;

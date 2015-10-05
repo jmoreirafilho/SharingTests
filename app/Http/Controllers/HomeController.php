@@ -106,19 +106,20 @@ class HomeController extends Controller
         $user = User::where('email',$email)->get();
         $result = count($user);
         if($result){
-            \Mail::send('emails.temp_password', ['user' => $user], function($message) use ($user)
+            $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            $password = substr( str_shuffle( $chars ), 0, 8);
+            \Mail::send('emails.temp_password', ['user' => $user, 'password' => $password], function($message) use ($user, $password)
             {
                 foreach($user AS $id=>$key){
-                    $message->to($key->email, $key->name)->subject('Welcome!');
+                    $message->to($key->email, $key->name)->subject(trans('home.temp_password_mail_title'));
+                    $edit_user = User::find($key->id);
+                    $edit_user->password = \Hash::make($password);
+                    $edit_user->save();
                 }
             });
+            header("Location: /");
         } else{
-            \Mail::send('emails.not_registered', ['user' => $user], function($message) use ($user)
-            {
-                foreach($user AS $id=>$key){
-                    $message->to($key->email, $key->name)->subject('Welcome!');
-                }
-            });
+            return view('home.forgot_password')->with('invalidEmailError', true);
         }
     }
 
@@ -130,6 +131,6 @@ class HomeController extends Controller
      */
     public function mail()
     {
-        return view('emails.index');
+        return view('emails.temp_password')->with('password', '12345678');
     }
 }

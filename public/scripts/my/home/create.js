@@ -11,5 +11,5 @@ angular.module('view').controller('viewController', function($scope){
 		if($scope.checkAll($scope.user) == ""){
 			$("form").submit();
 		}
-	}
+	};
 });

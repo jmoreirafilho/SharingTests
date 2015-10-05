@@ -8,19 +8,22 @@
 			<div class="card-title">@lang('title.home-forgot_pass')</div>
 			{!! Form::open(['route'=>'home.recoveryPassword']) !!}
 				<div class="row">
-					<div class="col-md-6 col-md-offset-3">
+					<div class="col-md-6">
 						<div class="form-group" id="email_content">
 							{!! Form::label('email', trans('home.email')) !!}
 							{!! Form::text('email', null, ['class' => 'form-control', 'placeholder' => trans('home.email_ph'), 'ng-model'=>'email']) !!}
-							<small>@lang('home.sended_message')</small>
+							@if(isset($invalidEmailError))
+								<small>@lang('home.email_error')</small>
+							@else
+								<small>@lang('home.sended_message')</small>
+							@endif
 						</div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-md-6 col-md-offset-3">
-						<div class="form-group">
-							<label class="btn btn-primary" id="fake_button">@lang('home.confirm_button')</label>
-							{!! Form::submit(null, ['id'=>'confirm_button', 'class' => 'hide']) !!}
+				<div class="card-footer">
+					<div class="row">
+						<div class="col-md-6">
+							<a class="btn-footer" ng-class="disabledClass()" ng-click="submit()">@lang('home.confirm_button')</a>
 						</div>
 					</div>
 				</div>
