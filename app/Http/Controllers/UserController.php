@@ -65,13 +65,13 @@ class UserController extends RestController
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $id)
-    {
-        dd($request);
-        $user = User::find($id);
-        $user->fill($request->all());
-        $user->save();
-    }
+    // public function update(Request $request, $id)
+    // {
+    //     dd($request);
+    //     $user = User::find($id);
+    //     $user->fill($request->all());
+    //     $user->save();
+    // }
     
     /**
      * Logout
@@ -105,9 +105,12 @@ class UserController extends RestController
     {
         $user = User::find($id);
         $user->name = $request->name;
+        if($request->new_password && $request->check_new_password && ($request->new_password == $request->check_new_password)){
+            $user->password = \Hash::make($request->new_password);
+        }
         $user->save();
 
-        return view('user.profile')->with('user', User::find($id)->toJson());
+        return \Redirect::route('user.profile');
     }
 
     /**
