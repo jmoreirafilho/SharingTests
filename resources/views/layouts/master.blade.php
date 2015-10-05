@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/scripts/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="/scripts/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="/scripts/my/my.min.css">
+	<link rel="stylesheet" type="text/css" href="/scripts/my/my.css">
 	@yield('styles')
 </head>
 <body>

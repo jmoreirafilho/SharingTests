@@ -13,5 +13,14 @@ angular.module('view').controller('viewController', function($scope, $http){
 	$scope.getLocationId = function(data, city, state){
 		$scope.location_city_id = data;
 		$scope.search = city+" ("+state+")";
+	};
+	$scope.disabledClass = function(){
+		if($scope.name && $scope.initials){
+			return "";
+		}
+			return "btn-disabled";
+	};
+	$scope.submit = function(){
+		$("form").submit();
 	}
 });

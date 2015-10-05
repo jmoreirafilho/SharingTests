@@ -39,10 +39,10 @@
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-3">
-					<div class="form-group">
-						{!! Form::submit(trans('college.form-submit'), ['class'=>'btn btn-primary', 'ng-disabled'=>'!name||!initials']) !!}
+			<div class="card-footer">
+				<div class="row">
+					<div class="col-md-6">
+						<a class="btn-footer" id="submit_button" ng-class="disabledClass()" ng-click="submit()">@lang('college.form-submit')</a>
 					</div>
 				</div>
 			</div>
