@@ -35,6 +35,30 @@
 					</div>
 				</div>
 			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label class="clickable" id="change_password">@lang('user.change_password')</label>
+					</div>
+				</div>
+			</div>
+			<div id="change_password" class="row hide">
+				<div class="col-md-6">
+					<div class="form-group">
+						{!! Form::label('new_password', trans('user.new_password')) !!}
+						{!! Form::password('new_password', ['class' => 'form-control', 'placeholder'=>'new_password_ph']) !!}
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						{!! Form::label('check_new_password', trans('user.check_new_password')) !!}
+						{!! Form::password('check_new_password', ['class' => 'form-control', 'placeholder'=>'check_new_password_ph']) !!}
+					</div>
+				</div>
+			</div>
+			<div class="card-footer">
+				spdfksfk
+			</div>
 			{!! Form::close() !!}
 		</div>
 	</div>

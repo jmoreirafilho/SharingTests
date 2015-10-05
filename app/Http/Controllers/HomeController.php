@@ -93,4 +93,37 @@ class HomeController extends Controller
     {
         return view('home.forgot_password');
     }
+
+    /**
+     * Login
+     *
+     * @param  Request  $request
+     * @return Response
+     */
+    public function recoveryPassword(Request $request)
+    {
+        $email = $request->email;
+        $user = User::where('email',$email)->get();
+        $result = count($user);
+        if($result){
+            \Mail::send('emails.index', ['key' => 'value'], function($message)
+            {
+                $message->to('airtonmfilho@hotmail.com', 'John Smith')->subject('Welcome!');
+            });
+        } else{
+            header("Location: /forgot_password");
+        }
+        dd($user);
+    }
+
+    /**
+     * Login
+     *
+     * @param  Request  $request
+     * @return Response
+     */
+    public function mail()
+    {
+        return view('emails.index');
+    }
 }

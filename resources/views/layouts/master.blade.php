@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/scripts/font-awesome/css/font-awesome.min.css">
-	<!-- <link rel="stylesheet" type="text/css" href="/scripts/bootstrap/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="/scripts/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/scripts/my/my.min.css">
 	@yield('styles')
 </head>
@@ -120,9 +120,9 @@
 
 
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-<!-- <script type="text/javascript" src="/scripts/jquery/jquery-2.1.4.min.js"></script> -->
+<script type="text/javascript" src="/scripts/jquery/jquery-2.1.4.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-<!-- <script type="text/javascript" src="/scripts/angularjs/angular.min.js"></script> -->
+<script type="text/javascript" src="/scripts/angularjs/angular.min.js"></script>
 <script type="text/javascript" src="/scripts/my/my.js"></script>
 @yield('scripts')
 </html>
