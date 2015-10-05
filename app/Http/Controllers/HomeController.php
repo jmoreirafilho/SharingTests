@@ -106,14 +106,20 @@ class HomeController extends Controller
         $user = User::where('email',$email)->get();
         $result = count($user);
         if($result){
-            \Mail::send('emails.index', ['key' => 'value'], function($message)
+            \Mail::send('emails.temp_password', ['user' => $user], function($message) use ($user)
             {
-                $message->to('airtonmfilho@hotmail.com', 'John Smith')->subject('Welcome!');
+                foreach($user AS $id=>$key){
+                    $message->to($key->email, $key->name)->subject('Welcome!');
+                }
             });
         } else{
-            header("Location: /forgot_password");
+            \Mail::send('emails.not_registered', ['user' => $user], function($message) use ($user)
+            {
+                foreach($user AS $id=>$key){
+                    $message->to($key->email, $key->name)->subject('Welcome!');
+                }
+            });
         }
-        dd($user);
     }
 
     /**
