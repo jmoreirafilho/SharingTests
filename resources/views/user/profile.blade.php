@@ -29,11 +29,6 @@
 						{!! Form::text('name', null, ['class'=>'form-control', 'ng-model'=>'user.name']) !!}
 					</div>
 				</div>
-				<div class="col-md-5">
-					<div class="form-group">
-						{!! Form::submit(trans('user.form-submit-profile'), ['class'=>'btn btn-primary', 'ng-disabled' => '!user.name']) !!}
-					</div>
-				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
@@ -46,18 +41,22 @@
 				<div class="col-md-6">
 					<div class="form-group">
 						{!! Form::label('new_password', trans('user.new_password')) !!}
-						{!! Form::password('new_password', ['class' => 'form-control', 'placeholder'=>'new_password_ph']) !!}
+						{!! Form::password('new_password', ['class' => 'form-control', 'placeholder'=> trans('user.new_password_ph')]) !!}
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="form-group">
 						{!! Form::label('check_new_password', trans('user.check_new_password')) !!}
-						{!! Form::password('check_new_password', ['class' => 'form-control', 'placeholder'=>'check_new_password_ph']) !!}
+						{!! Form::password('check_new_password', ['class' => 'form-control', 'placeholder'=> trans('user.check_new_password_ph')]) !!}
 					</div>
 				</div>
 			</div>
 			<div class="card-footer">
-				spdfksfk
+				<div class="row">
+					<div class="col-md-6">
+						<a class="btn-footer" ng-class="disabledClass()" ng-click="submit()">@lang('user.form-submit-profile')</a>
+					</div>
+				</div>
 			</div>
 			{!! Form::close() !!}
 		</div>

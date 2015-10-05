@@ -38,14 +38,15 @@
 					</div>
 				</div>
 			</div>
-
-			<div class="row">
-				<div class="col-md-2">
-					<div class="form-group">
-						{!! Form::submit(trans('user.form-submit-create'), ['class'=>'btn btn-primary', 'ng-disabled'=>'checkAll(user)']) !!}
+			
+			<div class="card-footer">
+				<div class="row">
+					<div class="col-md-6">
+						<a class="btn-footer" ng-class="checkAll(user)" ng-click="submit()">@lang('home.confirm_button')</a>
 					</div>
 				</div>
 			</div>
+
 		</div>
 	</div>
 </section>

@@ -9,5 +9,14 @@ angular.module('view').controller('viewController', function($scope, $http){
 			$("div#change_password").addClass("hide", 400);
 			status_password_view = true;
 		}
-	})
+	});
+	$scope.disabledClass = function(){
+		if($scope.user.name){
+			return "";
+		}
+		return "btn-disabled";
+	};
+	$scope.submit = function(){
+		$("form").submit();
+	};
 });

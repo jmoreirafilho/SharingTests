@@ -42,7 +42,7 @@
 			<div class="card-footer">
 				<div class="row">
 					<div class="col-md-6">
-						<a class="btn-footer" id="submit_button" ng-class="disabledClass()" ng-click="submit()">@lang('college.form-submit')</a>
+						<a class="btn-footer" ng-class="disabledClass()" ng-click="submit()">@lang('college.form-submit')</a>
 					</div>
 				</div>
 			</div>

@@ -16,5 +16,10 @@ return [
 	"form-submit-create" => "Cadastrar",
 	"form-submit-profile" => "Atualizar",
 	"form-submit-back" => "Back",
+	"change_password" => "Alterar Senha",
+	"new_password" => "Nova Senha",
+	"new_password_ph" => "Digite sua nova senha",
+	"check_new_password" => "Confirme a Senha",
+	"check_new_password_ph" => "Confirme sua nova senha",
 ];
  ?>
