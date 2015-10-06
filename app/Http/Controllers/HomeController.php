@@ -59,8 +59,7 @@ class HomeController extends Controller
     /**
      * Redirect to donate page
      *
-     * @param  Request  $request
-     * @return Response
+     * @return View
      */
     public function donate()
     {
@@ -84,10 +83,9 @@ class HomeController extends Controller
     }
 
     /**
-     * Login
+     * Redirect to recovery password page
      *
-     * @param  Request  $request
-     * @return Response
+     * @return View
      */
     public function forgotPass()
     {
@@ -95,10 +93,10 @@ class HomeController extends Controller
     }
 
     /**
-     * Login
+     * Send email with new password to user
      *
      * @param  Request  $request
-     * @return Response
+     * @return Mix
      */
     public function recoveryPassword(Request $request)
     {
@@ -117,7 +115,7 @@ class HomeController extends Controller
                     $edit_user->save();
                 }
             });
-            header("Location: /");
+            return \Redirect::route('home.index');
         } else{
             return view('home.forgot_password')->with('invalidEmailError', true);
         }
@@ -126,7 +124,6 @@ class HomeController extends Controller
     /**
      * Login
      *
-     * @param  Request  $request
      * @return Response
      */
     public function mail()

@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'from' => ['address' => "postmaster@sandbox6180e6c9ea6f4c31bc9b7de8ccb567c6.mailgun.org", 'name' => "SharingTestsProject"],
+    'from' => ['address' => env('MAIL_ADDRESS', 'postmaster@sandbox6180e6c9ea6f4c31bc9b7de8ccb567c6.mailgun.org'), 'name' => 'SharingTestsProject'],
 
     /*
     |--------------------------------------------------------------------------
