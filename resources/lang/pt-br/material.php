@@ -23,5 +23,6 @@ return [
 	"back" => "Voltar",
 	"save" => "Salvar",
 	"cancel" => "Cancelar",
+	"empty_result" => "<strong>Erro!</strong> Nenhum Resultado Encontrado!",
 ];
  ?>

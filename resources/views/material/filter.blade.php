@@ -17,7 +17,7 @@
 						<th></th>
 						<th></th>
 					</head>
-					<tr ng-repeat="material in materials | filter:search_bar:description" ng-model="modelo" ng-mouseover="modelo=true" ng-mouseleave="modelo=false">
+					<tr ng-repeat="material in (filteredMaterials = (materials | filter:search_bar:description))" ng-model="modelo" ng-mouseover="modelo=true" ng-mouseleave="modelo=false">
 						<td>
 							@{{material.created_at}}
 						</td>
@@ -35,6 +35,9 @@
 						</td>
 					</tr>
 				</table>
+				<div class="alert alert-warning hide" id="alertEmpty" ng-class="checkAlert(filteredMaterials)">
+					@lang('material.empty_result')
+				</div>
 			</div>
 		</div>
 	</div>

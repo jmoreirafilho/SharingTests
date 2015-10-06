@@ -10,5 +10,7 @@ return [
 	"ph-form-search-city" => "Buscar Cidade",
 	"form-submit" => "Cadastrar",
 	"select-button" => "Selecionar",
+	"emptyCityResult" => "<strong>Nenhuma Resultado!</strong>",
+	"empty_result" => "<strong>Erro!</strong> Nenhum Resultado Encontrado!"
 ];
  ?>

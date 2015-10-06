@@ -7,7 +7,12 @@ $("#search_location").on('focus', function(){
 angular.module('view').controller('viewController', function($scope, $http){
 	$scope.searching = function (data){
 		$http.get('/searchLocation/'+data).success(function(result){
-			$scope.cities = result;
+			if(result.length > 0){
+				$scope.cities = result;
+				$scope.emptyCityResult = false;
+			} else {
+				$scope.emptyCityResult = true;
+			}
 		});
 	};
 	$scope.getLocationId = function(data, city, state){

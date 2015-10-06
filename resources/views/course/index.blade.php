@@ -9,34 +9,15 @@
 			<div class="card-title">@lang('course.courses')</div>
 			<div class="container-fluid">
 				<table class="table">
-					<tr ng-repeat="course in courses | filter:search_bar" ng-model="modelo" ng-mouseover="modelo=true" ng-mouseleave="modelo=false" ng-class="selected(modelo)">
+					<tr ng-repeat="course in (filteredCourses = (courses | filter:search_bar))" ng-model="modelo" ng-mouseover="modelo=true" ng-mouseleave="modelo=false" ng-class="selected(modelo)">
 						<td class="text-left" ng-click="redirect(course.id)">
 							@{{course.name}}
 						</td>
 					</tr>
 				</table>
-				<table class="nomeDaClasse">
-					<tr>
-						<td id="nomedaid"></td>
-						<td id="nomedaid"></td>
-						<td id="nomedaid"></td>
-					</tr>
-					<tr>
-						<td id="nomedaid"></td>
-						<td id="nomedaid"></td>
-						<td id="nomedaid"></td>
-					</tr>
-					<tr>
-						<td id="nomedaid"></td>
-						<td id="nomedaid"></td>
-						<td id="nomedaid"></td>
-					</tr>
-					<tr>
-						<td id="nomedaid"></td>
-						<td id="nomedaid"></td>
-						<td id="nomedaid"></td>
-					</tr>
-				</table>
+				<div class="alert alert-warning hide" id="alertEmpty" ng-class="checkAlert(filteredCourses)">
+					@lang('course.empty_result')
+				</div>
 			</div>
 		</div>
 	</div>

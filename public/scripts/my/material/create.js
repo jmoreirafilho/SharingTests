@@ -61,7 +61,12 @@ angular.module('view').controller('viewController', function($scope, $http){
 	$scope.searchingColleges = function (data){
 		$scope.showCourse = false;
 		$http.get('/searchCollege/'+data).success(function(result){
-			$scope.colleges = result;
+			if(result.length > 0){
+				$scope.colleges = result;
+				$scope.emptyCityResult = false;
+			} else {
+				$scope.emptyCityResult = true;
+			}
 		});
 	};
 	$scope.getCollegeId = function(id, name, initials){

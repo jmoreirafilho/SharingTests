@@ -32,8 +32,11 @@
 						{!! Form::text('search_location', null, ['class'=>'form-control', 'placeholder'=>trans('college.ph-form-search-city'), 'ng-model'=>'search', 'ng-change'=>'searching(search)', 'id'=>'search_location']) !!}
 						{!! Form::hidden('location_city_id', '@{{location_city_id}}') !!}
 						<div class="typeahead" id="typeahead" ng-show="search">
-							<div class="typeahead-option" ng-repeat='city in cities' ng-click="getLocationId(city.id, city.city, city.state)">
+							<div class="typeahead-option" ng-hide="emptyCityResult" ng-repeat='city in cities' ng-click="getLocationId(city.id, city.city, city.state)">
 								@{{city.city}} (@{{city.state}})
+							</div>
+							<div class="alert alert-warning" ng-show="emptyCityResult">
+								@lang('college.emptyCityResult')
 							</div>
 						</div>
 					</div>

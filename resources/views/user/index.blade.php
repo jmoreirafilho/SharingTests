@@ -9,12 +9,15 @@
 			<div class="card-title">@lang('title.user-index')</div>
 			<div class="container-fluid">
 				<table class="table">
-					<tr ng-repeat="user in users | filter:search_bar" ng-model="modelo" ng-mouseover="modelo=true" ng-mouseleave="modelo=false" ng-class="selected(modelo)">
+					<tr ng-repeat="user in (filteredUsers = (users | filter:search_bar))" ng-model="modelo" ng-mouseover="modelo=true" ng-mouseleave="modelo=false" ng-class="selected(modelo)">
 						<td class="text-left" ng-click="redirect(user.id)">
 							@{{user.name}}
 						</td>
 					</tr>
 				</table>
+				<div class="alert alert-warning hide" id="alertEmpty" ng-class="checkAlert(filteredUsers)">
+					@lang('user.empty_result')
+				</div>
 			</div>
 		</div>
 	</div>
