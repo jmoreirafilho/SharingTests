@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'from' => ['address' => "sharing.tests.project@gmail.com", 'name' => "SharingTestsProject"],
+    'from' => ['address' => "postmaster@sandbox6180e6c9ea6f4c31bc9b7de8ccb567c6.mailgun.org", 'name' => "SharingTestsProject"],
 
     /*
     |--------------------------------------------------------------------------
