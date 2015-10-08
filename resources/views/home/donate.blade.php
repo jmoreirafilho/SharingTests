@@ -5,7 +5,7 @@
 <section>
 	<div class="col-md-12">
 		<div class="card">
-			<div class="card-title">@lang('title.home-donate')</div>
+			<div class="title">@lang('title.home-donate')</div>
 		</div>
 	</div>
 </section>

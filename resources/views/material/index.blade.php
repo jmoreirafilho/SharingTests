@@ -6,7 +6,7 @@
 	@include('search-bar')
 	<div class="col-md-10 col-md-offset-1">
 		<div class="card text-left">
-			<div class="card-title">@lang('material.materials')</div>
+			<div class="title">@lang('material.materials')</div>
 			<div class="container-fluid">
 				<table class="table">
 					<tr ng-repeat="material in (filteredMaterials = (materials | filter:search_bar))" ng-model="modelo" ng-mouseover="modelo=true" ng-mouseleave="modelo=false" ng-class="selected(modelo)">

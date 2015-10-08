@@ -5,7 +5,7 @@
 <section ng-controller="viewController">
 	<div class="col-md-12">
 		<div class="card">
-			<div class="card-title">@lang('title.home-forgot_pass')</div>
+			<div class="title">@lang('title.home-forgot_pass')</div>
 			{!! Form::open(['route'=>'home.recoveryPassword']) !!}
 				<div class="row">
 					<div class="col-md-6">
@@ -20,10 +20,10 @@
 						</div>
 					</div>
 				</div>
-				<div class="card-footer">
+				<div class="bottom">
 					<div class="row">
 						<div class="col-md-6">
-							<a class="btn-footer" ng-class="disabledClass()" ng-click="submit()">@lang('home.confirm_button')</a>
+							<a class="button pointer" ng-class="disabledClass()" ng-click="submit()">@lang('home.confirm_button')</a>
 						</div>
 					</div>
 				</div>

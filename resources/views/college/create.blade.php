@@ -5,7 +5,7 @@
 <section ng-controller="viewController">
 	<div class="col-md-12">
 		<div class="card">
-			<div class="card-title">
+			<div class="title">
 				@lang('title.college-create')
 			</div>
 
@@ -42,10 +42,10 @@
 					</div>
 				</div>
 			</div>
-			<div class="card-footer">
+			<div class="bottom">
 				<div class="row">
 					<div class="col-md-6">
-						<a class="btn-footer" ng-class="disabledClass()" ng-click="submit()">@lang('college.form-submit')</a>
+						<a class="button pointer" ng-class="disabledClass()" ng-click="submit()">@lang('college.form-submit')</a>
 					</div>
 				</div>
 			</div>

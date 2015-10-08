@@ -6,7 +6,7 @@
 <section ng-controller="viewController">
 	<div class="col-md-12">
 		<div class="card">
-			<div class="card-title">@lang('title.material-create')</div>
+			<div class="title">@lang('title.material-create')</div>
 			<ul class="nav nav-tabs">
 			  	<li role="presentation" ng-click="active('config')" ng-class="configClass"><a href="">@lang('material.config')</a></li>
 			  	<li role="presentation" ng-click="active('material')" ng-class="materialClass"><a href="">@lang('material.upload')</a></li>
@@ -122,15 +122,15 @@
 					</div>
 				</div>
 			</div>
-			<div class="card-footer">
+			<div class="bottom">
 				<div class="row">
 					<div class="col-md-6">
-						<a ng-click="save()" class="btn-footer">@lang('material.save')</a>
-						<a class="btn-footer">@lang('material.cancel')</a>
+						<a ng-click="save()" class="button pointer">@lang('material.save')</a>
+						<a class="button pointer">@lang('material.cancel')</a>
 					</div>
 					<div class="col-md-6 text-right">
-						<a ng-click="next()" ng-show="goNext" ng-hidden="!goNext" class="btn-footer">@lang('material.next')</a>
-						<a ng-click="back()" ng-show="goBack" ng-hidden="!goBack" class="btn-footer">@lang('material.back')</a>
+						<a ng-click="next()" ng-show="goNext" ng-hidden="!goNext" class="button pointer">@lang('material.next')</a>
+						<a ng-click="back()" ng-show="goBack" ng-hidden="!goBack" class="button pointer">@lang('material.back')</a>
 					</div>
 				</div>
 			</div>

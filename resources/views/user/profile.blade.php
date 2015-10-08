@@ -6,7 +6,7 @@
 <section ng-controller="viewController">
 	<div class="col-md-12">
 		<div class="card">
-			<div class="card-title">@lang('title.user-profile')</div>
+			<div class="title">@lang('title.user-profile')</div>
 			{!! Form::open(['method'=>'PUT', 'route'=>['user.updateProfile', \Auth::id()]]) !!}
 			<div class="row">
 				<div class="col-md-7">
@@ -51,10 +51,10 @@
 					</div>
 				</div>
 			</div>
-			<div class="card-footer">
+			<div class="bottom">
 				<div class="row">
 					<div class="col-md-6">
-						<a class="btn-footer" ng-class="disabledClass()" ng-click="submit()">@lang('user.form-submit-profile')</a>
+						<a class="button pointer" ng-class="disabledClass()" ng-click="submit()">@lang('user.form-submit-profile')</a>
 					</div>
 				</div>
 			</div>

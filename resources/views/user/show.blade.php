@@ -6,7 +6,7 @@
 <section ng-controller="viewController">
 	<div class="col-md-12">
 		<div class="card">
-			<div class="card-title">@lang('title.user-profile') - @{{user.name}}</div>
+			<div class="title">@lang('title.user-profile') - @{{user.name}}</div>
 			<div class="row">
 				<div class="col-md-6">
 					<div class="form-group">

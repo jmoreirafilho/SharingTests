@@ -6,7 +6,7 @@
 	@include('search-bar')
 	<div class="col-md-10 col-md-offset-1">
 		<div class="card text-left">
-			<div class="card-title">@lang('title.user-index')</div>
+			<div class="title">@lang('title.user-index')</div>
 			<div class="container-fluid">
 				<table class="table">
 					<tr ng-repeat="user in (filteredUsers = (users | filter:search_bar))" ng-model="modelo" ng-mouseover="modelo=true" ng-mouseleave="modelo=false" ng-class="selected(modelo)">

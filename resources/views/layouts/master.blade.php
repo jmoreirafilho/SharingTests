@@ -39,12 +39,12 @@
 		<div class="row">
 			<div class="col-md-2">
 				<div class="form-group">
-					{!! Form::submit(trans('subject.submit_login'), ['class'=>'btn btn-login']) !!}
+					{!! Form::submit(trans('subject.submit_login'), ['class'=>'btn']) !!}
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="form-group">
-					<label class="forgot-password" ng-click="forgotPass()">@lang('home.forgot_pass')</label>
+					<label class="pointer" ng-click="forgotPass()">@lang('home.forgot_pass')</label>
 				</div>
 			</div>
 		</div>
@@ -61,8 +61,8 @@
 	</div>
 	@endif
 	<div class="menu" role="navigation">
-		<div class="col-md-1 logo-icon">&nbsp;</div>
-		<div class="col-md-2 user-name-space" id="open-points">
+		<div class="col-md-1 icon">&nbsp;</div>
+		<div class="col-md-2 name" id="open-points">
 			@if(Auth::check())
 				<i class="fa fa-user"></i> {!! Auth::user()->name !!}
 			@else
@@ -78,20 +78,20 @@
 				@endif
 				@if(Auth::check())
 					@if(Auth::check() && Auth::user()->status_level == 1)
-					<a href="{!! route('user.index') !!}" class="btn-menu">@lang('title.user-index')</a>
-					<a href="{!! route('college.create') !!}" class="btn-menu">@lang('title.college-create')</a>
-					<a href="{!! route('material.filter') !!}" class="btn-menu">@lang('title.material-filter')</a>
+					<a href="{!! route('user.index') !!}">@lang('title.user-index')</a>
+					<a href="{!! route('college.create') !!}">@lang('title.college-create')</a>
+					<a href="{!! route('material.filter') !!}">@lang('title.material-filter')</a>
 					@endif
-					<a href="{!! route('college.index') !!}" class="btn-menu">@lang('title.college-index')</a>
-					<a href="{!! route('material.create') !!}" class="btn-menu">@lang('title.material-create')</a>
+					<a href="{!! route('college.index') !!}">@lang('title.college-index')</a>
+					<a href="{!! route('material.create') !!}">@lang('title.material-create')</a>
 					@else
-					<a href="{!! route('home.create') !!}" class="btn-menu">@lang('title.home-create')</a>
+					<a href="{!! route('home.create') !!}">@lang('title.home-create')</a>
 					@endif
-				<a href="{!! route('home.donate') !!}" class="btn-menu">@lang('title.home-donate')</a>
+				<a href="{!! route('home.donate') !!}">@lang('title.home-donate')</a>
 				@if(!Auth::check())
-				<a href="" class="btn-menu" id="show-login"><i class="fa fa-sign-in">&nbsp;</i></a>
+				<a href="" id="show-login"><i class="fa fa-sign-in">&nbsp;</i></a>
 				@else
-				<a href="{!! route('user.logout') !!}" class="btn-menu"><i class="fa fa-sign-out">&nbsp;</i></a>
+				<a href="{!! route('user.logout') !!}"><i class="fa fa-sign-out">&nbsp;</i></a>
 				@endif
 			</div>
 		</div>

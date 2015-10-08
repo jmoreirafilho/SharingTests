@@ -6,7 +6,7 @@
 <section ng-controller="viewController">
 	<div class="col-md-12">
 		<div class="card">
-			<div class="card-title">@lang('title.home-create')</div>
+			<div class="title">@lang('title.home-create')</div>
 			{!! Form::open(['route' => 'home.store']) !!}
 			{!! Form::token() !!}
 			<div class="row">
@@ -39,10 +39,10 @@
 				</div>
 			</div>
 			
-			<div class="card-footer">
+			<div class="bottom">
 				<div class="row">
 					<div class="col-md-6">
-						<a class="btn-footer" ng-class="checkAll(user)" ng-click="submit()">@lang('home.confirm_button')</a>
+						<a class="button pointer" ng-class="checkAll(user)" ng-click="submit()">@lang('home.confirm_button')</a>
 					</div>
 				</div>
 			</div>

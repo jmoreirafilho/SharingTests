@@ -7,7 +7,7 @@
 	@include('search-bar')
 	<div class="col-md-10 col-md-offset-1">
 		<div class="card text-left">
-			<div class="card-title">@lang('title.material-filter')</div>
+			<div class="title">@lang('title.material-filter')</div>
 			<div class="container-fluid">
 				<table class="table">
 					<head>
