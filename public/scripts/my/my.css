@@ -131,12 +131,15 @@ body .login {
 }
 body .login input.btn {
   background-color: #1a237e;
-  color: #fff;
+  color: #FFF;
   border: none;
 }
 body .login input.btn:hover {
-  background-color: #9fa8da;
-  color: #000;
+  background-color: rgba(26, 35, 126, 0.8);
+  color: #FFF;
+}
+body .login .link {
+  width: 100%;
 }
 body .addon-preferences {
   background-color: #1a237e;

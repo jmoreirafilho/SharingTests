@@ -12,6 +12,11 @@ angular.module('view').controller('viewController', function($scope, $http){
 	$scope.scCourseClass = "active";
 	$scope.scSubjectClass = "active";
 
+	$("#upa").click(function(){
+		console.log("hey");
+		$("#pdf-upload").click();
+	});
+
 	$scope.active = function(data){
 		switch(data){
 			case 'material':

@@ -43,7 +43,7 @@
 				</div>
 			</div>
 			<div class="col-md-6">
-				<div class="form-group">
+				<div class="form-group link">
 					<label class="pointer" ng-click="forgotPass()">@lang('home.forgot_pass')</label>
 				</div>
 			</div>

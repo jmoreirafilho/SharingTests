@@ -111,7 +111,8 @@
 										<div class="form-group">
 											<div class="row">
 												<div class="col-md-12">
-													Upload de PDF
+													<label id="upa">Upload de PDF</label>
+													{!! Form::file('pdf', ['class' => 'hide', 'id' => 'pdf-upload']) !!}
 												</div>
 											</div>
 										</div>
