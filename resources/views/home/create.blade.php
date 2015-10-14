@@ -1,4 +1,4 @@
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" ng-controller="viewController">
+<div class="modal fade" id="myModalHomeCreate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" ng-controller="viewHomeCreateModalController">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -40,13 +40,13 @@
 				{!! Form::close() !!}
             </div>
             <div class="modal-footer bottom">
-                <a class="button pointer" data-dismiss="modal" ng-click="user = null">@lang('home.cancel-button')</button>
+                <a class="button pointer" data-dismiss="modal" ng-click="user = null || removeErrors()">@lang('home.cancel-button')</button>
                 <a class="button pointer" ng-class="checkAll(user)" ng-click="submit()">@lang('home.confirm-button')</a>
             </div>
         </div>
     </div>
 </div>
 
-@section('scripts')
+@section('modal_scripts')
 <script src="/scripts/my/home/create.js"></script>
 @endsection

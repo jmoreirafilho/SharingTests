@@ -1,4 +1,4 @@
-angular.module('view').controller('viewController', function($scope, $http){
+angular.module('view').controller('viewHomeCreateModalController', function($scope, $http){
 	var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 	var timeoutEmail, timeoutPasswords;
 	
@@ -40,4 +40,9 @@ angular.module('view').controller('viewController', function($scope, $http){
 			}
 		}, 1500);
 	};
+
+	$scope.removeErrors = function(){
+		$(".passwords").removeClass("has-error");
+		$("#emailContent").removeClass("has-error");
+	}
 });
