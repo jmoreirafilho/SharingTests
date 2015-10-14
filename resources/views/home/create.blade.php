@@ -1,55 +1,52 @@
-@extends('layouts.master')
-
-@section('title', trans('title.home-create'))
-
 @section('content')
-<section ng-controller="viewController">
-	<div class="col-md-12">
-		<div class="card">
-			<div class="title">@lang('title.home-create')</div>
-			{!! Form::open(['route' => 'home.store']) !!}
-			{!! Form::token() !!}
-			<div class="row">
-				<div class="col-md-6">
-					<div class="form-group">
-						{!! Form::label('email', trans('user.form-email')) !!}
-						{!! Form::text('email', null, ['class'=>'form-control', 'placeholder' => trans('user.form-email-ph'), 'ng-model'=>'user.email']) !!}
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" ng-controller="viewController">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">@lang('title.home-create')</h4>
+            </div>
+            <div class="modal-body">
+            	{!! Form::open(['route' => 'home.store']) !!}
+                <div class="row">
+					<div class="col-md-11">
+						<div class="form-group" id="emailContent">
+							{!! Form::label('email', trans('user.form-email')) !!}
+							{!! Form::text('email', null, ['class'=>'form-control', 'placeholder' => trans('user.form-email-ph'), 'ng-model'=>'user.email', 'ng-change' => 'checkEmail()']) !!}
+						</div>
 					</div>
 				</div>
-				<div class="col-md-6">
-					<div class="form-group">
-						{!! Form::label('name', trans('user.form-name')) !!}
-						{!! Form::text('name', null, ['class'=>'form-control', 'placeholder' => trans('user.form-name-ph'), 'ng-model'=>'user.name']) !!}
+				<div class="row">
+					<div class="col-md-9">
+						<div class="form-group">
+							{!! Form::label('name', trans('user.form-name')) !!}
+							{!! Form::text('name', null, ['class'=>'form-control', 'placeholder' => trans('user.form-name-ph'), 'ng-model'=>'user.name']) !!}
+						</div>
 					</div>
 				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-md-5">
-					<div class="form-group">
-						{!! Form::label('password', trans('user.form-password')) !!}
-						{!! Form::password('password', ['class'=>'form-control', 'placeholder'=>trans('user.form-password-ph'), 'ng-model'=>'user.pass1']) !!}
-					</div>
-				</div>
-				<div class="col-md-5">
-					<div class="form-group">
-						{!! Form::label('password-conf', trans('user.form-password').'*') !!}
-						{!! Form::password('password-conf', ['class'=>'form-control', 'placeholder'=>trans('user.form-password-conf-ph'), 'ng-model'=>'user.pass2']) !!}
-					</div>
-				</div>
-			</div>
-			
-			<div class="bottom">
 				<div class="row">
 					<div class="col-md-6">
-						<a class="button pointer" ng-class="checkAll(user)" ng-click="submit()">@lang('home.confirm_button')</a>
+						<div class="form-group">
+							{!! Form::label('password', trans('user.form-password')) !!}
+							{!! Form::password('password', ['class'=>'form-control', 'placeholder'=>trans('user.form-password-ph'), 'ng-model'=>'user.pass1']) !!}
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							{!! Form::label('password-conf', trans('user.form-password').'*') !!}
+							{!! Form::password('password-conf', ['class'=>'form-control', 'placeholder'=>trans('user.form-password-conf-ph'), 'ng-model'=>'user.pass2']) !!}
+						</div>
 					</div>
 				</div>
-			</div>
-
-		</div>
-	</div>
-</section>
+				{!! Form::close() !!}
+            </div>
+            <div class="modal-footer bottom">
+                <a class="button pointer" data-dismiss="modal" ng-click="user = null">@lang('home.cancel-button')</button>
+                <a class="button pointer" ng-class="checkAll(user)" ng-click="submit()">@lang('home.confirm-button')</a>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 
 @section('scripts')

@@ -77,16 +77,16 @@
 				<a href="{!! route('home.index') !!}" class="btn-menu">@lang('title.home-index')</a>
 				@endif
 				@if(Auth::check())
-					@if(Auth::check() && Auth::user()->status_level == 1)
+					@if(Auth::user()->status_level == 1)
 					<a href="{!! route('user.index') !!}">@lang('title.user-index')</a>
 					<a href="{!! route('college.create') !!}">@lang('title.college-create')</a>
 					<a href="{!! route('material.filter') !!}">@lang('title.material-filter')</a>
 					@endif
-					<a href="{!! route('college.index') !!}">@lang('title.college-index')</a>
-					<a href="{!! route('material.create') !!}">@lang('title.material-create')</a>
-					@else
-					<a href="{!! route('home.create') !!}">@lang('title.home-create')</a>
-					@endif
+				<a href="{!! route('college.index') !!}">@lang('title.college-index')</a>
+				<a href="{!! route('material.create') !!}">@lang('title.material-create')</a>
+				@else
+				<a class="pointer" data-toggle="modal" data-target="#myModal">@lang('title.home-create')</a>
+				@endif
 				<a href="{!! route('home.donate') !!}">@lang('title.home-donate')</a>
 				@if(!Auth::check())
 				<a href="" id="show-login"><i class="fa fa-sign-in">&nbsp;</i></a>
@@ -96,6 +96,13 @@
 			</div>
 		</div>
 	</div>
+	@if(Auth::check())
+		@include('material.create')
+	@else
+		@include('home.login')
+		@include('home.create')
+	@endif
+
 	<div class="logo-banner">&nbsp;</div>
 
 	<div class="col-md-9 content">
@@ -121,6 +128,7 @@
 
 <!-- <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script> -->
 <script type="text/javascript" src="/scripts/jquery/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="/scripts/bootstrap/js/bootstrap.min.js"></script>
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script> -->
 <script type="text/javascript" src="/scripts/angularjs/angular.min.js"></script>
 <script type="text/javascript" src="/scripts/my/my.js"></script>
