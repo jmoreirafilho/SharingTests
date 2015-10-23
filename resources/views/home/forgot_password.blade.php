@@ -23,7 +23,7 @@
 				<div class="bottom">
 					<div class="row">
 						<div class="col-md-6">
-							<a class="button pointer" ng-class="disabledClass()" ng-click="submit()">@lang('home.confirm_button')</a>
+							<a class="button pointer" ng-class="disabledClass()" ng-click="submit()">@lang('home.confirm-button')</a>
 						</div>
 					</div>
 				</div>

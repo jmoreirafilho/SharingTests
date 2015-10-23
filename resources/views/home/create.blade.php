@@ -46,7 +46,3 @@
         </div>
     </div>
 </div>
-
-@section('modal_scripts')
-	<script src="/scripts/my/home/create.js"></script>
-@endsection

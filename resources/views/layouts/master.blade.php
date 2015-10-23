@@ -12,45 +12,7 @@
 	@yield('styles')
 </head>
 <body>
-	@if(!Auth::check())
-	<div class="login" id="login" ng-controller="loginController">
-		{!! Form::open(['route'=>'home.login']) !!}
-		{!! Form::token() !!}
-		<div class="row">
-			<div class="col-md-12">
-				<div class="form-group">
-					<div class="input-group">
-						<div class="input-group-addon addon-preferences"><i class="fa fa-at"></i></div>
-						{!! Form::text('email', null, ['class'=>'form-control', 'placeholder' => trans('subject.placeholder-email')]) !!}
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<div class="form-group">
-					<div class="input-group">
-						<div class="input-group-addon addon-preferences"><i class="fa fa-key"></i></div>
-						{!! Form::password('password', ['class'=>'form-control', 'placeholder' => trans('subject.placeholder-password')]) !!}
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-2">
-				<div class="form-group">
-					{!! Form::submit(trans('subject.submit_login'), ['class'=>'btn']) !!}
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="form-group link">
-					<label class="pointer" ng-click="forgotPass()">@lang('home.forgot_pass')</label>
-				</div>
-			</div>
-		</div>
-		{!! Form::close() !!}
-	</div>
-	@else
+	@if(Auth::check())
 	<div class="points" id="points">
 		<div class="col-md-2">
 			<i class="fa fa-trophy"></i>
@@ -61,7 +23,9 @@
 	</div>
 	@endif
 	<div class="menu" role="navigation">
+		<!-- Logo esquerda superior -->
 		<div class="col-md-1 icon">&nbsp;</div>
+		<!-- Div oculta nome do usuario logado e pontuação -->
 		<div class="col-md-2 name" id="open-points">
 			@if(Auth::check())
 				<i class="fa fa-user"></i> {!! Auth::user()->name !!}
@@ -69,8 +33,9 @@
 				&nbsp;
 			@endif
 		</div>
+		<!-- Menu de opções -->
 		<div class="col-md-9 text-right">
-			<div class="btn-group" ng-controller="menuController">
+			<div class="btn-group">
 				@if(Auth::check())
 				<a href="{!! route('user.profile') !!}" class="btn-menu">@lang('title.user-profile')</a>
 				@else
@@ -135,5 +100,10 @@
 <script type="text/javascript" src="/scripts/angularjs/angular.min.js"></script>
 <script type="text/javascript" src="/scripts/my/my.js"></script>
 @yield('scripts')
-@yield('modal_scripts')
+@if(Auth::check() && Auth::user()->status_level == 1)
+	<script type="text/javascript" src="/scripts/my/college/create.js"></script>
+@else
+	<script type="text/javascript" src="/scripts/my/home/create.js"></script>
+	<script type="text/javascript" src="/scripts/my/home/login.js"></script>
+@endif
 </html>
