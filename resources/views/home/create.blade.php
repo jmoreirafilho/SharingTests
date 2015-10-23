@@ -1,4 +1,4 @@
-<div class="modal fade" id="myModalHomeCreate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" ng-controller="viewHomeCreateModalController">
+<div class="modal fade" id="myModalHomeCreate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"  ng-controller="viewHomeCreateModalController">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -48,5 +48,5 @@
 </div>
 
 @section('modal_scripts')
-<script src="/scripts/my/home/create.js"></script>
+	<script src="/scripts/my/home/create.js"></script>
 @endsection

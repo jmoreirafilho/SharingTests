@@ -16,3 +16,11 @@ $("input").attr('autocomplete','off');
 $("#open-points").on('click', function(){
 	$("#points").toggle(200);
 });
+
+angular.module("view").controller("menuController", function($scope){
+	$scope.showHomeCreate = function(){
+		console.log("hey");
+		include('/scripts/my/home/create.js');
+	}
+
+});

@@ -70,7 +70,7 @@
 			@endif
 		</div>
 		<div class="col-md-9 text-right">
-			<div class="btn-group">
+			<div class="btn-group" ng-controller="menuController">
 				@if(Auth::check())
 				<a href="{!! route('user.profile') !!}" class="btn-menu">@lang('title.user-profile')</a>
 				@else
@@ -89,13 +89,15 @@
 				@endif
 				<a href="{!! route('home.donate') !!}">@lang('title.home-donate')</a>
 				@if(!Auth::check())
-				<a href="" id="show-login"><i class="fa fa-sign-in">&nbsp;</i></a>
+				<!-- <a href="" id="show-login" ><i class="fa fa-sign-in">&nbsp;</i></a> -->
+				<a class="pointer" data-toggle="modal" data-target="#myModalHomeLogin"><i class="fa fa-sign-in">&nbsp;</i></a>
 				@else
 				<a href="{!! route('user.logout') !!}"><i class="fa fa-sign-out">&nbsp;</i></a>
 				@endif
 			</div>
 		</div>
 	</div>
+	
 	@if(Auth::check() && Auth::user()->status_level == 1)
 		@include('college.create')
 	@else
