@@ -57,21 +57,6 @@ class UserController extends RestController
     {
         return view('user.edit')->with('user', User::find($id)->toJson());
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  Request  $request
-     * @param  int  $id
-     * @return Response
-     */
-    // public function update(Request $request, $id)
-    // {
-    //     dd($request);
-    //     $user = User::find($id);
-    //     $user->fill($request->all());
-    //     $user->save();
-    // }
     
     /**
      * Logout

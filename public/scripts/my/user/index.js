@@ -15,4 +15,14 @@ angular.module('view').controller('viewController', function($scope, $http){
 			$("#alertEmpty").addClass("hide");
 		}
 	}
+
+	$scope.getStatusLevel = function(status){
+		if(status == 0){
+			return client;
+		}
+		return admin;
+	}
+	$scope.deleteUser = function(id){
+		console.log(id);
+	}
 });

@@ -33,7 +33,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="form-group">
-						<label class="clickable" id="change_password">@lang('user.change_password')</label>
+						<label class="pointer" id="change_password">@lang('user.change_password')</label>
 					</div>
 				</div>
 			</div>

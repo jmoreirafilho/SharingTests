@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
+use App\Http\Requests\RecoveryPasswordRequest;
 use App\Http\Controllers\Controller;
-
 use App\Models\User;
 use App\Models\Score;
 
@@ -98,27 +96,22 @@ class HomeController extends Controller
      * @param  Request  $request
      * @return Mix
      */
-    public function recoveryPassword(Request $request)
+    public function recoveryPassword(RecoveryPasswordRequest $request)
     {
         $email = $request->email;
-        $user = User::where('email',$email)->get();
-        $result = count($user);
-        if($result){
-            $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            $password = substr( str_shuffle( $chars ), 0, 8);
-            \Mail::send('emails.temp_password', ['user' => $user, 'password' => $password], function($message) use ($user, $password)
-            {
-                foreach($user AS $id=>$key){
-                    $message->to($key->email, $key->name)->subject(trans('home.temp_password_mail_title'));
-                    $edit_user = User::find($key->id);
-                    $edit_user->password = \Hash::make($password);
-                    $edit_user->save();
-                }
-            });
-            return \Redirect::route('home.index');
-        } else{
-            return view('home.forgot_password')->with('invalidEmailError', true);
-        }
+        $user = User::where('email', $email)->get();
+        $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        $password = substr( str_shuffle( $chars ), 0, 8);
+        \Mail::send('emails.temp_password', ['user' => $user, 'password' => $password], function($message) use ($user, $password)
+        {
+            foreach($user AS $id=>$key){
+                $message->to($key->email, $key->name)->subject(trans('home.temp_password_mail_title'));
+                $edit_user = User::find($key->id);
+                $edit_user->password = \Hash::make($password);
+                $edit_user->save();
+            }
+        });
+        return \Redirect::route('home.index');
     }
 
     /**

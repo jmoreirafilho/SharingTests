@@ -11,8 +11,8 @@
 			<div class="container-fluid">
 				<table class="table">
 					<head>
-						<th>Date</th>
-						<th>Description</th>
+						<th>@lang('material.date')</th>
+						<th>@lang('material.description')</th>
 						<th></th>
 						<th></th>
 						<th></th>

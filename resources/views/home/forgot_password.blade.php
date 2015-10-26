@@ -11,8 +11,8 @@
 					<div class="col-md-6">
 						<div class="form-group" id="email_content">
 							{!! Form::label('email', trans('home.email')) !!}
-							{!! Form::text('email', null, ['class' => 'form-control', 'placeholder' => trans('home.email_ph'), 'ng-model'=>'email']) !!}
-							@if(isset($invalidEmailError))
+							{!! Form::text('email', null, ['class' => 'form-control', 'placeholder' => trans('home.email_ph'), 'ng-model'=>'email', 'ng-change' => 'checkEmail(email)']) !!}
+							@if(count($errors))
 								<small>@lang('home.email_error')</small>
 							@else
 								<small>@lang('home.sended_message')</small>

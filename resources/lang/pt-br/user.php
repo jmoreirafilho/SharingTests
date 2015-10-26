@@ -1,6 +1,7 @@
 <?php 
 return [
 	"form-name" => "Nome",
+	"form-status-level" => "Permissão",
 	"form-name-ph" => "Informe seu nome",
 	"form-email" => "E-mail",
 	"form-email-ph" => "Informe seu e-mail",

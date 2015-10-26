@@ -2,6 +2,7 @@
 return [
 	"materials" => "Materiais",
 	"config" => "Configurações",
+	"date" => "Data",
 	"upload" => "Upload",
 	"select" => "Selecionar",
 	"create" => "Criar",
