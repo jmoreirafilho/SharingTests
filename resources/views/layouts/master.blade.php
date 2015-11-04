@@ -23,19 +23,32 @@
 	</div>
 	@endif
 	<div class="menu" role="navigation">
+		<!-- Menu Mobile -->
+		<div class="visible-xs col-xs-2 pointer buttons" id="menu-button">
+			<i class="fa fa-navicon fa-2x"></i>
+		</div>
 		<!-- Logo esquerda superior -->
-		<div class="col-md-1 icon">&nbsp;</div>
+		<div class="col-md-1 col-xs-8 icon">&nbsp;</div>
 		<!-- Div oculta nome do usuario logado e pontuação -->
-		<div class="col-md-2 name" id="open-points">
+		<div class="col-md-2 hidden-xs name" id="open-points">
 			@if(Auth::check())
 				<i class="fa fa-user"></i> {!! Auth::user()->name !!}
 			@else
 				&nbsp;
 			@endif
 		</div>
+		<!-- Login Mobile -->
+		<div class="visible-xs col-xs-2 pointer buttons">
+			@if(!Auth::check())
+				<a class="pointer" data-toggle="modal" data-target="#myModalHomeLogin"><i class="fa fa-sign-in fa-2x">&nbsp;</i></a>
+			@else
+				<a href="{!! route('user.logout') !!}"><i class="fa fa-sign-out fa-2x">&nbsp;</i></a>
+			@endif
+		</div>
+
 		<!-- Menu de opções -->
 		<!-- PC -->
-		<div class="col-md-9 text-right hidden-xs">
+		<div class="col-md-9 menu-pc hidden-xs">
 			<div class="btn-group">
 				@if(Auth::check())
 				<a href="{!! route('user.profile') !!}" class="btn-menu">@lang('title.user-profile')</a>
@@ -64,50 +77,46 @@
 		</div>
 
 		<!-- MOBILE -->
-		<div class="col-xs-10 menu-mobile visible-xs">
-			<div class="row">
-				<div class="col-xs-12">ddd</div>
-			</div>
-			<div class="row">
-				<div class="col-xs-12">aaaa</div>
-			</div>
-			<div class="row">
-				<div class="col-xs-12">aaaa</div>
-			</div>
-			<div class="row">
-				<div class="col-xs-12">aaaa</div>
-			</div>
-			<div class="row">
-				<div class="col-xs-12">aaaa</div>
-			</div>
-			<div class="btn-group">
-				@if(Auth::check())
-				<a href="{!! route('user.profile') !!}" class="btn-menu">@lang('title.user-profile')</a>
-				@else
-				<a href="{!! route('home.index') !!}" class="btn-menu">@lang('title.home-index')</a>
+		<div class="col-xs-10 menu-mobile pointer visible-xs" id="mobile-menu-options">
+			@if(Auth::check())
+				<div class="row">
+					<a href="{!! route('user.profile') !!}"><div class="col-xs-12">@lang('title.user-profile')</div></a>
+				</div>
+			@else
+				<div class="row">
+					<a href="{!! route('home.index') !!}"><div class="col-xs-12">@lang('title.home-index')</div></a>
+				</div>
+			@endif
+			@if(Auth::check())
+				@if(Auth::check() && Auth::user()->status_level == 1)
+					<div class="row">
+						<a href="{!! route('user.index') !!}"><div class="col-xs-12">@lang('title.user-index')</div></a>
+					</div>
+					<div class="row">
+						<a class="pointer" data-toggle="modal" data-target="#myModalCollegeCreate"><div class="col-xs-12">@lang('title.college-create')</div></a>
+					</div>
+					<div class="row">
+						<a href="{!! route('material.filter') !!}"><div class="col-xs-12">@lang('title.material-filter')</div></a>
+					</div>
 				@endif
-				@if(Auth::check())
-					@if(Auth::check() && Auth::user()->status_level == 1)
-					<a href="{!! route('user.index') !!}">@lang('title.user-index')</a>
-					<a class="pointer" data-toggle="modal" data-target="#myModalCollegeCreate">@lang('title.college-create')</a>
-					<a href="{!! route('material.filter') !!}">@lang('title.material-filter')</a>
-					@endif
-				<a href="{!! route('college.index') !!}">@lang('title.college-index')</a>
-				<a href="{!! route('material.create') !!}">@lang('title.material-create')</a>
-				@else
-				<a class="pointer" data-toggle="modal" data-target="#myModalHomeCreate">@lang('title.home-create')</a>
-				@endif
-				<a href="{!! route('home.donate') !!}">@lang('title.home-donate')</a>
-				@if(!Auth::check())
-				<!-- <a href="" id="show-login" ><i class="fa fa-sign-in">&nbsp;</i></a> -->
-				<a class="pointer" data-toggle="modal" data-target="#myModalHomeLogin"><i class="fa fa-sign-in">&nbsp;</i></a>
-				@else
-				<a href="{!! route('user.logout') !!}"><i class="fa fa-sign-out">&nbsp;</i></a>
-				@endif
+				<div class="row">
+					<a href="{!! route('college.index') !!}"><div class="col-xs-12">@lang('title.college-index')</div></a>
+				</div>
+				<div class="row">
+					<a href="{!! route('material.create') !!}"><div class="col-xs-12">@lang('title.material-create')</div></a>
+				</div>
+			@else
+			<div class="row">
+				<a class="pointer" data-toggle="modal" data-target="#myModalHomeCreate"><div class="col-xs-12">@lang('title.home-create')</div></a>
+			</div>
+			@endif
+			<div class="row">
+				<a href="{!! route('home.donate') !!}"><div class="col-xs-12">@lang('title.home-donate')</div></a>
 			</div>
 		</div>
 		<!-- Menu de opções -->
 	</div>
+	<div class="modal-back-window hide" id="modal-back-window"></div>
 
 	@if(Auth::check() && Auth::user()->status_level == 1)
 		@include('college.create')

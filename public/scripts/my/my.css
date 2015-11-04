@@ -6,6 +6,7 @@ body .top-buffer {
   height: 120px;
 }
 body .menu {
+  z-index: 3;
   position: fixed;
   background-color: #1A237E;
   height: 50px;
@@ -13,9 +14,11 @@ body .menu {
   top: 0px;
   box-shadow: 0px 0px 10px #666666;
   border: none;
-  z-index: 2;
 }
-body .menu a {
+body .menu .menu-pc {
+  text-align: right;
+}
+body .menu .menu-pc a {
   color: #FFFFFF;
   position: relative;
   top: 13px;
@@ -23,7 +26,7 @@ body .menu a {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding: 5px;
 }
-body .menu a:hover {
+body .menu .menu-pc a:hover {
   text-decoration: none;
   color: #9FA8DA;
 }
@@ -45,10 +48,44 @@ body .menu .name {
 body .menu .name:hover {
   text-shadow: 0px 0px 10px #9FA8DA;
 }
+body .menu .buttons {
+  padding-top: 11px;
+}
+body .menu .buttons i {
+  color: #FFFFFF;
+}
+body .modal-back-window {
+  position: fixed;
+  background-color: #000000;
+  opacity: 0.8;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
 body .menu-mobile {
-  position: absolute;
+  z-index: 1;
+  position: relative;
+  top: 5px;
   left: 0;
   background-color: #5C6BC0;
+  display: none;
+}
+body .menu-mobile div {
+  font-size: 14px;
+  height: 30px;
+  color: #FFFFFF;
+}
+body .menu-mobile div:hover {
+  background-color: #9FA8DA;
+}
+body .menu-mobile div div {
+  padding: 5px;
+}
+body .menu-mobile div div a {
+  color: #FFFFFF;
+  text-decoration: none;
 }
 body .modal {
   border-radius: 0px;
