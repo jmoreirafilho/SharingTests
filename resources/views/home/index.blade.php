@@ -6,7 +6,7 @@
 	<div class="col-md-7">
 		<div class="card">
 			<div class="title">@lang('title.home-index')</div>
-			<h4>@lang('home.init-text-1')</h3>
+			<h4>@lang('home.init-text-1')</h4>
 		</div>
 	</div>
 	<div class="col-md-5">

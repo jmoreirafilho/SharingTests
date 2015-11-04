@@ -1,5 +1,5 @@
 body {
-  background-color: #eff8fa;
+  background-color: #E3F2FD;
 }
 body .top-buffer {
   margin-top: 40px;
@@ -7,16 +7,16 @@ body .top-buffer {
 }
 body .menu {
   position: fixed;
-  background-color: #1a237e;
+  background-color: #1A237E;
   height: 50px;
   width: 100%;
   top: 0px;
-  box-shadow: 0px 0px 10px #666;
+  box-shadow: 0px 0px 10px #666666;
   border: none;
   z-index: 2;
 }
 body .menu a {
-  color: #FFF;
+  color: #FFFFFF;
   position: relative;
   top: 13px;
   font-size: 18px;
@@ -25,7 +25,7 @@ body .menu a {
 }
 body .menu a:hover {
   text-decoration: none;
-  color: #9fa8da;
+  color: #9FA8DA;
 }
 body .menu .icon {
   background-image: url('/images/logo-icone.png');
@@ -37,23 +37,28 @@ body .menu .icon {
 }
 body .menu .name {
   cursor: pointer;
-  color: #FFF;
+  color: #FFFFFF;
   padding-top: 15px;
   text-align: left;
   font: bold 18px 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 body .menu .name:hover {
-  text-shadow: 0px 0px 10px #9fa8da;
+  text-shadow: 0px 0px 10px #9FA8DA;
+}
+body .menu-mobile {
+  position: absolute;
+  left: 0;
+  background-color: #5C6BC0;
 }
 body .modal {
   border-radius: 0px;
 }
 body .modal .modal-dialog .modal-content .modal-header {
-  background-color: #1a237e;
-  color: #FFF;
+  background-color: #1A237E;
+  color: #FFFFFF;
 }
 body .modal .modal-dialog .modal-content .modal-header .close {
-  color: #FFF;
+  color: #FFFFFF;
   opacity: 1;
 }
 body .modal .modal-dialog .modal-content .modal-header .close:hover {
@@ -63,10 +68,10 @@ body .pointer {
   cursor: pointer;
 }
 body .footer {
-  background-color: #1a237e;
+  background-color: #1A237E;
   height: 60px;
   text-align: center;
-  color: #FFF;
+  color: #FFFFFF;
   border: none;
 }
 body .footer-margin {
@@ -85,8 +90,8 @@ body .no-top-margin {
   margin-top: 0px;
 }
 body .card {
-  background-color: #fff;
-  box-shadow: 0px 1px 5px #666;
+  background-color: #FFFFFF;
+  box-shadow: 0px 1px 5px #666666;
   width: 100%;
   margin: 10px;
   padding: 10px;
@@ -98,8 +103,8 @@ body .card .title {
   margin-bottom: 15px;
   padding: 5px;
   padding-left: 10px;
-  background-color: #1a237e;
-  color: #FFF;
+  background-color: #1A237E;
+  color: #FFFFFF;
   font-size: 24px;
   line-height: 1.1;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -107,7 +112,7 @@ body .card .title {
   padding-bottom: 17px;
 }
 body .card .bottom {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #DDDDDD;
   padding: 5px;
   padding-top: 10px;
 }
@@ -118,7 +123,7 @@ body .button {
 }
 body .button:hover,
 body .button:link {
-  color: #1a237e;
+  color: #1A237E;
   text-decoration: none;
 }
 body .btn-disabled,
@@ -126,21 +131,16 @@ body .btn-disabled:hover,
 body .btn-disabled:link {
   cursor: not-allowed;
   opacity: .65;
-  color: #1a237e;
+  color: #1A237E;
 }
 body .card-ads {
   height: 500px;
 }
-body .addon-preferences {
-  background-color: #1a237e;
-  color: #FFF;
-  border: 1px solid #CCC;
-}
 body .typeahead {
-  background-color: #eff8fa;
+  background-color: #E3F2FD;
   border-radius: 3px;
   position: absolute;
-  box-shadow: 0px 0px 5px #666;
+  box-shadow: 0px 0px 5px #666666;
   width: 90%;
   height: 120px;
   display: none;
@@ -152,20 +152,20 @@ body .typeahead-option {
   padding-top: 3px;
 }
 body .typeahead-option:hover {
-  background-color: #9fa8da;
-  color: #FFF;
+  background-color: #9FA8DA;
+  color: #FFFFFF;
   font-weight: bold;
 }
 body .points {
   z-index: 2;
-  box-shadow: 0px 1px 5px #000;
-  background-color: #FFF;
+  box-shadow: 0px 1px 5px #000000;
+  background-color: #FFFFFF;
   position: fixed;
   width: 16.6%;
   height: 40px;
   top: 50px;
   margin-left: 8.3%;
-  color: #1a237e;
+  color: #1A237E;
   padding: 10px;
   font-size: 17px;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -181,8 +181,8 @@ body .back-bar {
   margin-top: 10px;
 }
 body .option-hover {
-  background-color: #9fa8da;
-  color: #FFF;
+  background-color: #9FA8DA;
+  color: #FFFFFF;
   font-weight: bold;
   cursor: pointer;
 }
@@ -196,7 +196,7 @@ body .tab-pane.body {
   padding-top: 15px;
 }
 body .sub-card {
-  box-shadow: 0px 1px 3px #666;
+  box-shadow: 0px 1px 3px #666666;
   padding: 10px;
 }
 

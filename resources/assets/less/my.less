@@ -1,5 +1,7 @@
+@import "colors.less";
+
 body{
-  background-color:#eff8fa;
+  background-color: @color-blue-50;
   .top-buffer {
   	margin-top: 40px;
     height:120px;
@@ -7,15 +9,15 @@ body{
 
   .menu {
     position: fixed;
-    background-color: #1a237e;
+    background-color: @color-indigo-900;
     height:50px;
     width:100%;
     top:0px;
-    box-shadow: 0px 0px 10px #666;
+    box-shadow: 0px 0px 10px @color-shadow;
     border:none;
     z-index:2;
     a {
-      color: #FFF;
+      color: @color-white;
       position:relative;
       top:13px;
       font-size:18px;
@@ -23,7 +25,7 @@ body{
       padding:5px;
       &:hover{
         text-decoration: none;
-        color:#9fa8da;
+        color: @color-indigo-200;
       }
     }
     .icon {
@@ -36,14 +38,20 @@ body{
     }
     .name {
       cursor: pointer;
-      color:#FFF;
+      color: @color-white;
       padding-top:15px;
       text-align: left;
       font: bold 18px 'Helvetica Neue', Helvetica, Arial, sans-serif;
       &:hover {
-        text-shadow:0px 0px 10px #9fa8da;
+        text-shadow:0px 0px 10px @color-indigo-200;
       }
     }
+  }
+
+  .menu-mobile {
+    position:absolute;
+    left:0;
+    background-color: @color-indigo-400;
   }
 
   .modal {
@@ -51,10 +59,10 @@ body{
     .modal-dialog {
       .modal-content {
         .modal-header {
-          background-color:#1a237e;
-          color:#FFF;
+          background-color: @color-indigo-900;
+          color: @color-white;
           .close{
-            color:#FFF;
+            color: @color-white;
             opacity: 1;
             &:hover{
               opacity:.7;
@@ -70,10 +78,10 @@ body{
   }
 
   .footer {
-    background-color: #1a237e;
+    background-color: @color-indigo-900;
     height:60px;
     text-align: center;
-    color:#FFF;
+    color: @color-white;
     border:none;
   }
   .footer-margin {
@@ -95,8 +103,8 @@ body{
   }
 
   .card {
-    background-color:#fff;
-    box-shadow: 0px 1px 5px #666;
+    background-color: @color-white;
+    box-shadow: 0px 1px 5px @color-shadow;
     width:100%;
     margin:10px;
     padding: 10px;
@@ -107,8 +115,8 @@ body{
       margin-bottom:15px;
       padding:5px;
       padding-left: 10px;
-      background-color:#1a237e;
-      color:#FFF;
+      background-color: @color-indigo-900;
+      color: @color-white;
       font-size: 24px;
       line-height:1.1;
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -116,7 +124,7 @@ body{
       padding-bottom: 17px;
     }
     .bottom {
-      border-top:1px solid #ddd;
+      border-top:1px solid @color-gray-D;
       padding:5px;
       padding-top:10px;
     }
@@ -126,28 +134,23 @@ body{
     font-weight:bold;
     margin-left:10px;
     &:hover, &:link {
-      color:#1a237e;
+      color: @color-indigo-900;
       text-decoration: none;
     }
   }
   .btn-disabled, .btn-disabled:hover, .btn-disabled:link {
     cursor: not-allowed;
     opacity: .65;
-    color:#1a237e;
+    color: @color-indigo-900;
   }
   .card-ads {
     height: 500px;
   }
-  .addon-preferences {
-    background-color: #1a237e;
-    color:#FFF;
-    border:1px solid #CCC;
-  }
   .typeahead {
-    background-color:#eff8fa;
+    background-color: @color-blue-50;
     border-radius:3px;
     position:absolute;
-    box-shadow: 0px 0px 5px #666;
+    box-shadow: 0px 0px 5px @color-shadow;
     width:90%;
     height:120px;
     display:none;
@@ -159,20 +162,20 @@ body{
     padding-top:3px;
   }
   .typeahead-option:hover{
-    background-color:#9fa8da;
-    color:#FFF;
+    background-color: @color-indigo-200;
+    color: @color-white;
     font-weight: bold;
   }
   .points {
     z-index:2;
-    box-shadow:0px 1px 5px #000;
-    background-color:#FFF;
+    box-shadow:0px 1px 5px @color-black;
+    background-color: @color-white;
     position:fixed;
     width:16.6%;
     height:40px;
     top:50px;
     margin-left:8.3%;
-    color:#1a237e;
+    color:@color-indigo-900;
     padding:10px;
     font-size: 17px;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -188,8 +191,8 @@ body{
     margin-top: 10px;
   }
   .option-hover {
-    background-color:#9fa8da;
-    color:#FFF; font-weight: bold;
+    background-color: @color-indigo-200;
+    color: @color-white; font-weight: bold;
     cursor: pointer;
   }
   .actions {
@@ -202,7 +205,7 @@ body{
     padding-top:15px;
   }
   .sub-card {
-    box-shadow:0px 1px 3px #666;
+    box-shadow:0px 1px 3px @color-shadow;
     padding:10px;
   }
 }
