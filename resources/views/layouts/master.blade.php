@@ -87,38 +87,79 @@
 		<div class="col-xs-10 col-sm-8 menu-mobile" id="mobile-menu-options">
 			@if(Auth::check())
 				<div class="row">
-					<a href="{!! route('user.profile') !!}"><div class="col-xs-12 col-sm-12">@lang('menu.profile')</div></a>
+					<a href="{!! route('user.profile') !!}">
+						<div class="col-xs-1 text-center"><i class="fa fa-user"></i></div>
+						<div class="col-xs-11">
+							@lang('menu.profile')
+						</div>
+					</a>
 				</div>
 			@else
 				<div class="row">
-					<a href="{!! route('home.index') !!}"><div class="col-xs-12 col-sm-12">@lang('menu.tutorial')</div></a>
+					<a href="{!! route('home.index') !!}">
+						<div class="col-xs-1 text-center"><i class="fa fa-info"></i></div>
+						<div class="col-xs-11">@lang('menu.tutorial')</div>
+					</a>
 				</div>
 			@endif
 			@if(Auth::check())
 				@if(Auth::check() && Auth::user()->status_level == 1)
 					<div class="row">
-						<a href="{!! route('user.index') !!}"><div class="col-xs-12 col-sm-12">@lang('menu.users')</div></a>
+						<a href="{!! route('user.index') !!}">
+							<div class="col-xs-1 text-center"><i class="fa fa-users"></i></div>
+							<div class="col-xs-11">@lang('menu.users')</div>
+						</a>
 					</div>
 					<div class="row">
-						<a class="pointer" data-toggle="modal" data-target="#myModalCollegeCreate"><div class="col-xs-12 col-sm-12">@lang('menu.add-college')</div></a>
+						<a class="pointer" data-toggle="modal" data-target="#myModalCollegeCreate">
+							<div class="col-xs-1 text-center"><i class="fa fa-university"></i></div>
+							<div class="col-xs-11">@lang('menu.add-college')</div>
+						</a>
 					</div>
 					<div class="row">
-						<a href="{!! route('material.filter') !!}"><div class="col-xs-12 col-sm-12">@lang('menu.filter-material')</div></a>
+						<a href="{!! route('material.filter') !!}">
+							<div class="col-xs-1 text-center"><i class="fa fa-filter"></i></div>
+							<div class="col-xs-11">@lang('menu.filter-material')</div>
+						</a>
 					</div>
 				@endif
 				<div class="row">
-					<a href="{!! route('college.index') !!}"><div class="col-xs-12 col-sm-12">@lang('menu.colleges')</div></a>
+					<a href="{!! route('college.index') !!}">
+						<div class="col-xs-1 text-center"><i class="fa fa-search"></i></div>
+						<div class="col-xs-11">@lang('menu.colleges')</div>
+					</a>
 				</div>
 				<div class="row">
-					<a href="{!! route('material.create') !!}"><div class="col-xs-12 col-sm-12">@lang('menu.add-material')</div></a>
+					<a href="{!! route('material.create') !!}">
+						<div class="col-xs-1 text-center"><i class="fa fa-file-o"></i></div>
+						<div class="col-xs-11">@lang('menu.add-material')</div>
+					</a>
 				</div>
 			@else
 			<div class="row">
-				<a class="pointer" data-toggle="modal" data-target="#myModalHomeCreate"><div class="col-xs-12 col-sm-12">@lang('menu.add-user')</div></a>
+				<a class="pointer" data-toggle="modal" data-target="#myModalHomeCreate">
+					<div class="col-xs-1 text-center"><i class="fa fa-user-plus"></i></div>
+					<div class="col-xs-11">@lang('menu.add-user')</div>
+				</a>
+			</div>
+			<div class="row">
+				<a href="#">
+					<div class="col-xs-1 text-center"><i class="fa fa-plus"></i></div>
+					<div class="col-xs-11">@lang('menu.about')</div>
+				</a>
+			</div>
+			<div class="row">
+				<a href="#">
+					<div class="col-xs-1 text-center"><i class="fa fa-question"></i></div>
+					<div class="col-xs-11">@lang('menu.faq')</div>
+				</a>
 			</div>
 			@endif
 			<div class="row">
-				<a href="{!! route('home.donate') !!}"><div class="col-xs-12 col-sm-12">@lang('menu.donate')</div></a>
+				<a href="{!! route('home.donate') !!}">
+					<div class="col-xs-1 text-center"><i class="fa fa-money"></i></div>
+					<div class="col-xs-11">@lang('menu.donate')</div>
+				</a>
 			</div>
 		</div>
 		<div class="modal-back-window hide" id="modal-back-window"></div>
