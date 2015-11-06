@@ -87,38 +87,38 @@
 		<div class="col-xs-10 col-sm-8 menu-mobile" id="mobile-menu-options">
 			@if(Auth::check())
 				<div class="row">
-					<a href="{!! route('user.profile') !!}"><div class="col-xs-12 col-sm-12">@lang('title.user-profile')</div></a>
+					<a href="{!! route('user.profile') !!}"><div class="col-xs-12 col-sm-12">@lang('menu.profile')</div></a>
 				</div>
 			@else
 				<div class="row">
-					<a href="{!! route('home.index') !!}"><div class="col-xs-12 col-sm-12">@lang('title.home-index')</div></a>
+					<a href="{!! route('home.index') !!}"><div class="col-xs-12 col-sm-12">@lang('menu.tutorial')</div></a>
 				</div>
 			@endif
 			@if(Auth::check())
 				@if(Auth::check() && Auth::user()->status_level == 1)
 					<div class="row">
-						<a href="{!! route('user.index') !!}"><div class="col-xs-12 col-sm-12">@lang('title.user-index')</div></a>
+						<a href="{!! route('user.index') !!}"><div class="col-xs-12 col-sm-12">@lang('menu.users')</div></a>
 					</div>
 					<div class="row">
-						<a class="pointer" data-toggle="modal" data-target="#myModalCollegeCreate"><div class="col-xs-12 col-sm-12">@lang('title.college-create')</div></a>
+						<a class="pointer" data-toggle="modal" data-target="#myModalCollegeCreate"><div class="col-xs-12 col-sm-12">@lang('menu.add-college')</div></a>
 					</div>
 					<div class="row">
-						<a href="{!! route('material.filter') !!}"><div class="col-xs-12 col-sm-12">@lang('title.material-filter')</div></a>
+						<a href="{!! route('material.filter') !!}"><div class="col-xs-12 col-sm-12">@lang('menu.filter-material')</div></a>
 					</div>
 				@endif
 				<div class="row">
-					<a href="{!! route('college.index') !!}"><div class="col-xs-12 col-sm-12">@lang('title.college-index')</div></a>
+					<a href="{!! route('college.index') !!}"><div class="col-xs-12 col-sm-12">@lang('menu.colleges')</div></a>
 				</div>
 				<div class="row">
-					<a href="{!! route('material.create') !!}"><div class="col-xs-12 col-sm-12">@lang('title.material-create')</div></a>
+					<a href="{!! route('material.create') !!}"><div class="col-xs-12 col-sm-12">@lang('menu.add-material')</div></a>
 				</div>
 			@else
 			<div class="row">
-				<a class="pointer" data-toggle="modal" data-target="#myModalHomeCreate"><div class="col-xs-12 col-sm-12">@lang('title.home-create')</div></a>
+				<a class="pointer" data-toggle="modal" data-target="#myModalHomeCreate"><div class="col-xs-12 col-sm-12">@lang('menu.add-user')</div></a>
 			</div>
 			@endif
 			<div class="row">
-				<a href="{!! route('home.donate') !!}"><div class="col-xs-12 col-sm-12">@lang('title.home-donate')</div></a>
+				<a href="{!! route('home.donate') !!}"><div class="col-xs-12 col-sm-12">@lang('menu.donate')</div></a>
 			</div>
 		</div>
 		<div class="modal-back-window hide" id="modal-back-window"></div>
