@@ -6,9 +6,9 @@ return [
 	"faq" => "FAQ",
 	"donate" => "Doação",
 	"profile" => "Perfil",
-	"users" => "Listar Usuários",
+	"users" => "Usuários",
 	"add-college" => "Add Universidade",
-	"filter-material" => "Filtrar Materiais",
+	"filter-material" => "Filtro",
 	"colleges" => "Buscar Material",
 	"add-material" => "Add Material"
 ];

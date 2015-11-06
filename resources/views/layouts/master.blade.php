@@ -139,7 +139,7 @@
 	<div class="col-lg-offset-1 col-lg-8 col-md-9 col-sm-12 col-xs-12 div-content">
 		@yield('content')
 	</div>
-	<div class="col-lg-2 col-md-3 col-sm-12 col-xs-12 div-content">
+	<div class="col-lg-2 col-md-3 visible-lg visible-md div-content">
 		<section>
 			<div class="col-md-12">
 				<div class="card card-ads">
