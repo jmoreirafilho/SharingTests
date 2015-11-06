@@ -73,8 +73,8 @@ body .menu-mobile {
   display: none;
 }
 body .menu-mobile div {
-  font-size: 14px;
-  height: 30px;
+  font-size: 20px;
+  height: 40px;
   color: #FFFFFF;
 }
 body .menu-mobile div:hover {
