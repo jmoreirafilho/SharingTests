@@ -130,15 +130,13 @@
 		@include('home.create')
 	@endif
 
-	<div class="logo-banner-lg visible-lg">&nbsp;</div>
-	<div class="logo-banner-md visible-md">&nbsp;</div>
-	<div class="logo-banner-sm visible-sm">&nbsp;</div>
-	<div class="logo-banner-xs visible-xs">&nbsp;</div>
+	<div class="logo-banner-pc visible-lg visible-md">&nbsp;</div>
+	<div class="logo-banner-mobile visible-sm visible-xs">&nbsp;</div>
 
-	<div class="col-md-9 content">
+	<div class="col-lg-offset-1 col-lg-8 col-md-9 col-sm-12 col-xs-12 div-content">
 		@yield('content')
 	</div>
-	<div class="col-md-3 content hidden-xs">
+	<div class="col-lg-2 col-md-3 col-sm-12 col-xs-12 div-content">
 		<section>
 			<div class="col-md-12">
 				<div class="card card-ads">
@@ -149,7 +147,7 @@
 		@yield('ads')
 	</div>
 
-	<div class="col-md-12 footer" role="navigation">
+	<div class="col-md-12 col-sm-12 col-xs-12 footer" role="navigation">
 		Footer
 	</div>
 
