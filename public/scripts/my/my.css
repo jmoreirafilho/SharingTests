@@ -65,9 +65,9 @@ body .modal-back-window {
   z-index: 2;
 }
 body .menu-mobile {
-  z-index: 1;
-  position: relative;
-  top: 5px;
+  z-index: 3;
+  position: fixed;
+  top: 50px;
   left: 0;
   background-color: #5C6BC0;
   display: none;
@@ -114,14 +114,41 @@ body .footer {
 body .footer-margin {
   height: 60px;
 }
-body .logo-banner {
+body .logo-banner-lg {
+  height: 150px;
+  margin-top: 60px;
+  margin-bottom: 10px;
+  background-image: url('/images/logo-banner.png');
+  background-position: center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+body .logo-banner-md {
   height: 150px;
   margin-top: 50px;
+  margin-bottom: 0;
   background-image: url('/images/logo-banner.png');
   background-position: center;
   background-size: auto 100%;
   background-repeat: no-repeat;
-  margin-bottom: 50px;
+}
+body .logo-banner-sm {
+  height: 150px;
+  margin-top: 50px;
+  margin-bottom: -10px;
+  background-image: url('/images/logo-banner.png');
+  background-position: center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+body .logo-banner-xs {
+  height: 150px;
+  margin-top: 20px;
+  margin-bottom: -30px;
+  background-image: url('/images/logo-banner.png');
+  background-position: center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
 }
 body .no-top-margin {
   margin-top: 0px;
