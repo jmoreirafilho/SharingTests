@@ -125,12 +125,18 @@ body .logo-banner-pc {
 }
 body .logo-banner-mobile {
   height: 150px;
-  margin-top: 20px;
-  margin-bottom: -30px;
   background-image: url('/images/logo-banner.png');
   background-position: center;
   background-size: 100% auto;
   background-repeat: no-repeat;
+}
+body .logo-banner-mobile.visible-sm {
+  margin-top: 40px;
+  margin-bottom: -10px;
+}
+body .logo-banner-mobile.visible-xs {
+  margin-top: 30px;
+  margin-bottom: -30px;
 }
 body .no-top-margin {
   margin-top: 0px;

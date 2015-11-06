@@ -135,12 +135,18 @@ body{
   }
   .logo-banner-mobile {
     height: 150px;
-    margin-top:20px;
-    margin-bottom: -30px;
     background-image:url('/images/logo-banner.png');
     background-position: center;
     background-size:100% auto; 
     background-repeat:no-repeat;
+    &.visible-sm {
+      margin-top:40px;
+      margin-bottom: -10px;
+    }
+    &.visible-xs {
+      margin-top:30px;
+      margin-bottom: -30px;
+    }
   }
 
   .no-top-margin {

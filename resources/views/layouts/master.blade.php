@@ -54,22 +54,24 @@
 		<div class="col-md-9 menu-pc visible-md visible-lg">
 			<div class="btn-group">
 				@if(Auth::check())
-				<a href="{!! route('user.profile') !!}" class="btn-menu">@lang('title.user-profile')</a>
+				<a href="{!! route('user.profile') !!}" class="btn-menu">@lang('menu.profile')</a>
 				@else
-				<a href="{!! route('home.index') !!}" class="btn-menu">@lang('title.home-index')</a>
+				<a href="{!! route('home.index') !!}" class="btn-menu">@lang('menu.tutorial')</a>
 				@endif
 				@if(Auth::check())
 					@if(Auth::check() && Auth::user()->status_level == 1)
-					<a href="{!! route('user.index') !!}">@lang('title.user-index')</a>
-					<a class="pointer" data-toggle="modal" data-target="#myModalCollegeCreate">@lang('title.college-create')</a>
-					<a href="{!! route('material.filter') !!}">@lang('title.material-filter')</a>
+					<a href="{!! route('user.index') !!}">@lang('menu.users')</a>
+					<a class="pointer" data-toggle="modal" data-target="#myModalCollegeCreate">@lang('menu.add-college')</a>
+					<a href="{!! route('material.filter') !!}">@lang('menu.filter-material')</a>
 					@endif
-				<a href="{!! route('college.index') !!}">@lang('title.college-index')</a>
-				<a href="{!! route('material.create') !!}">@lang('title.material-create')</a>
+				<a href="{!! route('college.index') !!}">@lang('menu.colleges')</a>
+				<a href="{!! route('material.create') !!}">@lang('menu.add-material')</a>
 				@else
-				<a class="pointer" data-toggle="modal" data-target="#myModalHomeCreate">@lang('title.home-create')</a>
+				<a class="pointer" data-toggle="modal" data-target="#myModalHomeCreate">@lang('menu.add-user')</a>
+				<a href="#about">@lang('menu.about')</a>
+				<a href="#faq">@lang('menu.faq')</a>
 				@endif
-				<a href="{!! route('home.donate') !!}">@lang('title.home-donate')</a>
+				<a href="{!! route('home.donate') !!}">@lang('menu.donate')</a>
 				@if(!Auth::check())
 				<!-- <a href="" id="show-login" ><i class="fa fa-sign-in">&nbsp;</i></a> -->
 				<a class="pointer" data-toggle="modal" data-target="#myModalHomeLogin"><i class="fa fa-sign-in">&nbsp;</i></a>
@@ -131,7 +133,8 @@
 	@endif
 
 	<div class="logo-banner-pc visible-lg visible-md">&nbsp;</div>
-	<div class="logo-banner-mobile visible-sm visible-xs">&nbsp;</div>
+	<div class="logo-banner-mobile visible-sm">&nbsp;</div>
+	<div class="logo-banner-mobile visible-xs">&nbsp;</div>
 
 	<div class="col-lg-offset-1 col-lg-8 col-md-9 col-sm-12 col-xs-12 div-content">
 		@yield('content')
