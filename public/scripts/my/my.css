@@ -76,6 +76,7 @@ body .menu-mobile div {
   font-size: 14px;
   height: 40px;
   color: #FFFFFF;
+  padding-left: 15px;
 }
 body .menu-mobile div:hover {
   background-color: #9FA8DA;
