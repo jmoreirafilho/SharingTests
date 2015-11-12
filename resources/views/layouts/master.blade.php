@@ -54,22 +54,24 @@
 		<div class="col-md-9 menu-pc visible-md visible-lg">
 			<div class="btn-group">
 				@if(Auth::check())
-				<a href="{!! route('user.profile') !!}" class="btn-menu">@lang('title.user-profile')</a>
+				<a href="{!! route('user.profile') !!}" class="btn-menu">@lang('menu.profile')</a>
 				@else
-				<a href="{!! route('home.index') !!}" class="btn-menu">@lang('title.home-index')</a>
+				<a href="{!! route('home.index') !!}" class="btn-menu">@lang('menu.tutorial')</a>
 				@endif
 				@if(Auth::check())
 					@if(Auth::check() && Auth::user()->status_level == 1)
-					<a href="{!! route('user.index') !!}">@lang('title.user-index')</a>
-					<a class="pointer" data-toggle="modal" data-target="#myModalCollegeCreate">@lang('title.college-create')</a>
-					<a href="{!! route('material.filter') !!}">@lang('title.material-filter')</a>
+					<a href="{!! route('user.index') !!}">@lang('menu.users')</a>
+					<a class="pointer" data-toggle="modal" data-target="#myModalCollegeCreate">@lang('menu.add-college')</a>
+					<a href="{!! route('material.filter') !!}">@lang('menu.filter-material')</a>
 					@endif
-				<a href="{!! route('college.index') !!}">@lang('title.college-index')</a>
-				<a href="{!! route('material.create') !!}">@lang('title.material-create')</a>
+				<a href="{!! route('college.index') !!}">@lang('menu.colleges')</a>
+				<a href="{!! route('material.create') !!}">@lang('menu.add-material')</a>
 				@else
-				<a class="pointer" data-toggle="modal" data-target="#myModalHomeCreate">@lang('title.home-create')</a>
+				<a class="pointer" data-toggle="modal" data-target="#myModalHomeCreate">@lang('menu.add-user')</a>
+				<a href="#about">@lang('menu.about')</a>
+				<a href="#faq">@lang('menu.faq')</a>
 				@endif
-				<a href="{!! route('home.donate') !!}">@lang('title.home-donate')</a>
+				<a href="{!! route('home.donate') !!}">@lang('menu.donate')</a>
 				@if(!Auth::check())
 				<!-- <a href="" id="show-login" ><i class="fa fa-sign-in">&nbsp;</i></a> -->
 				<a class="pointer" data-toggle="modal" data-target="#myModalHomeLogin"><i class="fa fa-sign-in">&nbsp;</i></a>
@@ -82,41 +84,80 @@
 
 	<!-- MOBILE -->
 	<div class="visible-xs visible-sm">
-		<div class="col-xs-10 col-sm-8 menu-mobile" id="mobile-menu-options">
+		<div class="col-xs-12 col-sm-9 menu-mobile" id="mobile-menu-options">
 			@if(Auth::check())
 				<div class="row">
-					<a href="{!! route('user.profile') !!}"><div class="col-xs-12 col-sm-12">@lang('title.user-profile')</div></a>
+					<a href="{!! route('user.profile') !!}">
+						<div class="col-xs-1 text-center"><i class="fa fa-user"></i></div>
+						<div class="col-xs-11">@lang('menu.profile')</div>
+					</a>
 				</div>
 			@else
 				<div class="row">
-					<a href="{!! route('home.index') !!}"><div class="col-xs-12 col-sm-12">@lang('title.home-index')</div></a>
+					<a href="{!! route('home.index') !!}">
+						<div class="col-xs-1 text-center"><i class="fa fa-info"></i></div>
+						<div class="col-xs-11">@lang('menu.tutorial')</div>
+					</a>
 				</div>
 			@endif
 			@if(Auth::check())
 				@if(Auth::check() && Auth::user()->status_level == 1)
 					<div class="row">
-						<a href="{!! route('user.index') !!}"><div class="col-xs-12 col-sm-12">@lang('title.user-index')</div></a>
+						<a href="{!! route('user.index') !!}">
+							<div class="col-xs-1 text-center"><i class="fa fa-users"></i></div>
+							<div class="col-xs-11">@lang('menu.users')</div>
+						</a>
 					</div>
 					<div class="row">
-						<a class="pointer" data-toggle="modal" data-target="#myModalCollegeCreate"><div class="col-xs-12 col-sm-12">@lang('title.college-create')</div></a>
+						<a class="pointer" data-toggle="modal" data-target="#myModalCollegeCreate">
+							<div class="col-xs-1 text-center"><i class="fa fa-university"></i></div>
+							<div class="col-xs-11">@lang('menu.add-college')</div>
+						</a>
 					</div>
 					<div class="row">
-						<a href="{!! route('material.filter') !!}"><div class="col-xs-12 col-sm-12">@lang('title.material-filter')</div></a>
+						<a href="{!! route('material.filter') !!}">
+							<div class="col-xs-1 text-center"><i class="fa fa-filter"></i></div>
+							<div class="col-xs-11">@lang('menu.filter-material')</div>
+						</a>
 					</div>
 				@endif
 				<div class="row">
-					<a href="{!! route('college.index') !!}"><div class="col-xs-12 col-sm-12">@lang('title.college-index')</div></a>
+					<a href="{!! route('college.index') !!}">
+						<div class="col-xs-1 text-center"><i class="fa fa-search"></i></div>
+						<div class="col-xs-11">@lang('menu.colleges')</div>
+					</a>
 				</div>
 				<div class="row">
-					<a href="{!! route('material.create') !!}"><div class="col-xs-12 col-sm-12">@lang('title.material-create')</div></a>
+					<a href="{!! route('material.create') !!}">
+						<div class="col-xs-1 text-center"><i class="fa fa-file-o"></i></div>
+						<div class="col-xs-11">@lang('menu.add-material')</div>
+					</a>
 				</div>
 			@else
 			<div class="row">
-				<a class="pointer" data-toggle="modal" data-target="#myModalHomeCreate"><div class="col-xs-12 col-sm-12">@lang('title.home-create')</div></a>
+				<a class="pointer" data-toggle="modal" data-target="#myModalHomeCreate">
+					<div class="col-xs-1 text-center"><i class="fa fa-user-plus"></i></div>
+					<div class="col-xs-11">@lang('menu.add-user')</div>
+				</a>
+			</div>
+			<div class="row">
+				<a href="#">
+					<div class="col-xs-1 text-center"><i class="fa fa-plus"></i></div>
+					<div class="col-xs-11">@lang('menu.about')</div>
+				</a>
+			</div>
+			<div class="row">
+				<a href="#">
+					<div class="col-xs-1 text-center"><i class="fa fa-question"></i></div>
+					<div class="col-xs-11">@lang('menu.faq')</div>
+				</a>
 			</div>
 			@endif
 			<div class="row">
-				<a href="{!! route('home.donate') !!}"><div class="col-xs-12 col-sm-12">@lang('title.home-donate')</div></a>
+				<a href="{!! route('home.donate') !!}">
+					<div class="col-xs-1 text-center"><i class="fa fa-money"></i></div>
+					<div class="col-xs-11">@lang('menu.donate')</div>
+				</a>
 			</div>
 		</div>
 		<div class="modal-back-window hide" id="modal-back-window"></div>
@@ -130,15 +171,14 @@
 		@include('home.create')
 	@endif
 
-	<div class="logo-banner-lg visible-lg">&nbsp;</div>
-	<div class="logo-banner-md visible-md">&nbsp;</div>
-	<div class="logo-banner-sm visible-sm">&nbsp;</div>
-	<div class="logo-banner-xs visible-xs">&nbsp;</div>
+	<div class="logo-banner-pc visible-lg visible-md">&nbsp;</div>
+	<div class="logo-banner-mobile visible-sm">&nbsp;</div>
+	<div class="logo-banner-mobile visible-xs">&nbsp;</div>
 
-	<div class="col-md-9 content">
+	<div class="col-lg-offset-1 col-lg-8 col-md-9 col-sm-12 col-xs-12 div-content">
 		@yield('content')
 	</div>
-	<div class="col-md-3 content hidden-xs">
+	<div class="col-lg-2 col-md-3 visible-lg visible-md div-content">
 		<section>
 			<div class="col-md-12">
 				<div class="card card-ads">
@@ -149,7 +189,7 @@
 		@yield('ads')
 	</div>
 
-	<div class="col-md-12 footer" role="navigation">
+	<div class="col-md-12 col-sm-12 col-xs-12 footer" role="navigation">
 		Footer
 	</div>
 

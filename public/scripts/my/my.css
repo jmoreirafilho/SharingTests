@@ -74,14 +74,16 @@ body .menu-mobile {
 }
 body .menu-mobile div {
   font-size: 14px;
-  height: 30px;
+  height: 40px;
   color: #FFFFFF;
+  padding-left: 15px;
 }
 body .menu-mobile div:hover {
   background-color: #9FA8DA;
 }
 body .menu-mobile div div {
   padding: 5px;
+  padding-top: 10px;
 }
 body .menu-mobile div div a {
   color: #FFFFFF;
@@ -114,41 +116,29 @@ body .footer {
 body .footer-margin {
   height: 60px;
 }
-body .logo-banner-lg {
+body .logo-banner-pc {
   height: 150px;
   margin-top: 60px;
   margin-bottom: 10px;
   background-image: url('/images/logo-banner.png');
   background-position: center;
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-}
-body .logo-banner-md {
-  height: 150px;
-  margin-top: 50px;
-  margin-bottom: 0;
-  background-image: url('/images/logo-banner.png');
-  background-position: center;
   background-size: auto 100%;
   background-repeat: no-repeat;
 }
-body .logo-banner-sm {
+body .logo-banner-mobile {
   height: 150px;
-  margin-top: 50px;
-  margin-bottom: -10px;
   background-image: url('/images/logo-banner.png');
   background-position: center;
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
-body .logo-banner-xs {
-  height: 150px;
-  margin-top: 20px;
+body .logo-banner-mobile.visible-sm {
+  margin-top: 40px;
+  margin-bottom: -10px;
+}
+body .logo-banner-mobile.visible-xs {
+  margin-top: 30px;
   margin-bottom: -30px;
-  background-image: url('/images/logo-banner.png');
-  background-position: center;
-  background-size: 100% auto;
-  background-repeat: no-repeat;
 }
 body .no-top-margin {
   margin-top: 0px;
@@ -262,6 +252,9 @@ body .tab-pane.body {
 body .sub-card {
   box-shadow: 0px 1px 3px #666666;
   padding: 10px;
+}
+body .div-content {
+  padding-left: 0;
 }
 
 /*# sourceMappingURL=my.css.map */

@@ -75,13 +75,15 @@ body{
     display:none;
     div {
       font-size:14px;
-      height: 30px;
+      height: 40px;
       color: @color-white;
+      padding-left:15px;
       &:hover{
         background-color: @color-indigo-200;
       }
       div {
         padding:5px;
+        padding-top:10px;
         a {
           color: @color-white;
           text-decoration:none;
@@ -124,41 +126,29 @@ body{
     height:60px;
   }
 
-  .logo-banner-lg {
+  .logo-banner-pc {
     height: 150px;
     margin-top:60px;
     margin-bottom: 10px;
     background-image:url('/images/logo-banner.png');
     background-position: center;
-    background-size:100% auto; 
+    background-size:auto 100%;
     background-repeat:no-repeat;
   }
-  .logo-banner-md {
+  .logo-banner-mobile {
     height: 150px;
-    margin-top:50px;
-    margin-bottom: 0;
-    background-image:url('/images/logo-banner.png');
-    background-position: center;
-    background-size:auto 100%; 
-    background-repeat:no-repeat;
-  }
-  .logo-banner-sm {
-    height: 150px;
-    margin-top:50px;
-    margin-bottom: -10px;
     background-image:url('/images/logo-banner.png');
     background-position: center;
     background-size:100% auto; 
     background-repeat:no-repeat;
-  }
-  .logo-banner-xs {
-    height: 150px;
-    margin-top:20px;
-    margin-bottom: -30px;
-    background-image:url('/images/logo-banner.png');
-    background-position: center;
-    background-size:100% auto; 
-    background-repeat:no-repeat;
+    &.visible-sm {
+      margin-top:40px;
+      margin-bottom: -10px;
+    }
+    &.visible-xs {
+      margin-top:30px;
+      margin-bottom: -30px;
+    }
   }
 
   .no-top-margin {
@@ -270,5 +260,8 @@ body{
   .sub-card {
     box-shadow:0px 1px 3px @color-shadow;
     padding:10px;
+  }
+  .div-content {
+    padding-left: 0;
   }
 }
