@@ -32,6 +32,10 @@ class UserSeeder extends Seeder {
 			'user_id' => 1,
 			'value' => 29384
 		]);
+		Score::create([
+			'user_id' => 2,
+			'value' => 29384
+		]);
 	}
 }
 ?>
