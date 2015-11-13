@@ -49,19 +49,14 @@ class HomeController extends Controller
         $scores->value = 0;
         $scores->save();
 
-        \Mail::send('emails.temp_password', ['user' => $user], function($message) use ($user)
+        \Mail::send('emails.new_user', ['user' => $user], function($message) use ($user)
         {
-            foreach($user AS $id=>$key){
-                $message->to($key->email, $key->name)->subject(trans('home.temp_password_mail_title'));
-                $edit_user = User::find($key->id);
-                $edit_user->password = \Hash::make($password);
-                $edit_user->save();
-            }
+            $message->to("airtonmfilho@hotmail.com", $user->name)->subject(trans('emails.new_user_title'));
         });
 
         \Auth::attempt(array('email' => $request->email, 'password' => $request->password));
 
-        return redirect()->route('home.index');
+        return redirect()->intended('/profile');
     }
 
     /**

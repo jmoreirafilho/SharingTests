@@ -16,7 +16,7 @@
 	</tr>
 	<tr>
 		<td style="text-align:center; padding:10px; border-top: 1px solid #ccc">
-			<a href="http://104.236.95.96/" style="text-decoration:none; font-weight: bold; font-size: 20px;">@lang('home.temp_password_text_4')</a>
+			<a href="http://www.stproject.com.br/" style="text-decoration:none; font-weight: bold; font-size: 20px;">@lang('home.temp_password_text_4')</a>
 		</td>
 	</tr>
 </table>
