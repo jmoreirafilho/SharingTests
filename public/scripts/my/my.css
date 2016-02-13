@@ -1,10 +1,12 @@
 body {
   background-color: #E3F2FD;
 }
+
 body .top-buffer {
   margin-top: 40px;
   height: 120px;
 }
+
 body .menu {
   z-index: 3;
   position: fixed;
@@ -15,9 +17,11 @@ body .menu {
   box-shadow: 0px 0px 10px #666666;
   border: none;
 }
+
 body .menu .menu-pc {
   text-align: right;
 }
+
 body .menu .menu-pc a {
   color: #FFFFFF;
   position: relative;
@@ -26,10 +30,12 @@ body .menu .menu-pc a {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding: 5px;
 }
+
 body .menu .menu-pc a:hover {
   text-decoration: none;
   color: #9FA8DA;
 }
+
 body .menu .icon {
   background-image: url('/images/logo-icone.png');
   background-size: 60px 25px;
@@ -38,6 +44,7 @@ body .menu .icon {
   margin-top: 5px;
   height: 40px;
 }
+
 body .menu .name {
   cursor: pointer;
   color: #FFFFFF;
@@ -45,15 +52,19 @@ body .menu .name {
   text-align: left;
   font: bold 18px 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+
 body .menu .name:hover {
   text-shadow: 0px 0px 10px #9FA8DA;
 }
+
 body .menu .buttons {
   padding-top: 11px;
 }
+
 body .menu .buttons i {
   color: #FFFFFF;
 }
+
 body .modal-back-window {
   position: fixed;
   background-color: #000000;
@@ -64,6 +75,7 @@ body .modal-back-window {
   height: 100%;
   z-index: 2;
 }
+
 body .menu-mobile {
   z-index: 3;
   position: fixed;
@@ -72,40 +84,50 @@ body .menu-mobile {
   background-color: #5C6BC0;
   display: none;
 }
+
 body .menu-mobile div {
   font-size: 14px;
   height: 40px;
   color: #FFFFFF;
   padding-left: 15px;
 }
+
 body .menu-mobile div:hover {
   background-color: #9FA8DA;
 }
+
 body .menu-mobile div div {
   padding: 5px;
   padding-top: 10px;
 }
+
 body .menu-mobile div div a {
   color: #FFFFFF;
   text-decoration: none;
 }
+
 body .modal {
   border-radius: 0px;
 }
+
 body .modal .modal-dialog .modal-content .modal-header {
   background-color: #1A237E;
   color: #FFFFFF;
 }
+
 body .modal .modal-dialog .modal-content .modal-header .close {
   color: #FFFFFF;
   opacity: 1;
 }
+
 body .modal .modal-dialog .modal-content .modal-header .close:hover {
   opacity: .7;
 }
+
 body .pointer {
   cursor: pointer;
 }
+
 body .footer {
   background-color: #1A237E;
   height: 60px;
@@ -113,9 +135,11 @@ body .footer {
   color: #FFFFFF;
   border: none;
 }
+
 body .footer-margin {
   height: 60px;
 }
+
 body .logo-banner-pc {
   height: 150px;
   margin-top: 60px;
@@ -125,6 +149,7 @@ body .logo-banner-pc {
   background-size: auto 100%;
   background-repeat: no-repeat;
 }
+
 body .logo-banner-mobile {
   height: 150px;
   background-image: url('/images/logo-banner.png');
@@ -132,17 +157,21 @@ body .logo-banner-mobile {
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
+
 body .logo-banner-mobile.visible-sm {
   margin-top: 40px;
   margin-bottom: -10px;
 }
+
 body .logo-banner-mobile.visible-xs {
   margin-top: 30px;
   margin-bottom: -30px;
 }
+
 body .no-top-margin {
   margin-top: 0px;
 }
+
 body .card {
   background-color: #FFFFFF;
   box-shadow: 0px 1px 5px #666666;
@@ -150,6 +179,7 @@ body .card {
   margin: 10px;
   padding: 10px;
 }
+
 body .card .title {
   margin-top: -10px;
   margin-left: -10px;
@@ -165,21 +195,25 @@ body .card .title {
   padding-top: 23px;
   padding-bottom: 17px;
 }
+
 body .card .bottom {
   border-top: 1px solid #DDDDDD;
   padding: 5px;
   padding-top: 10px;
 }
+
 body .button {
   font-size: 14px;
   font-weight: bold;
   margin-left: 10px;
 }
+
 body .button:hover,
 body .button:link {
   color: #1A237E;
   text-decoration: none;
 }
+
 body .btn-disabled,
 body .btn-disabled:hover,
 body .btn-disabled:link {
@@ -187,9 +221,11 @@ body .btn-disabled:link {
   opacity: .65;
   color: #1A237E;
 }
+
 body .card-ads {
   height: 500px;
 }
+
 body .typeahead {
   background-color: #E3F2FD;
   border-radius: 3px;
@@ -197,19 +233,21 @@ body .typeahead {
   box-shadow: 0px 0px 5px #666666;
   width: 90%;
   height: 120px;
-  display: none;
   z-index: 1;
 }
+
 body .typeahead-option {
   cursor: pointer;
   padding-left: 10px;
   padding-top: 3px;
 }
+
 body .typeahead-option:hover {
   background-color: #9FA8DA;
   color: #FFFFFF;
   font-weight: bold;
 }
+
 body .points {
   z-index: 2;
   box-shadow: 0px 1px 5px #000000;
@@ -226,35 +264,40 @@ body .points {
   text-align: center;
   display: none;
 }
+
 body .search-bar {
   z-index: 1;
   margin-top: 15px;
 }
+
 body .back-bar {
   padding-top: 5px;
   margin-top: 10px;
 }
+
 body .option-hover {
   background-color: #9FA8DA;
   color: #FFFFFF;
   font-weight: bold;
   cursor: pointer;
 }
+
 body .actions {
   width: 4.15%;
   text-align: center;
   cursor: pointer;
 }
+
 body .tab-pane.body {
   padding: 10px;
   padding-top: 15px;
 }
+
 body .sub-card {
   box-shadow: 0px 1px 3px #666666;
   padding: 10px;
 }
+
 body .div-content {
   padding-left: 0;
 }
-
-/*# sourceMappingURL=my.css.map */

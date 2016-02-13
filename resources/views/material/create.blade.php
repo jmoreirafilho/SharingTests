@@ -19,7 +19,7 @@
 								{!! Form::label('college', trans('material.college')) !!}
 								{!! Form::text('search_college', null, ['class'=>'form-control', 'ng-model' => 'material.college', 'ng-change'=> 'searchingColleges(material.college)', 'placeholder' => trans('material.college_ph'), 'id'=>'search_college']) !!}
 								{!! Form::hidden('college', '@{{college_id}}') !!}
-								<div class="typeahead" id="typeahead" ng-show="material.college">
+								<div ng-show="material.college" class="typeahead" id="typeahead">
 									<div class="typeahead-option" ng-hide="emptyCityResult" ng-repeat='college in colleges' ng-click="getCollegeId(college.id, college.name, college.initials)">
 										@{{college.name}} <strong>(@{{college.initials}})</strong>
 									</div>

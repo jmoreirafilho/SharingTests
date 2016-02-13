@@ -62,7 +62,6 @@ angular.module('view').controller('viewController', function($scope, $http){
 			$scope.pdfClass = "active";
 		}
 	}
-	
 	$scope.searchingColleges = function (data){
 		$scope.showCourse = false;
 		$http.get('/searchCollege/'+data).success(function(result){
@@ -75,8 +74,9 @@ angular.module('view').controller('viewController', function($scope, $http){
 		});
 	};
 	$scope.getCollegeId = function(id, name, initials){
-		$scope.college_id = id;
 		$scope.material.college = name+" ("+initials+")";
+		setTimeout(function(){$("div#typeahead").addClass("ng-hide");});
+		$scope.college_id = id;
 		$scope.showCourse = true;
 		$http.get("/material/getCourses/"+id).success(function(courses){
 			$scope.courses = courses;
